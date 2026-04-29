@@ -13,8 +13,10 @@ body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; background: #f
 
 /* ── Header ── */
 .header { background: linear-gradient(135deg, #07553b 0%, #1a7a52 60%, #2ecc87 100%); color: #fff; padding: 36px 48px 28px; display: flex; align-items: center; gap: 24px; position: relative; }
-.download-btn { position: absolute; top: 28px; right: 48px; background: rgba(255,255,255,.15); border: 1.5px solid rgba(255,255,255,.4); color: #fff; font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 20px; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: background .2s; text-decoration: none; }
-.download-btn:hover { background: rgba(255,255,255,.28); }
+.header-actions { position: absolute; top: 28px; right: 48px; display: flex; gap: 8px; }
+.action-btn { background: rgba(255,255,255,.15); border: 1.5px solid rgba(255,255,255,.4); color: #fff; font-size: 12px; font-weight: 600; padding: 7px 16px; border-radius: 20px; cursor: pointer; transition: background .2s; }
+.action-btn:hover { background: rgba(255,255,255,.28); }
+.pdf-btn { background: rgba(255,216,0,.2); border-color: rgba(255,216,0,.5); }
 .header-logo { width: 56px; height: 56px; background: rgba(255,255,255,.2); border-radius: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .header-logo img { width: 38px; height: 38px; object-fit: contain; }
 .header-text h1 { font-size: 24px; font-weight: 700; letter-spacing: 2px; }
@@ -106,6 +108,21 @@ body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; background: #f
 .footer-next { background: #fef9c3; color: #854d0e; font-weight: 700; padding: 3px 12px; border-radius: 20px; }
 .footer-credit { font-size: 12px; color: #a0aec0; }
 .footer-credit strong { color: #718096; }
+
+/* ── 打印/PDF 样式 ── */
+@media print {
+  body { background: #fff; font-size: 12px; }
+  .cal-wrap, .tabs, .download-btn, .footer { display: none !important; }
+  .period-content { display: block !important; }
+  .period-content:not(.active) { display: none !important; }
+  .container { max-width: 100%; padding: 0; }
+  .dim-block { box-shadow: none; border: 1px solid #e2e8f0; break-inside: avoid; margin-bottom: 12px; }
+  .item { break-inside: avoid; }
+  .link-btn { display: none; }
+  .overview-card { box-shadow: none; border: 1px solid #e2e8f0; }
+  .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 20px 24px; }
+  .header-meta { display: none; }
+}
 </style>
 </head>
 <body>
@@ -129,7 +146,10 @@ body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; background: #f
       <span><img src="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAAAAAAAAAAGa0aABmtGg4ZrRoOGa0aABmtGgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmtGgAZrRpGGa0arBmtGkEZrRobGa0aOBmtGkwZrRpNGa0aORmtGhoZrRoDGa0aAAAAAAAAAAAAAAAAAAAAAAAZrRoAGa0aKBmtGucZrRrwGa0a3BmtGvIZrRr6Ga0a+xmtGvMZrRrYGa0alxmtGjcZrRoCGa0aAAAAAAAZrRoAGa0aBhmtGnMZrRr1Ga0a/xmtGv8ZrRr/Ga0a/xmtGv8ZrRr/Ga0a/xmtGv8ZrRroGa0adBmtGgkZrRoAGa0aAhmtGnEZrRr2Ga0a/xmtGv8ZrRr/Ga0a/xmtGv8ZrRr/Ga0a/xmtGv8ZrRr/Ga0a/xmtGvgZrRp5Ga0aAxmtGkEZrRrmGa0a/xmtGv8ZrRr+Ga0a8RmtGvsZrRr/Ga0a/xmtGv8ZrRr/Ga0a/xmtGv8ZrRr/Ga0a6hmtGkkZrRqlGa0a/xmtGv8ZrRr/Ga0a5RmtGkwZrRpzGa0a3hmtGv8ZrRr/Ga0a/xmtGv8ZrRr/Ga0a/xmtGv8ZrRqvGa0a3xmtGv8ZrRr/Ga0a/xmtGpkZrRoDGa0aABmtGicZrRqWGa0a7hmtGv8ZrRr/Ga0a/xmtGv8ZrRr/Ga0a5xmtGusZrRr/Ga0a/xmtGu0ZrRo9Ga0aPBmtGmcZrRohGa0aAxmtGj8ZrRq0Ga0a+BmtGv8ZrRr/Ga0a/xmtGvIZrRrQGa0a/xmtGv8ZrRrLGa0agRmtGukZrRr+Ga0a3RmtGosZrRowGa0aEBmtGlsZrRrNGa0a/RmtGv8ZrRrYGa0agxmtGv0ZrRr/Ga0a+hmtGvsZrRr/Ga0a/xmtGv8ZrRr/Ga0a6hmtGqIZrRpDGa0aJRmtGnsZrRrhGa0ajBmtGiAZrRrHGa0a/xmtGv8ZrRr/Ga0a/xmtGv8ZrRr/Ga0a/xmtGv8ZrRr/Ga0a9BmtGrcZrRpdGa0aOxmtGhoZrRoAGa0aPBmtGtcZrRr/Ga0a/xmtGv8ZrRr/Ga0a/xmtGv8ZrRr/Ga0a/xmtGv8ZrRr/Ga0a1BmtGiwZrRoAGa0aABmtGgAZrRowGa0arRmtGvQZrRr/Ga0a/xmtGv8ZrRr/Ga0a/xmtGv8ZrRr2Ga0asRmtGjQZrRoAGa0aAAAAAAAZrRoAGa0aABmtGgsZrRpFGa0ajRmtGrsZrRrPGa0azxmtGr0ZrRqQGa0aSBmtGgwZrRoAGa0aAAAAAAAAAAAAAAAAAAAAAAAAAAAAGa0aABmtGgEZrRoKGa0aFBmtGhUZrRoKGa0aARmtGgAAAAAAAAAAAAAAAAAAAAAAz/8AAMAPAADAAwAAgAEAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAgAEAAMADAADgBwAA+B8AAA==" alt="">微信支付</span>
     </div>
   </div>
-  <button class="download-btn" onclick="downloadPage()">⬇ 下载本页</button>
+  <div class="header-actions">
+    <button class="action-btn" onclick="downloadPage()">⬇ 下载 HTML</button>
+    <button class="action-btn pdf-btn" onclick="printPDF()">📄 下载 PDF</button>
+  </div>
 </div>
 
 <!-- ══ 周历选择器 ══ -->
@@ -361,7 +381,12 @@ body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; background: #f
 </div>
 
 <script>
-// ══ 下载当前页面 ══
+// ══ 下载 PDF（调用浏览器打印）══
+function printPDF() {
+  window.print();
+}
+
+// ══ 下载当前页面 HTML ══
 function downloadPage() {
   const period = PERIODS.find(p => p.id === activePeriodId);
   const label = period ? period.label.replace(/[–—]/g, '-') : 'report';
