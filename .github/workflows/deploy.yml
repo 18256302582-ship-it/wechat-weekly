@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages + COS
 
 on:
   push:
@@ -21,9 +21,30 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+
+      # ── 部署到 GitHub Pages ──
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
       - id: deployment
         uses: actions/deploy-pages@v4
+
+      # ── 同步到腾讯云 COS ──
+      - name: Install coscmd
+        run: pip install coscmd
+
+      - name: Configure coscmd
+        run: |
+          coscmd config \
+            -a ${{ secrets.COS_SECRET_ID }} \
+            -s ${{ secrets.COS_SECRET_KEY }} \
+            -b wx-report-1309543112 \
+            -r ap-shanghai
+
+      - name: Upload to COS
+        run: coscmd upload -r . / --ignore ".git/*,.github/*,*.js,*.toml,*.json"
+
+      - name: Set COS static website
+        run: |
+          coscmd putbucketwebsite --index index.html --error index.html
