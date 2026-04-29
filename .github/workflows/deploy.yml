@@ -35,12 +35,7 @@ jobs:
         run: pip install coscmd
 
       - name: Configure coscmd
-        run: |
-          coscmd config \
-            -a ${{ secrets.COS_SECRET_ID }} \
-            -s ${{ secrets.COS_SECRET_KEY }} \
-            -b wx-report-1309543112 \
-            -r ap-shanghai
+        run: coscmd config -a ${{ secrets.COS_SECRET_ID }} -s ${{ secrets.COS_SECRET_KEY }} -b wx-report-1309543112 -r ap-shanghai
 
       - name: Upload to COS
         run: coscmd upload -r . / --ignore ".git/*,.github/*,*.js,*.toml,*.json"
