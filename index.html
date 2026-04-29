@@ -5,18 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>微信生态每周更新汇总</title>
 <style>
-/* ── 密码锁屏 ── */
-#lockScreen { position: fixed; inset: 0; background: linear-gradient(135deg, #07553b, #1a7a52); z-index: 9999; display: flex; align-items: center; justify-content: center; }
-#lockScreen.hidden { display: none; }
-.lock-box { background: #fff; border-radius: 20px; padding: 40px 36px; text-align: center; width: 320px; box-shadow: 0 20px 60px rgba(0,0,0,.25); }
-.lock-icon { font-size: 40px; margin-bottom: 12px; }
-.lock-title { font-size: 17px; font-weight: 700; color: #1a3a2c; margin-bottom: 6px; }
-.lock-sub { font-size: 13px; color: #718096; margin-bottom: 24px; }
-.lock-input { width: 100%; padding: 10px 14px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 15px; outline: none; transition: border .2s; text-align: center; letter-spacing: 4px; }
-.lock-input:focus { border-color: #07553b; }
-.lock-btn { margin-top: 12px; width: 100%; padding: 11px; background: #07553b; color: #fff; border: none; border-radius: 10px; font-size: 15px; font-weight: 700; cursor: pointer; transition: background .2s; }
-.lock-btn:hover { background: #055030; }
-.lock-err { margin-top: 10px; font-size: 13px; color: #e53e3e; min-height: 18px; }
+
+
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; background: #f0f4f8; color: #2d3748; font-size: 14px; line-height: 1.7; }
@@ -117,18 +107,6 @@ body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; background: #f
 </style>
 </head>
 <body>
-
-<!-- ══ 密码遮罩 ══ -->
-<div id="lockScreen">
-  <div class="lock-box">
-    <div class="lock-icon">🔒</div>
-    <div class="lock-title">微信生态每周更新汇总</div>
-    <div class="lock-sub">内部资料，请输入访问密码</div>
-    <input type="password" id="pwdInput" class="lock-input" placeholder="请输入密码" onkeydown="if(event.key==='Enter')checkPwd()">
-    <button class="lock-btn" onclick="checkPwd()">进入</button>
-    <div class="lock-err" id="lockErr"></div>
-  </div>
-</div>
 
 <!-- ══ Header ══ -->
 <div class="header">
