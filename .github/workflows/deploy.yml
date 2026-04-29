@@ -30,7 +30,7 @@ jobs:
       - id: deployment
         uses: actions/deploy-pages@v4
 
-      # ── 同步到腾讯云 COS（使用官方 Action）──
+      # ── 同步到腾讯云 COS ──
       - name: Upload to Tencent COS
         uses: TencentCloud/cos-action@v1
         with:
@@ -38,7 +38,6 @@ jobs:
           secret_key: ${{ secrets.COS_SECRET_KEY }}
           cos_bucket: wx-report-1309543112
           cos_region: ap-shanghai
-          local_path: .
-          remote_path: /
-          accelerate: false
+          local_path: index.html
+          remote_path: /index.html
           clean: false
