@@ -1040,22 +1040,32 @@ renderCal();
   document.querySelectorAll('.item').forEach(item => {
     const linkBtn = item.querySelector('.link-btn');
     const url = linkBtn ? linkBtn.href : null;
-    if (!url) return; // 无链接（如"本期无更新"）不加按钮
+    if (!url) return;
 
+    // 标题：去掉 span 标签（tag/badge）只留纯文字
     const titleEl = item.querySelector('.item-title');
-    // 提取纯文字标题，去掉 span 标签内容（tag/badge文字）
     let titleText = '';
     if (titleEl) {
-      // 克隆节点后移除 span，只保留纯文本
       const clone = titleEl.cloneNode(true);
       clone.querySelectorAll('span').forEach(s => s.remove());
       titleText = clone.textContent.trim();
     }
-    const copyText = titleText ? titleText + '\n' + url : url;
+
+    // 正文：取所有 p 标签文字，拼成一段
+    const bodyParts = [];
+    item.querySelectorAll('p').forEach(p => {
+      const t = p.textContent.trim();
+      if (t) bodyParts.push(t);
+    });
+    const bodyText = bodyParts.join(' ');
+
+    // 组合：标题 + 正文（若有）+ 链接
+    const parts = [titleText, bodyText, url].filter(Boolean);
+    const copyText = parts.join('\n');
 
     const btn = document.createElement('button');
     btn.className = 'share-btn';
-    btn.title = '复制标题+链接';
+    btn.title = '复制内容+链接';
     btn.innerHTML = SVG_ICON;
     btn.onclick = (e) => {
       e.stopPropagation();
@@ -1066,7 +1076,7 @@ renderCal();
         setTimeout(() => {
           btn.innerHTML = SVG_ICON;
           btn.classList.remove('copied');
-          btn.title = '复制标题+链接';
+          btn.title = '复制内容+链接';
         }, 1800);
       }).catch(() => {
         prompt('复制以下内容：', copyText);
