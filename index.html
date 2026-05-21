@@ -144,11 +144,10 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
 .deadline-close:hover { color: #6b7280; }
 
 /* ── 分享单条 ── */
-.item { position: relative; }
-.share-btn { position: absolute; top: 8px; right: 10px; background: none; border: none; cursor: pointer; color: #d1d5db; padding: 2px 4px; border-radius: 4px; font-size: 13px; transition: color .15s, background .15s; opacity: 0; }
-.item:hover .share-btn { opacity: 1; }
+.item { position: relative; padding-right: 32px; }
+.share-btn { position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: #c9d5cc; padding: 3px; border-radius: 4px; line-height: 0; transition: color .15s, background .15s; }
 .share-btn:hover { color: #2d8b61; background: #f0f7f3; }
-.share-btn.copied { color: #2d8b61; opacity: 1; }
+.share-btn.copied { color: #2d8b61; }
 
 /* ── 打印/PDF 样式 ── */
 @media print {
@@ -1036,30 +1035,41 @@ renderCal();
 
 // ══ 分享单条：为每个 item 注入分享按钮 ══
 (function initShareBtns() {
+  const SVG_ICON = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>';
+
   document.querySelectorAll('.item').forEach(item => {
-    // 找 link-btn 拿 href
     const linkBtn = item.querySelector('.link-btn');
-    const url = linkBtn ? linkBtn.href : location.href;
-    const title = item.querySelector('.item-title') ? item.querySelector('.item-title').textContent.trim().slice(0,40) : '';
+    const url = linkBtn ? linkBtn.href : null;
+    if (!url) return; // 无链接（如"本期无更新"）不加按钮
+
+    const titleEl = item.querySelector('.item-title');
+    // 提取纯文字标题，去掉 span 标签内容（tag/badge文字）
+    let titleText = '';
+    if (titleEl) {
+      // 克隆节点后移除 span，只保留纯文本
+      const clone = titleEl.cloneNode(true);
+      clone.querySelectorAll('span').forEach(s => s.remove());
+      titleText = clone.textContent.trim();
+    }
+    const copyText = titleText ? titleText + '\n' + url : url;
 
     const btn = document.createElement('button');
     btn.className = 'share-btn';
-    btn.title = '复制链接';
-    btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>';
+    btn.title = '复制标题+链接';
+    btn.innerHTML = SVG_ICON;
     btn.onclick = (e) => {
       e.stopPropagation();
-      navigator.clipboard.writeText(url).then(() => {
+      navigator.clipboard.writeText(copyText).then(() => {
         btn.innerHTML = '✓';
         btn.classList.add('copied');
         btn.title = '已复制';
         setTimeout(() => {
-          btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>';
+          btn.innerHTML = SVG_ICON;
           btn.classList.remove('copied');
-          btn.title = '复制链接';
+          btn.title = '复制标题+链接';
         }, 1800);
       }).catch(() => {
-        // 降级：弹出链接
-        prompt('复制以下链接：', url);
+        prompt('复制以下内容：', copyText);
       });
     };
     item.appendChild(btn);
