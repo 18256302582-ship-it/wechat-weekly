@@ -129,6 +129,27 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
 .no-result { text-align: center; padding: 48px 20px; color: #9ca3af; font-size: 14px; display: none; }
 .no-result.show { display: block; }
 
+/* ── 截止日期提醒栏 ── */
+.deadline-bar { background: #fffbeb; border-bottom: 1px solid #fde68a; padding: 10px 40px; display: flex; align-items: flex-start; gap: 12px; }
+.deadline-bar.hidden { display: none; }
+.deadline-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+.deadline-label { font-size: 12px; font-weight: 700; color: #92400e; white-space: nowrap; margin-top: 2px; }
+.deadline-list { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; }
+.deadline-chip { background: #fef3c7; border: 1px solid #fde68a; border-radius: 20px; padding: 3px 12px; font-size: 12px; color: #78350f; cursor: pointer; transition: background .15s; white-space: nowrap; }
+.deadline-chip:hover { background: #fde68a; }
+.deadline-chip .dc-date { font-weight: 700; margin-right: 4px; }
+.deadline-chip.overdue { background: #fee2e2; border-color: #fca5a5; color: #7f1d1d; }
+.deadline-chip.overdue .dc-date { color: #dc2626; }
+.deadline-close { margin-left: auto; background: none; border: none; color: #9ca3af; cursor: pointer; font-size: 16px; padding: 0 4px; flex-shrink: 0; }
+.deadline-close:hover { color: #6b7280; }
+
+/* ── 分享单条 ── */
+.item { position: relative; }
+.share-btn { position: absolute; top: 8px; right: 10px; background: none; border: none; cursor: pointer; color: #d1d5db; padding: 2px 4px; border-radius: 4px; font-size: 13px; transition: color .15s, background .15s; opacity: 0; }
+.item:hover .share-btn { opacity: 1; }
+.share-btn:hover { color: #2d8b61; background: #f0f7f3; }
+.share-btn.copied { color: #2d8b61; opacity: 1; }
+
 /* ── 打印/PDF 样式 ── */
 @media print {
   body { background: #fff; font-size: 12px; }
@@ -170,6 +191,14 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
   <div class="header-actions">
     <button class="action-btn pdf-btn" onclick="printPDF()">📄 下载 PDF</button>
   </div>
+</div>
+
+<!-- ══ 截止日期提醒栏 ══ -->
+<div class="deadline-bar" id="deadlineBar">
+  <span class="deadline-icon">⏰</span>
+  <span class="deadline-label">时间节点</span>
+  <div class="deadline-list" id="deadlineList"></div>
+  <button class="deadline-close" onclick="document.getElementById('deadlineBar').classList.add('hidden')" title="关闭">×</button>
 </div>
 
 <!-- ══ 周历选择器 ══ -->
@@ -931,6 +960,111 @@ function calMove(dir) {
 // 初始化
 renderCal();
 
+// ══ 截止日期提醒：扫描所有期次中含日期的 alert 条目 ══
+(function initDeadlines() {
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  // 未来90天内的截止日期才展示（过去的不超过7天也展示以提示"刚过期"）
+  const PAST_DAYS = 7, FUTURE_DAYS = 90;
+  const chips = [];
+
+  // 提取日期：匹配"X月X日""YYYY年X月X日""X/XX"等格式
+  function extractDates(text) {
+    const results = [];
+    // 格式1: 2026年5月18日 / 5月18日
+    const re1 = /(?:(d{4})年)?(d{1,2})月(d{1,2})日/g;
+    let m;
+    while ((m = re1.exec(text)) !== null) {
+      const year = m[1] ? parseInt(m[1]) : 2026;
+      const date = new Date(year, parseInt(m[2])-1, parseInt(m[3]));
+      results.push({ date, raw: m[0] });
+    }
+    return results;
+  }
+
+  document.querySelectorAll('.period-content').forEach(period => {
+    const periodId = period.id;
+    // 从 PERIODS 找 label
+    const periodMeta = (typeof PERIODS !== 'undefined') ? PERIODS.find(p => p.id === periodId) : null;
+    const periodLabel = periodMeta ? periodMeta.label : periodId;
+
+    period.querySelectorAll('.item.alert, .item.notice').forEach((item, idx) => {
+      const titleEl = item.querySelector('.item-title');
+      const linkEl = item.querySelector('.link-btn');
+      if (!titleEl) return;
+      const text = item.textContent;
+      const dates = extractDates(text);
+      dates.forEach(({ date, raw }) => {
+        const diff = Math.round((date - today) / 86400000);
+        if (diff < -PAST_DAYS || diff > FUTURE_DAYS) return;
+        const title = titleEl.textContent.replace(/^[专项新功能规则API更新激励治理活动]+\s*/,'').slice(0,28);
+        chips.push({ date, diff, raw, title, periodId, periodLabel, linkEl });
+      });
+    });
+  });
+
+  if (chips.length === 0) {
+    document.getElementById('deadlineBar').classList.add('hidden');
+    return;
+  }
+
+  // 按日期升序排列
+  chips.sort((a, b) => a.date - b.date);
+
+  const list = document.getElementById('deadlineList');
+  chips.forEach(({ date, diff, raw, title, periodId, periodLabel }) => {
+    const chip = document.createElement('span');
+    chip.className = 'deadline-chip' + (diff < 0 ? ' overdue' : '');
+    const dateStr = (date.getMonth()+1) + '月' + date.getDate() + '日';
+    const diffStr = diff === 0 ? '今天' : diff < 0 ? Math.abs(diff) + '天前' : diff + '天后';
+    chip.innerHTML = '<span class="dc-date">' + dateStr + '（' + diffStr + '）</span>' + title + (title.length >= 28 ? '…' : '');
+    chip.title = '点击跳转 ' + periodLabel + ' 期次';
+    chip.onclick = () => {
+      const tabs = document.querySelectorAll('.tab-btn');
+      let targetBtn = null;
+      tabs.forEach(btn => { if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(periodId)) targetBtn = btn; });
+      switchTab(targetBtn, periodId);
+      setTimeout(() => {
+        // 尝试滚动到第一个 alert 条目
+        const alertItem = document.querySelector('#' + periodId + ' .item.alert');
+        if (alertItem) alertItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
+    };
+    list.appendChild(chip);
+  });
+})();
+
+// ══ 分享单条：为每个 item 注入分享按钮 ══
+(function initShareBtns() {
+  document.querySelectorAll('.item').forEach(item => {
+    // 找 link-btn 拿 href
+    const linkBtn = item.querySelector('.link-btn');
+    const url = linkBtn ? linkBtn.href : location.href;
+    const title = item.querySelector('.item-title') ? item.querySelector('.item-title').textContent.trim().slice(0,40) : '';
+
+    const btn = document.createElement('button');
+    btn.className = 'share-btn';
+    btn.title = '复制链接';
+    btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>';
+    btn.onclick = (e) => {
+      e.stopPropagation();
+      navigator.clipboard.writeText(url).then(() => {
+        btn.innerHTML = '✓';
+        btn.classList.add('copied');
+        btn.title = '已复制';
+        setTimeout(() => {
+          btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>';
+          btn.classList.remove('copied');
+          btn.title = '复制链接';
+        }, 1800);
+      }).catch(() => {
+        // 降级：弹出链接
+        prompt('复制以下链接：', url);
+      });
+    };
+    item.appendChild(btn);
+  });
+})();
 
 </script>
 </body>
