@@ -109,6 +109,26 @@ body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; background: #f
 .footer-credit { font-size: 12px; color: #9ca3af; }
 .footer-credit strong { color: #6b7280; }
 
+/* ── 搜索 & 筛选栏 ── */
+.search-bar { background: #fff; border-bottom: 1px solid #e5e9e5; padding: 12px 40px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.search-input-wrap { position: relative; flex: 1; min-width: 200px; max-width: 360px; }
+.search-input-wrap svg { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); color: #9ca3af; pointer-events: none; }
+.search-input { width: 100%; padding: 8px 12px 8px 34px; border: 1px solid #e5e9e5; border-radius: 20px; font-size: 13px; color: #374151; background: #f9fafb; outline: none; transition: border-color .15s; }
+.search-input:focus { border-color: #2d8b61; background: #fff; }
+.search-input::placeholder { color: #9ca3af; }
+.search-clear { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: #9ca3af; font-size: 15px; display: none; padding: 0; line-height: 1; }
+.search-clear.show { display: block; }
+.filter-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.filter-tag { padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 500; cursor: pointer; border: 1px solid #e5e9e5; background: #f9fafb; color: #6b7280; transition: all .15s; white-space: nowrap; }
+.filter-tag:hover { border-color: #86c9a8; color: #2d8b61; }
+.filter-tag.active { background: #2d8b61; color: #fff; border-color: #2d8b61; }
+.search-result-count { font-size: 12px; color: #9ca3af; margin-left: auto; white-space: nowrap; }
+/* 搜索高亮 */
+mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1px; }
+/* 无结果提示 */
+.no-result { text-align: center; padding: 48px 20px; color: #9ca3af; font-size: 14px; display: none; }
+.no-result.show { display: block; }
+
 /* ── 打印/PDF 样式 ── */
 @media print {
   body { background: #fff; font-size: 12px; }
@@ -183,6 +203,25 @@ body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; background: #f
   <button class="tab-btn" onclick="switchTab(this,'p3')">📅 2026.4.21–4.27</button>
   <button class="tab-btn" onclick="switchTab(this,'p2')">📅 2026.4.14–4.20</button>
   <button class="tab-btn" onclick="switchTab(this,'p1')">📅 2026.3.1–4.14</button>
+</div>
+
+<!-- ══ 搜索 & 筛选栏 ══ -->
+<div class="search-bar" id="searchBar">
+  <div class="search-input-wrap">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input class="search-input" id="searchInput" type="text" placeholder="搜索更新内容…" oninput="onSearch()" />
+    <button class="search-clear" id="searchClear" onclick="clearSearch()">×</button>
+  </div>
+  <div class="filter-tags" id="filterTags">
+    <button class="filter-tag active" data-tag="all" onclick="onFilter(this)">全部</button>
+    <button class="filter-tag" data-tag="new" onclick="onFilter(this)">新功能</button>
+    <button class="filter-tag" data-tag="api" onclick="onFilter(this)">API更新</button>
+    <button class="filter-tag" data-tag="rule" onclick="onFilter(this)">规则</button>
+    <button class="filter-tag" data-tag="notice" onclick="onFilter(this)">治理公告</button>
+    <button class="filter-tag" data-tag="activity" onclick="onFilter(this)">活动激励</button>
+    <button class="filter-tag" data-tag="alert" onclick="onFilter(this)">专项治理</button>
+  </div>
+  <span class="search-result-count" id="resultCount"></span>
 </div>
 
 <div class="container">
@@ -667,6 +706,7 @@ body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; background: #f
 </div><!-- /p1 -->
 
 </div><!-- /container -->
+<div class="no-result" id="noResult">🔍 没有找到匹配的内容，换个关键词试试？</div>
 
 <div class="footer">
   <div class="footer-update">
@@ -682,6 +722,104 @@ body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; background: #f
 // ══ 下载 PDF（调用浏览器打印）══
 function printPDF() {
   window.print();
+}
+
+// ══ 搜索 & 标签筛选 ══
+let currentFilter = 'all';
+let currentKeyword = '';
+
+function onSearch() {
+  const input = document.getElementById('searchInput');
+  const clear = document.getElementById('searchClear');
+  currentKeyword = input.value.trim();
+  clear.classList.toggle('show', currentKeyword.length > 0);
+  applyFilter();
+}
+
+function clearSearch() {
+  const input = document.getElementById('searchInput');
+  input.value = '';
+  currentKeyword = '';
+  document.getElementById('searchClear').classList.remove('show');
+  applyFilter();
+}
+
+function onFilter(btn) {
+  document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  currentFilter = btn.dataset.tag;
+  applyFilter();
+}
+
+function applyFilter() {
+  const kw = currentKeyword.toLowerCase();
+  const tag = currentFilter;
+  const activeContent = document.querySelector('.period-content.active');
+  if (!activeContent) return;
+
+  const items = activeContent.querySelectorAll('.item');
+  let visible = 0;
+
+  items.forEach(item => {
+    // 标签匹配
+    const tagMatch = tag === 'all' || item.classList.contains(tag);
+    // 关键词匹配（在 item 文本范围内）
+    const text = item.textContent;
+    const kwMatch = !kw || text.toLowerCase().includes(kw);
+
+    if (tagMatch && kwMatch) {
+      item.style.display = '';
+      // 高亮关键词
+      if (kw) highlightItem(item, kw);
+      else clearHighlight(item);
+      visible++;
+    } else {
+      item.style.display = 'none';
+      clearHighlight(item);
+    }
+  });
+
+  // 控制 dim-block 显示（如果块内所有 item 都隐藏，隐藏整个块）
+  activeContent.querySelectorAll('.dim-block').forEach(block => {
+    const blockItems = block.querySelectorAll('.item');
+    const anyVisible = Array.from(blockItems).some(i => i.style.display !== 'none');
+    block.style.display = anyVisible ? '' : 'none';
+  });
+
+  // 概览卡片在搜索/筛选时隐藏（避免干扰）
+  const overviewCard = activeContent.querySelector('.overview-card');
+  if (overviewCard) overviewCard.style.display = (kw || tag !== 'all') ? 'none' : '';
+
+  // 更新计数
+  const countEl = document.getElementById('resultCount');
+  if (kw || tag !== 'all') {
+    countEl.textContent = '共 ' + visible + ' 条';
+  } else {
+    countEl.textContent = '';
+  }
+
+  // 无结果提示
+  document.getElementById('noResult').classList.toggle('show', visible === 0 && (kw || tag !== 'all'));
+}
+
+function highlightItem(item, kw) {
+  // 只对 item-title 和 p 标签做高亮，避免破坏 HTML 结构
+  const targets = item.querySelectorAll('.item-title, p');
+  targets.forEach(el => {
+    if (el._origHTML === undefined) el._origHTML = el.innerHTML;
+    const escaped = kw.split('').map(c => c.replace(/[-/\^$*+?.()|]/g, '\\$&')).join('');
+    const re = new RegExp(escaped, 'gi');
+    el.innerHTML = el._origHTML.replace(re, m => '<mark class="hl">' + m + '</mark>');
+  });
+}
+
+function clearHighlight(item) {
+  item.querySelectorAll('.item-title, p').forEach(el => {
+    if (el._origHTML !== undefined) {
+      el.innerHTML = el._origHTML;
+      delete el._origHTML;
+    }
+  });
 }
 
 
@@ -707,6 +845,11 @@ function switchTab(btn, id) {
   document.getElementById(id).classList.add('active');
   if (btn) btn.classList.add('active');
   renderCal();
+  // 切换期次时重置搜索和筛选状态
+  clearSearch();
+  currentFilter = 'all';
+  document.querySelectorAll('.filter-tag').forEach(t => t.classList.toggle('active', t.dataset.tag === 'all'));
+  document.getElementById('noResult').classList.remove('show');
   window.scrollTo(0, 0);
 }
 
