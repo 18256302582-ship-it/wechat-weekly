@@ -1,0 +1,1341 @@
+const fs = require('fs');
+
+// 读取所有图标base64（文件来自父目录 C:\Users\v_yiicao\WorkBuddy\20260413140616\）
+const ICONS = {};
+const iconFiles = {
+  mp:       'icon_公众号.b64',        // 公众号
+  mini:     'icon_xiaochengxu.b64',  // 小程序
+  channels: 'icon_shipinhao.b64',    // 视频号
+  store:    'icon_xiaodian.b64',     // 微信小店
+  work:     'icon_qiyeweixin.b64',   // 企业微信
+  open:     'icon_kaifangpt.b64',    // 微信开放平台
+  pay:      'icon_weipay.b64',       // 微信支付
+  tuike:    'icon_tuike.b64',        // 推客
+};
+
+const ICON_BASE = 'C:/Users/v_yiicao/WorkBuddy/20260413140616/';
+for (const [key, file] of Object.entries(iconFiles)) {
+  ICONS[key] = fs.readFileSync(ICON_BASE + file, 'utf8').trim();
+}
+
+
+const html = `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>微信生态每周更新汇总</title>
+<style>
+
+
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; background: #f5f7f5; color: #374151; font-size: 14px; line-height: 1.7; }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #1b6b48 0%, #2d8b61 55%, #52b888 100%); color: #fff; padding: 36px 48px 28px; display: flex; align-items: center; gap: 24px; position: relative; }
+.header-actions { position: absolute; top: 28px; right: 48px; display: flex; gap: 8px; }
+.action-btn { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.3); color: #fff; font-size: 12px; font-weight: 500; padding: 7px 16px; border-radius: 20px; cursor: pointer; transition: background .2s; }
+.action-btn:hover { background: rgba(255,255,255,.22); }
+.pdf-btn { background: rgba(255,220,100,.15); border-color: rgba(255,220,100,.35); }
+.header-logo { width: 56px; height: 56px; background: rgba(255,255,255,.18); border-radius: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.header-logo img { width: 38px; height: 38px; object-fit: contain; }
+.header-text h1 { font-size: 24px; font-weight: 700; letter-spacing: 2px; }
+.header-text p { font-size: 13px; opacity: .8; margin-top: 5px; }
+.header-update { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; font-size: 12px; }
+.update-cur  { background: rgba(255,255,255,.12); border-radius: 20px; padding: 4px 14px; }
+.update-next { background: rgba(255,220,100,.2); border-radius: 20px; padding: 4px 14px; font-weight: 600; letter-spacing: .3px; }
+.header-meta { display: flex; flex-wrap: wrap; gap: 8px; font-size: 12px; margin-top: 10px; }
+.header-meta span { background: rgba(255,255,255,.12); border-radius: 20px; padding: 3px 12px; display: flex; align-items: center; gap: 5px; }
+.header-meta img { width: 14px; height: 14px; object-fit: contain; border-radius: 3px; }
+
+/* ── Tabs ── */
+.tabs { background: #fff; border-bottom: 1px solid #e5e9e5; padding: 0 40px; display: flex; overflow-x: auto; }
+.tab-btn { padding: 13px 20px; font-size: 13px; font-weight: 500; color: #9ca3af; background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; white-space: nowrap; transition: all .2s; margin-bottom: -1px; }
+.tab-btn:hover { color: #2d8b61; }
+.tab-btn.active { color: #2d8b61; border-bottom-color: #2d8b61; font-weight: 600; }
+
+/* ── Layout ── */
+.container { max-width: 980px; margin: 0 auto; padding: 24px 20px 60px; }
+.period-content { display: none; }
+.period-content.active { display: block; }
+
+/* ── 要点速览 ── */
+.overview-card { background: #fff; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 1px 6px rgba(0,0,0,.05); overflow: hidden; }
+.card-title { background: #f0f7f3; color: #1b6b48; border-bottom: 1px solid #dceee5; padding: 12px 22px; font-size: 13px; font-weight: 700; letter-spacing: .5px; }
+.overview-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.overview-table th { background: #f8fbf9; color: #4b6b59; padding: 9px 14px; text-align: left; font-weight: 600; border-bottom: 1px solid #e5ede8; }
+.overview-table td { padding: 9px 14px; border-bottom: 1px solid #f0f4f1; vertical-align: middle; }
+.overview-table tr:last-child td { border-bottom: none; }
+.overview-table tr:nth-child(even) td { background: #fafcfb; }
+.overview-table tr:hover td { background: #f3f9f5; }
+.dim-cell { display: flex; align-items: center; gap: 8px; white-space: nowrap; font-weight: 600; }
+.dim-cell img { width: 20px; height: 20px; object-fit: contain; border-radius: 4px; }
+.stars { color: #d97706; }
+
+/* ── 维度块 ── */
+.dim-block { background: #fff; border-radius: 12px; margin-bottom: 14px; box-shadow: 0 1px 6px rgba(0,0,0,.05); overflow: hidden; }
+.dim-header { padding: 13px 20px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #f0f4f1; }
+.dim-icon { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden; }
+.dim-icon img { width: 26px; height: 26px; object-fit: contain; }
+.dim-title-text { font-size: 15px; font-weight: 600; color: #1f2937; }
+.dim-count { margin-left: auto; background: #f0f7f3; color: #2d8b61; font-size: 11px; font-weight: 600; padding: 2px 10px; border-radius: 20px; }
+.dim-body { padding: 14px 20px; }
+
+/* ── 条目 ── */
+.item { border-left: 3px solid #86c9a8; padding: 11px 15px; margin-bottom: 10px; background: #fafcfb; border-radius: 0 8px 8px 0; }
+.item:last-child { margin-bottom: 0; }
+/* 专项治理：红色强调 */
+.item.alert { border-left-color: #f87171; background: #fff7f7; }
+.item.alert .item-title { color: #b91c1c; }
+/* 无更新：灰色弱化 */
+.item.none { border-left-color: #d1d5db; background: #f9fafb; }
+.item.none .item-title { color: #9ca3af; }
+/* 其余所有类型：统一浅绿默认样式 */
+.item.rule, .item.notice, .item.api, .item.activity, .item.new { border-left-color: #86c9a8; background: #fafcfb; }
+/* 标题 */
+.item-title { font-size: 14px; font-weight: 600; color: #1f2937; margin-bottom: 5px; line-height: 1.5; }
+/* 专项治理红色警示标 */
+.alert-badge { display: inline-block; background: #ef4444; color: #fff; font-size: 11px; font-weight: 700; padding: 1px 7px; border-radius: 4px; margin-right: 6px; vertical-align: middle; letter-spacing: .5px; }
+.item p { font-size: 13px; color: #6b7280; margin-bottom: 7px; margin-top: 4px; }
+.link-btn { display: inline-block; margin-top: 4px; padding: 4px 14px; background: #2d8b61; color: #fff; border-radius: 20px; font-size: 12px; text-decoration: none; opacity: .85; }
+.link-btn:hover { opacity: 1; }
+
+/* ── 周历选择器 ── */
+.cal-wrap { background: #fff; border-bottom: 1px solid #e5e9e5; padding: 16px 40px 12px; }
+.cal-nav { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.cal-nav-btn { background: none; border: 1px solid #e5e9e5; border-radius: 6px; padding: 4px 12px; cursor: pointer; font-size: 13px; color: #6b7280; transition: all .15s; }
+.cal-nav-btn:hover { border-color: #2d8b61; color: #2d8b61; }
+.cal-month-label { font-size: 15px; font-weight: 600; color: #1f2937; min-width: 90px; }
+.cal-legend { margin-left: auto; display: flex; gap: 14px; font-size: 12px; color: #9ca3af; align-items: center; }
+.cal-legend-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 4px; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.cal-day-header { text-align: center; font-size: 11px; font-weight: 600; color: #9ca3af; padding: 4px 0; }
+.cal-cell { min-height: 36px; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 12px; color: #9ca3af; cursor: default; position: relative; transition: all .15s; }
+.cal-cell.has-data { background: #f0f7f3; color: #2d8b61; font-weight: 600; cursor: pointer; border: 1px solid #c5e0d0; }
+.cal-cell.has-data:hover { background: #e0f0e8; border-color: #86c9a8; transform: scale(1.05); }
+.cal-cell.active-period { background: #2d8b61; color: #fff; border-color: #2d8b61; }
+.cal-cell.active-period:hover { background: #236e4c; }
+.cal-cell.period-range { background: #f5faf7; border: 1px dashed #c5e0d0; color: #6b7280; }
+.cal-cell .day-num { font-size: 13px; line-height: 1; }
+.cal-cell .week-label { font-size: 10px; color: #2d8b61; margin-top: 2px; }
+.cal-cell.active-period .week-label { color: rgba(255,255,255,.75); }
+.cal-cell.empty { background: transparent; }
+.cal-cell.other-month { opacity: .3; }
+
+/* ── Footer ── */
+.footer { text-align: center; padding: 28px 20px 36px; border-top: 1px solid #e5e9e5; margin-top: 12px; }
+.footer-update { display: flex; justify-content: center; align-items: center; gap: 20px; margin-bottom: 10px; font-size: 13px; color: #6b7280; flex-wrap: wrap; }
+.footer-next { background: #fef3c7; color: #92400e; font-weight: 600; padding: 3px 12px; border-radius: 20px; }
+.footer-credit { font-size: 12px; color: #9ca3af; }
+.footer-credit strong { color: #6b7280; }
+
+/* ── 搜索 & 筛选栏 ── */
+.search-bar { background: #fff; border-bottom: 1px solid #e5e9e5; padding: 12px 40px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.search-input-wrap { position: relative; flex: 1; min-width: 200px; max-width: 360px; }
+.search-input-wrap svg { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); color: #9ca3af; pointer-events: none; }
+.search-input { width: 100%; padding: 8px 12px 8px 34px; border: 1px solid #e5e9e5; border-radius: 20px; font-size: 13px; color: #374151; background: #f9fafb; outline: none; transition: border-color .15s; }
+.search-input:focus { border-color: #2d8b61; background: #fff; }
+.search-input::placeholder { color: #9ca3af; }
+.search-clear { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: #9ca3af; font-size: 15px; display: none; padding: 0; line-height: 1; }
+.search-clear.show { display: block; }
+.filter-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.filter-tag { padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 500; cursor: pointer; border: 1px solid #e5e9e5; background: #f9fafb; color: #6b7280; transition: all .15s; white-space: nowrap; }
+.filter-tag:hover { border-color: #86c9a8; color: #2d8b61; }
+.filter-tag.active { background: #2d8b61; color: #fff; border-color: #2d8b61; }
+.search-result-count { font-size: 12px; color: #9ca3af; margin-left: auto; white-space: nowrap; }
+/* 搜索高亮 */
+mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1px; }
+/* 无结果提示 */
+.no-result { text-align: center; padding: 48px 20px; color: #9ca3af; font-size: 14px; display: none; }
+.no-result.show { display: block; }
+
+/* ── 截止日期提醒栏 ── */
+.deadline-bar { background: #fffbeb; border-bottom: 1px solid #fde68a; padding: 10px 40px; display: flex; align-items: flex-start; gap: 12px; }
+.deadline-bar.hidden { display: none; }
+.deadline-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+.deadline-label { font-size: 12px; font-weight: 700; color: #92400e; white-space: nowrap; margin-top: 2px; }
+.deadline-list { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; }
+.deadline-chip { background: #fef3c7; border: 1px solid #fde68a; border-radius: 20px; padding: 3px 12px; font-size: 12px; color: #78350f; cursor: pointer; transition: background .15s; white-space: nowrap; }
+.deadline-chip:hover { background: #fde68a; }
+.deadline-chip .dc-date { font-weight: 700; margin-right: 4px; }
+.deadline-chip.overdue { background: #fee2e2; border-color: #fca5a5; color: #7f1d1d; }
+.deadline-chip.overdue .dc-date { color: #dc2626; }
+.deadline-close { margin-left: auto; background: none; border: none; color: #9ca3af; cursor: pointer; font-size: 16px; padding: 0 4px; flex-shrink: 0; }
+.deadline-close:hover { color: #6b7280; }
+
+/* ── 分享单条 ── */
+.item { position: relative; padding-right: 32px; }
+.share-btn { position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: #c9d5cc; padding: 3px; border-radius: 4px; line-height: 0; transition: color .15s, background .15s; }
+.share-btn:hover { color: #2d8b61; background: #f0f7f3; }
+.share-btn.copied { color: #2d8b61; }
+
+/* ── 打印/PDF 样式 ── */
+@media print {
+  body { background: #fff; font-size: 12px; }
+  .cal-wrap, .tabs, .download-btn, .footer { display: none !important; }
+  .period-content { display: block !important; }
+  .period-content:not(.active) { display: none !important; }
+  .container { max-width: 100%; padding: 0; }
+  .dim-block { box-shadow: none; border: 1px solid #e2e8f0; break-inside: avoid; margin-bottom: 12px; }
+  .item { break-inside: avoid; }
+  .link-btn { display: none; }
+  .overview-card { box-shadow: none; border: 1px solid #e2e8f0; }
+  .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 20px 24px; }
+  .header-meta { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ Header ══ -->
+<div class="header">
+  <div class="header-logo">
+    <img src="${ICONS.mp}" alt="微信">
+  </div>
+  <div class="header-text">
+    <h1>微信生态每周更新汇总</h1>
+    <p>覆盖微信生态 9 大产品线 · AI 辅助搜集整理 · 每周一更新</p>
+    <div class="header-meta">
+      <span><img src="${ICONS.mp}" alt="">公众号</span>
+
+
+      <span><img src="${ICONS.mini}" alt="">小程序</span>
+      <span><img src="${ICONS.channels}" alt="">视频号</span>
+      <span><img src="${ICONS.store}" alt="">微信小店</span>
+      <span><img src="${ICONS.work}" alt="">企业微信</span>
+      <span><img src="${ICONS.open}" alt="">微信开放平台</span>
+      <span><img src="${ICONS.pay}" alt="">微信支付</span>
+    </div>
+  </div>
+  <div class="header-actions">
+    <button class="action-btn pdf-btn" onclick="printPDF()">📄 下载 PDF</button>
+  </div>
+</div>
+
+<!-- ══ 截止日期提醒栏 ══ -->
+<div class="deadline-bar" id="deadlineBar">
+  <span class="deadline-icon">⏰</span>
+  <span class="deadline-label">时间节点</span>
+  <div class="deadline-list" id="deadlineList"></div>
+  <button class="deadline-close" onclick="document.getElementById('deadlineBar').classList.add('hidden')" title="关闭">×</button>
+</div>
+
+<!-- ══ 周历选择器 ══ -->
+<div class="cal-wrap" id="calWrap">
+  <div class="cal-nav">
+    <button class="cal-nav-btn" onclick="calMove(-1)">&#8249; 上月</button>
+    <span class="cal-month-label" id="calMonthLabel"></span>
+    <button class="cal-nav-btn" onclick="calMove(1)">下月 &#8250;</button>
+    <div class="cal-legend">
+      <span><span class="cal-legend-dot" style="background:#07553b"></span>当前查看</span>
+      <span><span class="cal-legend-dot" style="background:#2ecc87"></span>有数据</span>
+      <span><span class="cal-legend-dot" style="background:#e2e8f0"></span>暂无数据</span>
+    </div>
+  </div>
+  <div class="cal-grid" id="calGrid">
+    <div class="cal-day-header">一</div>
+    <div class="cal-day-header">二</div>
+    <div class="cal-day-header">三</div>
+    <div class="cal-day-header">四</div>
+    <div class="cal-day-header">五</div>
+    <div class="cal-day-header">六</div>
+    <div class="cal-day-header">日</div>
+  </div>
+</div>
+
+<!-- ══ Tabs ══ -->
+<div class="tabs" id="tabsBar">
+  <button class="tab-btn active" onclick="switchTab(this,'p7')">📅 2026.5.26–6.1</button>
+  <button class="tab-btn"" onclick="switchTab(this,'p6')">📅 2026.5.19–5.25</button>
+  <button class="tab-btn" onclick="switchTab(this,'p5')">📅 2026.5.12–5.18</button>
+  <button class="tab-btn" onclick="switchTab(this,'p45')">📅 2026.5.6–5.11</button>
+  <button class="tab-btn" onclick="switchTab(this,'p4')">📅 2026.4.28–5.5</button>
+  <button class="tab-btn" onclick="switchTab(this,'p3')">📅 2026.4.21–4.27</button>
+  <button class="tab-btn" onclick="switchTab(this,'p2')">📅 2026.4.14–4.20</button>
+  <button class="tab-btn" onclick="switchTab(this,'p1')">📅 2026.3.1–4.14</button>
+</div>
+
+<!-- ══ 搜索 & 筛选栏 ══ -->
+<div class="search-bar" id="searchBar">
+  <div class="search-input-wrap">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input class="search-input" id="searchInput" type="text" placeholder="搜索更新内容…" oninput="onSearch()" />
+    <button class="search-clear" id="searchClear" onclick="clearSearch()">×</button>
+  </div>
+  <div class="filter-tags" id="filterTags">
+    <button class="filter-tag active" data-tag="all" onclick="onFilter(this)">全部</button>
+    <button class="filter-tag" data-tag="new" onclick="onFilter(this)">新功能</button>
+    <button class="filter-tag" data-tag="api" onclick="onFilter(this)">API更新</button>
+    <button class="filter-tag" data-tag="rule" onclick="onFilter(this)">规则</button>
+    <button class="filter-tag" data-tag="notice" onclick="onFilter(this)">治理公告</button>
+    <button class="filter-tag" data-tag="activity" onclick="onFilter(this)">活动激励</button>
+    <button class="filter-tag" data-tag="alert" onclick="onFilter(this)">专项治理</button>
+  </div>
+  <span class="search-result-count" id="resultCount"></span>
+</div>
+
+<div class="container">
+
+
+<!-- ════ 期次7：2026.5.26–6.1 ════ -->
+<div class="period-content active" id="p7">
+  <div class="overview-card">
+    <div class="card-title">▌ 本期要点速览（2026.5.26–6.1）</div>
+    <table class="overview-table">
+      <thead><tr><th>#</th><th>维度</th><th>核心内容</th><th style="text-align:center;width:80px">重要程度</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><div class="dim-cell"><img src="${ICONS.pay}" alt="">微信支付</div></td><td>「组合支付」灰度上线（转账场景，最多两种支付方式组合）；入境支付升级三大举措（外卡内绑手续费减免+16语种指引+与PayPal合作）</td><td class="stars" style="text-align:center">★★★</td></tr>
+        <tr><td>2</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店</div></td><td>功能调整汇总-20260529：新增「今日发」功能（5.26上线）+ 7个供货商API接口（获取发货协商结果/提交发货协商申请/获取类目下商品发布规则/批量获取库存信息/获取库存/获取库存流水/快速更新库存）</td><td class="stars" style="text-align:center">★★★</td></tr>
+        <tr><td>3</td><td><div class="dim-cell"><img src="${ICONS.work}" alt="">企业微信</div></td><td>「记录面聊」功能正式推出（声纹识别+实时转写+AI生成会议纪要）；3.0.36版本：聊天敏感词+群防骚扰+收集表应用+语音消息转文字+标记未读聊天+企业培训直播+线上会议横屏展示</td><td class="stars" style="text-align:center">★★★</td></tr>
+        <tr><td>4</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">公众号</div></td><td>公众号官方图标灰度变更（叶片样式替换书本样式）；iOS 8.0.69内测：公众号主页改版（头条大封面完整展示）；服务号可设置为不显示未读数字（小红点提醒）</td><td class="stars" style="text-align:center">★★</td></tr>
+        <tr><td>5</td><td><div class="dim-cell"><img src="${ICONS.channels}" alt="">视频号</div></td><td>iOS 8.0.27正式版：视频号「自动上滑」功能；鸿蒙版：视频号支持查看图片类作品+评论区支持查看和评论图片+支持展示直播预约+小红点提醒支持显示在底部「发现」tab</td><td class="stars" style="text-align:center">★★</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.mp}" alt=""></div>
+      <div class="dim-title-text">公众号 / 微信客户端</div>
+      <div class="dim-count">3 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item new"><div class="item-title"><span class="tag new">图标灰度</span>公众号官方图标开启灰度变更：经典「书本」样式被「叶片」样式取代</div><p>5月27日消息，微信公众号官方图标已悄悄完成样式调整，全新的「叶片」样式取代经典「书本」样式。目前处于灰度测试阶段，尚未对所有用户开放，仅有部分用户能看到新图标。</p><a class="link-btn" href="http://m.sxssysh.cn/news/7e475395239.html" target="_blank">查看报道</a></div>
+      <div class="item new"><div class="item-title"><span class="tag new">内测功能</span>iOS 微信 8.0.69 内测：公众号主页改版 +「整理文字」功能下线</div><p>公众号主页「全部」板块中头条文章的 2.35:1 大封面可完整展示，视觉层级更清晰。另「整理文字」功能正式取消，安卓/iOS 双端均无法调用。</p><a class="link-btn" href="http://m.sxssysh.cn/news/7e475395239.html" target="_blank">查看详情</a></div>
+      <div class="item new"><div class="item-title"><span class="tag new">功能上线</span>服务号消息提醒可设置为不显示未读数字（5月19日版本）</div><p>iOS 微信 8.0.22 版本中，服务号可被设置为不显示未读数字，改用小红点提醒，有效减少消息列表的数字焦虑。</p><a class="link-btn" href="http://weihai.jingyanla.com/a/13/05196204962022.html" target="_blank">查看报道</a></div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.mini}" alt=""></div>
+      <div class="dim-title-text">小程序</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item api"><div class="item-title"><span class="tag api">API更新</span>微信小店本周功能调整汇总-20260529</div><p>功能更新：新增「今日发」功能（5月26日上线），商家设置完成后会在商品详情页、加购页、提单页等多场景向小店用户外显对应发货时效承诺。API接口新增：① 获取发货协商结果 ② 提交发货协商申请 ③ 获取类目下商品发布规则 ④ 批量获取库存信息 ⑤ 获取库存 ⑥ 获取库存流水 ⑦ 快速更新库存。接口更新：获取售后单接口字段更正（after_sale_order.exchange_delivery_info 的 address_info 字段更正为 user_address_info）。</p><a class="link-btn" href="https://developers.weixin.qq.com/community/minihome/doc/000c82b5ab86d091ff258a10f61401" target="_blank">查看原文</a></div>
+      <div class="item new"><div class="item-title"><span class="tag new">体验优化</span>小程序页面体验优化（5月28日报道）</div><p>① 下拉小程序页面取消音乐/最近播放常驻入口（iOS/安卓），页面更简洁；② 小程序浮窗回归（部分用户），可将常用小程序添加到侧边浮窗，快速返回。</p><a class="link-btn" href="https://www.toutiao.com/a7644796960498614826/" target="_blank">查看报道</a></div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#fff0f0"><img src="${ICONS.channels}" alt=""></div>
+      <div class="dim-title-text">视频号</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item new"><div class="item-title"><span class="tag new">功能上线</span>iOS 微信 8.0.27 正式版：视频号「自动上滑」功能</div><p>进入视频号后点击「分享」图标，开启「自动上滑」功能，视频播放完毕后自动播放下条视频，解放双手。此前安卓 8.0.27 已率先支持。</p><a class="link-btn" href="http://weihai.jingyanla.com/a/13/0R3M2IR022.html" target="_blank">查看报道</a></div>
+      <div class="item new"><div class="item-title"><span class="tag new">鸿蒙版更新</span>微信鸿蒙版 8.0.18.33/34：视频号多项能力升级</div><p>5月29日，微信鸿蒙版发布新版本，视频号支持查看图片类作品、作品评论区支持查看和评论图片、支持展示直播预约、小红点提醒支持显示在底部「发现」tab。另：视频通话支持双指缩放、面容支付支持微信内调用。</p><a class="link-btn" href="https://www.163.com/dy/article/KU6MKNFN0511B8LM.html" target="_blank">查看公告</a></div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#fff3ee"><img src="${ICONS.store}" alt=""></div>
+      <div class="dim-title-text">微信小店</div>
+      <div class="dim-count">5 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item api"><div class="item-title"><span class="tag api">API更新</span>微信小店本周功能调整汇总-20260529</div><p>① 新增「今日发」功能（5月26日上线），商家设置后可在商品详情页等多场景外显发货时效承诺，助力提升曝光和下单转化；② 新增7个供货商API接口（获取发货协商结果/提交发货协商申请/获取类目下商品发布规则/批量获取库存信息/获取库存/获取库存流水/快速更新库存）；③ 获取售后单接口字段更正（address_info → user_address_info）。</p><a class="link-btn" href="https://developers.weixin.qq.com/community/minihome/doc/000c82b5ab86d091ff258a10f61401" target="_blank">查看原文</a></div>
+      <div class="item rule"><div class="item-title"><span class="tag rule">规则修订</span>《微信小店｜新商技术服务费激励政策(26年2月-6月)-20260526版本》修订公示通知 2026/05/19</div><p>为优化平台生态，对激励政策进行修订，新商需关注最新条款，以免影响激励资格。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9378/d14f315004899bfe/growth_center_rule_for_store" target="_blank">查看公示</a></div>
+      <div class="item rule"><div class="item-title"><span class="tag rule">规则修订</span>《微信小店「价格保护」服务规则-20260527版本》修订公示通知 2026/05/27</div><p>调整价保服务适用范围：国补订单、礼物订单、一起买订单、朋友赞订单及本地生活/同城等特殊类型订单不再支持价保申请。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9374/228a56bf96ed3c4a/growth_center_rule_for_store/28?bpath=%252Fhome%252Fweekly-rules" target="_blank">查看公示</a></div>
+      <div class="item notice"><div class="item-title"><span class="tag notice">规则升级</span>微信小店「订单收件信息加密规则」升级通知（2026年6月30日前为过渡期）</div><p>平台对订单收件信息加密规则进行升级，2026年6月30日前为过渡期，商家需完成逻辑调整，以免影响订单/物流发货/售后环节处理。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9424/9df888823eed2dd4/growth_center_platform_notice/1?bpath=%252Fhome%252Fweekly-rules" target="_blank">查看通知</a></div>
+      <div class="item alert"><div class="item-title"><span class="alert-badge">重要</span>微信小店「货源信息上报 API 接口」调整：2026年6月1日生效</div><p>自2026年6月1日起，未完成货源信息上报API接口调整的商家，其商品发布可能受限。ISV（第三方服务商）需尽快接入 addProductThirdPartySource 接口。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9359/2c7fe6e288242c5c/growth_center_platform_notice/1" target="_blank">查看通知</a></div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#f0f5ff"><img src="${ICONS.tuike}" alt=""></div>
+      <div class="dim-title-text">推客</div>
+      <div class="dim-count">本期无更新</div>
+    </div>
+    <div class="dim-body"><div class="item none"><div class="item-title">本期无独立官方更新公告</div></div>
+  </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8f4ff"><img src="${ICONS.work}" alt=""></div>
+      <div class="dim-title-text">企业微信</div>
+      <div class="dim-count">4 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item new"><div class="item-title"><span class="tag new">重大功能</span>企业微信正式推出「记录面聊」功能（5月27日）</div><p>依托声纹识别技术，精准区分并匹配企业通讯录中的发言人，实现「听声辨人」，并将语音实时转化为结构化文字记录。AI可自动提炼核心要点生成会议纪要，并直接拆解、分配待办事项至对应责任人。</p><a class="link-btn" href="https://new.qq.com/rain/a/20260527A05XCN00" target="_blank">查看报道</a></div>
+      <div class="item new"><div class="item-title"><span class="tag new">版本更新</span>企业微信 3.0.36 版本更新（5月29日报道）</div><p>① 客户联系：聊天敏感词拦截+群防骚扰自动踢人；② 企业办公：收集表应用+语音消息转文字+标记未读聊天+企业培训直播+线上会议横屏展示+自定义汇报；③ 获客助手持续灰度（教育/汽车服务/家居家装）。</p><a class="link-btn" href="https://www.wescrm.com/siyuzhishiku/qiweiyunying/40229.html" target="_blank">查看详情</a></div>
+      <div class="item new"><div class="item-title"><span class="tag new">鸿蒙版更新</span>鸿蒙版企业微信大升级：十余项新功能（5月27日）</div><p>三端同步上新：添加表情+消息撤回重新编辑+从微信好友中添加客户与同事+客户联系新增「联系我」+欢迎语支持加附件+日程支持添加附件+审批支持从微盘/收藏中添加附件+文档可分享到微信。</p><a class="link-btn" href="http://www.sochat.online/news/69a94698984.html" target="_blank">查看报道</a></div>
+      <div class="item new"><div class="item-title"><span class="tag new">能力打通</span>企业微信获客助手打通视频号持续内测（教育/汽车服务/家居家装优先开放）</div><p>视频号发布的视频左下角可直接挂「获客助手」组件，用户一键添加企业微信。当前为灰度测试，需满足注册资本实缴500万以上+持有办学许可证等条件（教育行业）。</p><a class="link-btn" href="https://www.wescrm.com/siyuzhishiku/qiweiyunying/40228.html" target="_blank">查看详情</a></div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#edf2ff"><img src="${ICONS.open}" alt=""></div>
+      <div class="dim-title-text">微信开放平台</div>
+      <div class="dim-count">本期无更新</div>
+    </div>
+    <div class="dim-body"><div class="item none"><div class="item-title">本期无独立官方更新公告（微信小店API更新见「微信小店」维度）</div></div>
+  </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#fffbea"><img src="${ICONS.pay}" alt=""></div>
+      <div class="dim-title-text">微信支付</div>
+      <div class="dim-count">3 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item new"><div class="item-title"><span class="tag new">灰度上线</span>微信支付「组合支付」灰度上线（转账场景，5月25日报道）</div><p>完成实名认证的微信支付用户，在转账时可在收银台任选「零钱、零钱通、经营账户、借记卡、分付」中的任意两种方式进行组合完成支付。当前优先支持转账场景，其他场景将后续逐步放开。退款时资金自动原路退回各渠道。</p><a class="link-btn" href="https://new.qq.com/rain/a/20260525A0AG9600" target="_blank">查看报道</a></div>
+      <div class="item new"><div class="item-title"><span class="tag new">跨境升级</span>微信支付入境支付便利升级三大举措（2026年 APEC 会议配套，5月27-28日）</div><p>① <strong>外卡内绑手续费减免</strong>：2026年5月27日至12月31日，首次在微信绑定国际银行卡的用户完成首笔消费后，享连续90个自然日、每日1000元额度内3%交易手续费减免；全年所有国际卡用户单笔200元及以内消费免3%手续费；② <strong>16语种支付指引</strong>：覆盖英/韩/泰/俄/西班牙/阿拉伯等主要APEC语种；③ <strong>与PayPal打通</strong>：来华支付更丝滑，支持更多境外钱包互联互通。</p><a class="link-btn" href="https://new.qq.com/rain/a/20260528A09Q1C00" target="_blank">查看报道</a></div>
+      <div class="item api"><div class="item-title"><span class="tag api">文档更新</span>微信支付开发者文档更新（5月21日）</div><p>商家转账新增「用户授权免确认模式」API；微信支付分/医保支付/合单支付文档同步更新。</p><a class="link-btn" href="https://pay.weixin.qq.com/docs/merchant/changelog/index.html" target="_blank">查看更新日志</a></div>
+    </div>
+  </div>
+</div><!-- /p7 -->
+
+<!-- ════ 期次6：2026.5.19–5.25 ════ -->
+<div class="period-content active" id="p6">
+  <div class="overview-card">
+    <div class="card-title">▌ 本期要点速览（2026.5.19–5.25）</div>
+    <table class="overview-table">
+      <thead><tr><th>#</th><th>维度</th><th>核心内容</th><th style="text-align:center;width:80px">重要程度</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><div class="dim-cell"><img src="${ICONS.pay}" alt="">微信支付</div></td><td>《微信支付链路界面与交互规范》正式发布（5月19日），6月18日起生效；禁止强制广告遮挡支付按钮；商家转账新增「用户授权免确认模式」API上线</td><td class="stars" style="text-align:center">★★★</td></tr>
+        <tr><td>2</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店</div></td><td>功能调整汇总-20260522：新增供货单查询/列表/搜索3个接口；电子面单支持供货单取号；鲜切花专项治理公告发布；玩具乐器新增定向准入类目（5月30日起）</td><td class="stars" style="text-align:center">★★★</td></tr>
+        <tr><td>3</td><td><div class="dim-cell"><img src="${ICONS.work}" alt="">企业微信</div></td><td>获客助手打通视频号内测：短视频可挂企微组件，一键添加企微好友；5月28日起获客助手在部分类目调价为「高级功能」</td><td class="stars" style="text-align:center">★★★</td></tr>
+        <tr><td>4</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">微信客户端</div></td><td>微信8.0.72正式推送：「用本机号码登录」全量上线（iOS/安卓）；电脑端「边写边译」内测；视频通话支持横屏模式</td><td class="stars" style="text-align:center">★★</td></tr>
+        <tr><td>5</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店</div></td><td>第22周治理公告：鲜切花质量不达标/虚假宣传专项治理；生鲜新增开放类目；618大促活动规则更新版发布</td><td class="stars" style="text-align:center">★★</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.mp}" alt=""></div>
+      <div class="dim-title-text">公众号 / 服务号</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item new"><div class="item-title"><span class="tag new">功能升级</span>微信8.0.72全量推送：服务号消息展示优化持续落地</div><p>5月22日，微信8.0.72正式全量推送（iOS/安卓），本机号码免密登录正式上线；服务号模板消息展示规则调整（2026年5月1日起逐步生效）：部分模板消息在服务号首页仅展示"标题+优先展示字段"，运营者需主动在「广告与服务」-「模板消息」中设置优先展示字段。</p><a class="link-btn" href="https://new.qq.com/rain/a/20260525A07UC700" target="_blank">查看报道</a></div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.mini}" alt=""></div>
+      <div class="dim-title-text">小程序</div>
+      <div class="dim-count">本期无更新</div>
+    </div>
+    <div class="dim-body"><div class="item none"><div class="item-title">本期无新增更新（基础库3.16.0灰度已于上期发布，持续推进中）</div></div></div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#fff0f0"><img src="${ICONS.channels}" alt=""></div>
+      <div class="dim-title-text">视频号</div>
+      <div class="dim-count">本期无更新</div>
+    </div>
+    <div class="dim-body"><div class="item none"><div class="item-title">本期无独立官方更新公告</div></div></div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#fff3ee"><img src="${ICONS.store}" alt=""></div>
+      <div class="dim-title-text">微信小店</div>
+      <div class="dim-count">5 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item api"><div class="item-title"><span class="tag api">API更新</span>微信小店本周功能调整汇总-20260522</div><p>接口新增：① 查询供货单详情；② 获取供货单列表；③ 搜索供货单（供货商/商家均可用）。接口更新：电子面单取号/预取号新增supply_order_id字段；获取订单详情新增SKU维度custom_info字段；添加商品/更新商品接口新增supply_source等供货字段；代发单与供货单发货接口升级。</p><a class="link-btn" href="https://developers.weixin.qq.com/community/minihome/doc/0008629eb20ca8146c25e4ef461c01" target="_blank">查看原文</a></div>
+      <div class="item alert"><div class="item-title"><span class="alert-badge">专项</span>关于「鲜切花质量不达标、虚假宣传及服务问题」专项治理公告 2026/05/21</div><p>针对直播/橱窗中鲜切花商品存在的以次充好、以假乱真、虚假宣传及服务承诺不兑现等问题，平台启动专项治理，对违规商家及带货者依规处置。</p><a class="link-btn" href="https://store.weixin.qq.com/commerce/noticeList" target="_blank">查看公告</a></div>
+      <div class="item rule"><div class="item-title"><span class="tag rule">类目调整</span>关于「微信小店生鲜新增开放类目」调整公告 2026/05/20</div><p>生鲜类目下新增若干开放类目，以满足用户购物需求和生鲜商家经营需求。具体新增类目以平台公告页实际展示为准。</p><a class="link-btn" href="https://store.weixin.qq.com/commerce/noticeList" target="_blank">查看公告</a></div>
+      <div class="item rule"><div class="item-title"><span class="tag rule">类目调整</span>玩具乐器新增定向准入类目：文具类盲盒/其他玩具类盲盒（5月30日起）2026/05/20</div><p>自2026年5月30日起，微信小店一级类目【玩具乐器】下新增定向准入四级类目【文具类盲盒】和【其他玩具类盲盒】，保证金1万元（企业店），个体工商户暂不开放。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9384/71a0471c5b30061c/growth_center_platform_notice/1?bpath=%252Fhome%252Fweekly-rules" target="_blank">查看公告</a></div>
+      <div class="item notice"><div class="item-title"><span class="tag notice">618活动</span>2026年618大促活动规则更新版 2026/05/21</div><p>618平台大促活动更新：跨店满减补贴活动（5月15日-6月18日）、直播大场激励并行推进；报名截止6月18日；商家不得变相涨价，违者取消激励资格。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9355/e13ece8503fe0d5c/growth_center_platform_notice/2?bpath=%252Fnotice" target="_blank">查看活动规则</a></div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#f0f5ff"><img src="${ICONS.tuike}" alt=""></div>
+      <div class="dim-title-text">推客</div>
+      <div class="dim-count">本期无更新</div>
+    </div>
+    <div class="dim-body"><div class="item none"><div class="item-title">本期无独立官方更新公告（2026年Q2推客带货激励计划持续执行中）</div></div></div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8f5e8"><img src="${ICONS.work}" alt=""></div>
+      <div class="dim-title-text">企业微信</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item new"><div class="item-title"><span class="tag new">能力打通</span>企微获客助手正式打通视频号（内测中）</div><p>视频号短视频左下角支持挂载「添加企业微信咨询」组件，用户一键即可添加企微好友，将公域流量直接导入私域。首批定向准入家具建材、家电汽车、教育培训等重咨询行业。最多可授权50个视频号账号挂载，支持通过API将线索手机号拉取至企业CRM。</p><a class="link-btn" href="https://www.163.com/dy/article/KTMMS701053144S4.html" target="_blank">查看详情</a></div>
+      <div class="item alert"><div class="item-title"><span class="alert-badge">注意</span>获客助手部分经营类目调价通知：5月28日起变更为「高级功能」</div><p>企微官方公告：自2026年5月28日（含）起，获客助手在部分经营类目下调价，变更为「高级功能」。5月28日前支付的待支付订单及企业已购买使用量不受影响。具体调价类目请在「高级功能-获客助手」中查看。</p><a class="link-btn" href="https://www.163.com/dy/article/KTMMS701053144S4.html" target="_blank">查看公告</a></div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#f0f0ff"><img src="${ICONS.open}" alt=""></div>
+      <div class="dim-title-text">微信开放平台</div>
+      <div class="dim-count">本期无更新</div>
+    </div>
+    <div class="dim-body"><div class="item none"><div class="item-title">本期无独立官方更新公告</div></div></div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8f8ee"><img src="${ICONS.pay}" alt=""></div>
+      <div class="dim-title-text">微信支付</div>
+      <div class="dim-count">3 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item rule"><div class="item-title"><span class="tag rule">规范发布</span>《微信支付链路界面与交互规范》正式发布 2026/05/19，6月18日起生效</div><p>财付通发布《微信支付链路界面与交互规范》，适用于微信小程序支付、H5支付等所有在微信客户端内唤起支付的场景。核心要求：① 支付流程中禁止强制广告、不可跳过弹窗；② 支付按钮/金额/密码键盘等核心区域不得遮挡；③ 营销按钮不得伪装成付款按钮；④ 退款页禁止插入"取消退款领红包"等干扰信息；⑤ 品牌使用不得误导为官方保障。违规将依规处罚。</p><a class="link-btn" href="https://pay.weixin.qq.com/doc/v3/merchant/4020527461" target="_blank">查看规范</a></div>
+      <div class="item api"><div class="item-title"><span class="tag api">API更新</span>商家转账新增「用户授权免确认模式」API上线 2026/05/21</div><p>商家转账产品更新：新增用户授权免确认模式，用户可提前授权商家直接转账，无需每次手动确认；更新产品介绍文档；新增request参数 user_recv_style（用户收款样式）选填字段；新增鸿蒙APP调起用户确认收款接口。</p><a class="link-btn" href="https://pay.weixin.qq.com/docs/merchant/changelog/index.html" target="_blank">查看更新日志</a></div>
+      <div class="item api"><div class="item-title"><span class="tag api">文档更新</span>微信支付分/医保支付/合单支付文档更新 2026/05/21</div><p>① 微信支付分：优化创建/完结/修改订单金额接口的 materiel_no 字段填写规则；② 医保支付：更新开发指引，新增完整业务流程概览；③ 合单支付：sub_orders字段更名为"商品单信息"，out_trade_no更名为"商品单商户订单号"，各合单支付接口同步更新。</p><a class="link-btn" href="https://pay.weixin.qq.com/docs/merchant/changelog/index.html" target="_blank">查看更新日志</a></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ════ 期次5：2026.5.12–5.18 ════ -->
+<div class="period-content" id="p5">
+  <div class="overview-card">
+    <div class="card-title">▌ 本期要点速览（2026.5.12–5.18）</div>
+    <table class="overview-table">
+      <thead><tr><th>#</th><th>维度</th><th>核心内容</th><th style="text-align:center;width:80px">重要程度</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><div class="dim-cell"><img src="${ICONS.pay}" alt="">微信支付</div></td><td>「商家红包/现金红包」升级为「商家转账」（5月13日起新商户适用）；「组合支付」正式上线，支持任意两种渠道组合完成支付</td><td class="stars" style="text-align:center">★★★</td></tr>
+        <tr><td>2</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店</div></td><td>功能调整汇总-20260515：货源信息上报API新增+限时抢购/售后单/纠纷单接口升级；618大促平台激励计划发布</td><td class="stars" style="text-align:center">★★★</td></tr>
+        <tr><td>3</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店</div></td><td>发货管理规则-20260518版正式生效：新增「今日发」时效选项；食品/生鲜虚假一物一拍专项治理公告</td><td class="stars" style="text-align:center">★★★</td></tr>
+        <tr><td>4</td><td><div class="dim-cell"><img src="${ICONS.mini}" alt="">小程序</div></td><td>基础库3.16.0灰度推送：新增安卓NFC交通卡接口、小游戏离线模式；上周问题反馈处理进度（05.12-05.16）</td><td class="stars" style="text-align:center">★★</td></tr>
+        <tr><td>5</td><td><div class="dim-cell"><img src="${ICONS.channels}" alt="">视频号</div></td><td>视频号小助手全面升级上线（智能客服+功能咨询+权益查询）；「个人主页推广」功能上线，创作者可获分成收益</td><td class="stars" style="text-align:center">★★</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.mp}" alt=""></div>
+      <div class="dim-title-text">公众号</div>
+      <div class="dim-count">本期无更新</div>
+    </div>
+    <div class="dim-body"><div class="item none"><div class="item-title">本期无更新</div></div></div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.mini}" alt=""></div>
+      <div class="dim-title-text">小程序</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item new"><div class="item-title"><span class="tag new">版本更新</span>小程序基础库 3.16.0 灰度推送</div><p>新增安卓交通卡NFC相关接口；小游戏支持离线模式；修复小游戏窗口尺寸异常、安卓 textarea 高度异常等多个 Bug；wx.batchGetStorageSync 支持插件调用；wx.onCopyUrl 支持 promise 回调。</p><a class="link-btn" href="https://developers.weixin.qq.com/community/develop/doc/00066a82ef08e08c471555a3d6b801" target="_blank">查看日志</a></div>
+      <div class="item api"><div class="item-title"><span class="tag api">问题追踪</span>社区每周｜上周问题反馈处理进度（05.12–05.16）</div><p>已修复：Canvas 2D font 设置字体真机不生效；微信开发者工具提示下载基础库3.8.3失败。修复中：innerAudioContext 播放语音自动切换听筒模式；canvas.putImageData iOS/安卓表现不一致。</p><a class="link-btn" href="https://developers.weixin.qq.com/community/develop/doc/000c8ae54fc0d06ac35315aa36c801" target="_blank">查看原文</a></div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#fff0f0"><img src="${ICONS.channels}" alt=""></div>
+      <div class="dim-title-text">视频号</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item new"><div class="item-title"><span class="tag new">能力升级</span>视频号小助手全面升级上线</div><p>在视频号「创作者中心」-「作者客服」，或关注服务号「视频号创作平台」，可通过智能客服和直接提问两种方式，直达功能/规则咨询、权益/状态查询、视频案例推荐等服务，极大降低创作者沟通成本。</p></div>
+      <div class="item new"><div class="item-title"><span class="tag new">新功能</span>视频号上线「个人主页推广」分成功能</div><p>创作者可通过个人主页视频流展示推广内容获得分成：当用户浏览创作者个人主页并往下滑看视频时，有机会被展示推广内容，创作者因此获得分成收益。</p></div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#fff3ee"><img src="${ICONS.store}" alt=""></div>
+      <div class="dim-title-text">微信小店</div>
+      <div class="dim-count">6 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item api"><div class="item-title"><span class="tag api">API更新</span>微信小店本周功能调整汇总-20260515</div><p>① 新增货源信息上报接口（addproductthirdpartysource），ISV 必接；② 新增「更新限时抢购任务」接口；③ 更新获取售后单接口（退货地址字段脱敏）；④ 更新获取纠纷单接口（新增媒体信息字段）；⑤ 获取订单详情新增供货单信息字段；⑥ 限时抢购相关接口新增多项字段及错误码。</p><a class="link-btn" href="https://developers.weixin.qq.com/community/minihome/doc/0004ce356b8280c8d215a3f0d61801" target="_blank">查看原文</a></div>
+      <div class="item notice"><div class="item-title"><span class="tag notice">重要通知</span>微信小店「货源信息上报 API 接口」调整通知</div><p>平台新增货源信息上报接口，用于在各场景下对货源信息进行标准化上报，规范商品发布流程、保障用户体验与平台交易秩序。接入微信小店商品管理 API 的第三方服务商（ISV）需尽快接入。</p><a class="link-btn" href="https://developers.weixin.qq.com/community/minihome/list/1929579418541178884/2" target="_blank">查看公告</a></div>
+      <div class="item alert"><div class="item-title"><span class="alert-badge">专项</span>关于「食品饮料、生鲜类目虚假一物一拍」专项治理公告 2026/05/08</div><p>针对直播中以"一物一拍""所见即所得"为噱头诱导下单但实际发货商品与直播间不一致的行为展开专项治理。</p><a class="link-btn" href="https://developers.weixin.qq.com/community/minihome/list/1929579418541178884/2" target="_blank">查看公告</a></div>
+      <div class="item rule"><div class="item-title"><span class="tag rule">规则生效</span>发货管理规则-20260518版正式生效：新增「今日发」时效</div><p>非预售商品新增「今日发」发货时效选项（16:00前付款当日24点前发货，16:00后付款次日24点前发货）；礼物订单发货时效自收礼方确认收下礼物时开始计算。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9326/b37b93c255e40c1f/growth_center_rule_for_store/28?bpath=%252Fhome%252Fweekly-rules" target="_blank">查看规则</a></div>
+      <div class="item activity"><div class="item-title"><span class="tag activity">大促活动</span>2026年618平台大促-平台活动激励计划 2026/05/09</div><p>发布618大促平台活动激励政策及参与规则，含商家、带货者分类激励方案。建议商家尽早筹备活动报名。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9365/b20d4ce080d5f10d/growth_center_rule_for_store/24?bpath=%252Fhome%252Fweekly-rules" target="_blank">查看计划</a></div>
+      <div class="item rule"><div class="item-title"><span class="tag rule">类目调整</span>二级类目「水果」调整公告（5月18日起生效）</div><p>新增冷冻水果、新鲜核桃等子类目；更名新鲜木瓜、枣类、龙眼等类目；关闭「其他瓜」「青枣」「海棠果」等类目。5月18日起存量商品逐步迁移至新类目。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9358/4365efab04a640f3/growth_center_platform_notice/1?bpath=%252Fnotice" target="_blank">查看公告</a></div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#f0f5ff"><img src="${ICONS.tuike}" alt=""></div>
+      <div class="dim-title-text">推客</div>
+      <div class="dim-count">本期无更新</div>
+    </div>
+    <div class="dim-body"><div class="item none"><div class="item-title">本期无更新</div></div></div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8f4ff"><img src="${ICONS.work}" alt=""></div>
+      <div class="dim-title-text">企业微信</div>
+      <div class="dim-count">本期无新版本更新</div>
+    </div>
+    <div class="dim-body"><div class="item none"><div class="item-title">5.0.8 版本功能（记录面聊、智能表格AI技能卡片等）持续推广中，本周暂无新版本发布</div></div></div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#edf2ff"><img src="${ICONS.open}" alt=""></div>
+      <div class="dim-title-text">微信开放平台 / 推客</div>
+      <div class="dim-count">本期无更新</div>
+    </div>
+    <div class="dim-body"><div class="item none"><div class="item-title">本期无更新</div></div></div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#fffbea"><img src="${ICONS.pay}" alt=""></div>
+      <div class="dim-title-text">微信支付</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item new"><div class="item-title"><span class="tag new">功能升级</span>「商家红包/现金红包」升级为「商家转账」（2026/05/13起）</div><p>自5月13日起，新开通商户可通过「商户平台-产品中心-商家转账」申请开通并使用，已开通原功能的商户暂不受影响。商家转账覆盖现金营销、企业赔付、佣金报酬、采购货款等多类场景，仍支持红包样式（单笔≤200元）。</p><a class="link-btn" href="https://pay.wechatpay.cn/index.php/public/cms/content_detail?id=136013" target="_blank">查看公告</a></div>
+      <div class="item new"><div class="item-title"><span class="tag new">新功能</span>微信支付「组合支付」正式上线（2026/05/12）</div><p>完成实名认证的微信支付用户可在转账时选择「零钱、零钱通、经营账户、借记卡、分付」中的任意两种方式组合完成支付。当前优先支持转账场景，其他场景将后续逐步放开。退款时资金原路退回各渠道。</p><a class="link-btn" href="https://news.qq.com/rain/a/20260512A05AS200" target="_blank">查看报道</a></div>
+    </div>
+  </div>
+</div><!-- /p5 -->
+
+
+<!-- ════ 期次4.5：2026.5.6–5.11 ════ -->
+<div class="period-content" id="p45">
+  <div class="overview-card">
+    <div class="card-title">▌ 本期要点速览（2026.5.6–5.11）</div>
+    <table class="overview-table">
+      <thead><tr><th>#</th><th>维度</th><th>核心内容</th><th style="text-align:center;width:80px">重要程度</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><div class="dim-cell"><img src="${ICONS.pay}" alt="">微信支付</div></td><td>微信公开课官宣：AI原生接入Skill正式发布（Skill技能包+AI友好文档+AI友好API三大工具，支持20+功能）</td><td class="stars" style="text-align:center">★★★</td></tr>
+        <tr><td>2</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店</div></td><td>功能汇总-20260509：新增「支付摇优惠」营销工具；多项接口更新（类目规则/纠纷单/商品/代发订单）</td><td class="stars" style="text-align:center">★★★</td></tr>
+        <tr><td>3</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店</div></td><td>新规速递-20260511：珠宝首饰联盟准入调整（和田玉/水晶玛瑙/彩宝等开放）；夏日果蔬生鲜双选会；618激励计划</td><td class="stars" style="text-align:center">★★</td></tr>
+        <tr><td>4</td><td><div class="dim-cell"><img src="${ICONS.mini}" alt="">小程序</div></td><td>微信AI小程序成长计划再升级：参与门槛全面放开 + 工具类变现激励 + 教育行业支持</td><td class="stars" style="text-align:center">★★</td></tr>
+        <tr><td>5</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">公众号/微信客户端</div></td><td>微信公开课5月11日盘点4月9大更新；微信贴图支持发布原图（安卓8.0.71+）；小游戏IAP激励计划升级（首发最高5000万不分成）</td><td class="stars" style="text-align:center">★★</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.mp}" alt=""></div>
+      <div class="dim-title-text">公众号 / 微信客户端</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item new"><div class="item-title"><span class="tag new">功能更新</span>微信贴图支持发布和查看原图（5月11日官宣）</div><p>安卓用户升级至 8.0.71 及以上版本即可体验贴图发送原图，iOS 版本仍在适配中。</p><a class="link-btn" href="https://new.qq.com/rain/a/20260512A05SAU00" target="_blank">查看报道</a></div>
+      <div class="item notice"><div class="item-title"><span class="tag notice">官方盘点</span>微信公开课：4月9大功能更新汇总（5月11日发布）</div><p>微信公开课5月11日官宣4月核心更新：① 微信支付AI原生接入Skill ② AI小程序成长计划升级 ③ 企微5.0.8（记录面聊等）④ 表情助手小程序上线 ⑤ 小游戏IAP激励升级 ⑥ 小店新商家六大权益 ⑦ 视频号小助手升级 ⑧ 视频号个人主页推广 ⑨ 微信贴图支持原图。</p><a class="link-btn" href="https://news.bjd.com.cn/2026/05/11/11737454.shtml" target="_blank">查看原文</a></div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.mini}" alt=""></div>
+      <div class="dim-title-text">小程序</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item new"><div class="item-title"><span class="tag new">生态扶持</span>微信AI小程序成长计划再升级（5月11日官宣）</div><p>在首期"四大福利"基础上进一步加码：① 参与门槛全面放开（不限规模）；② 工具类小程序新增变现激励；③ We分析资源普惠；④ 新增教育行业专项支持。</p><a class="link-btn" href="https://news.bjd.com.cn/2026/05/11/11737454.shtml" target="_blank">查看报道</a></div>
+      <div class="item api"><div class="item-title"><span class="tag api">问题追踪</span>社区每周｜上周问题反馈处理进度（04.27–04.30）</div><p>修复中：wx.makePhoneCall 真机使用小程序退出的问题；向鸿蒙手机拨打微信小程序音视频弹不出接听页面的问题；LivePusher 和 LivePlayer 在微信语音通话时闪退的问题。</p><a class="link-btn" href="https://fuwu.weixin.qq.com/community/develop/doc/000acafb1c46e0cb4c153c7d56b001" target="_blank">查看原文</a></div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#fff0f0"><img src="${ICONS.channels}" alt=""></div>
+      <div class="dim-title-text">视频号 / 小游戏</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item activity"><div class="item-title"><span class="tag activity">激励升级</span>小游戏 IAP 激励计划再升级（5月11日官宣）</div><p>两阶段让利：新游首发最高 <strong>5000万元不分成</strong>，可获最高 2000万元激励金；优质游戏在微信平台首发可享专属流量扶持与长线运营支持。粉丝超1000的创作者均可参与挂载小游戏变现任务。</p><a class="link-btn" href="https://news.bjd.com.cn/2026/05/11/11737454.shtml" target="_blank">查看报道</a></div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#fff3ee"><img src="${ICONS.store}" alt=""></div>
+      <div class="dim-title-text">微信小店</div>
+      <div class="dim-count">5 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item api"><div class="item-title"><span class="tag api">API更新</span>微信小店本周功能调整汇总-20260509</div><p>① 新增「支付摇优惠」营销工具（5月8日上线）：用户微信支付后可在"摇一摇领优惠"页面看到商家优惠券，直接引流至小店下单；② 更新获取类目下商品发布规则接口；③ 更新获取纠纷单接口（新增2个枚举值）；④ 更新商品详情图字段（最多50张）；⑤ 更新代发单发货接口字段描述。</p><a class="link-btn" href="https://developers.weixin.qq.com/community/minihome/doc/0004cc853605588e5c154243968c01" target="_blank">查看原文</a></div>
+      <div class="item alert"><div class="item-title"><span class="alert-badge">专项</span>关于「食品饮料、生鲜类目虚假一物一拍」专项治理公告 2026/05/08</div><p>针对直播中以"一物一拍""所见即所得"为噱头但实际发货不符的行为展开专项治理，违规带货者将面临扣分、限流等处理。</p><a class="link-btn" href="https://developers.weixin.qq.com/community/minihome/doc/0004cc853605588e5c154243968c01" target="_blank">查看公告</a></div>
+      <div class="item rule"><div class="item-title"><span class="tag rule">类目调整</span>珠宝首饰部分类目开放特定条件联盟准入 2026/05/09</div><p>自5月9日起，「和田玉」「水晶玛瑙」「彩宝」「其它玉石」四个二级类目开放特定条件带货者联盟准入，具体准入条件见平台公告。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9365/b20d4ce080d5f10d/growth_center_rule_for_store/24?bpath=%252Fhome%252Fweekly-rules" target="_blank">查看新规</a></div>
+      <div class="item activity"><div class="item-title"><span class="tag activity">活动</span>夏日果蔬生鲜-应季双选会 2026/05/09</div><p>平台自5月15日至6月15日开展生鲜类目商达双选会，报名时间为5月10日至5月14日（<strong>已截止</strong>）。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9365/b20d4ce080d5f10d/growth_center_rule_for_store/24?bpath=%252Fhome%252Fweekly-rules" target="_blank">查看活动</a></div>
+      <div class="item rule"><div class="item-title"><span class="tag rule">规则公示</span>带货功能服务协议-20260513版修订公示（AI功能使用说明）2026/05/06</div><p>对《微信小店带货功能服务协议》进行修订，新增AI功能的使用说明条款，公示期5月6日至5月12日，预计5月13日生效。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9289/e88ca4fbce0af378/growth_center_rule_for_store/28?bpath=%252Fhome%252Fweekly-rules" target="_blank">查看公示</a></div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#f0f5ff"><img src="${ICONS.tuike}" alt=""></div>
+      <div class="dim-title-text">推客</div>
+      <div class="dim-count">本期无更新</div>
+    </div>
+    <div class="dim-body"><div class="item none"><div class="item-title">本期无更新</div></div></div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8f4ff"><img src="${ICONS.work}" alt=""></div>
+      <div class="dim-title-text">企业微信 / 微信开放平台</div>
+      <div class="dim-count">本期无更新</div>
+    </div>
+    <div class="dim-body"><div class="item none"><div class="item-title">企业微信 5.0.8 功能持续铺量中（记录面聊/智能表格AI字段等），本周暂无新公告</div></div></div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#fffbea"><img src="${ICONS.pay}" alt=""></div>
+      <div class="dim-title-text">微信支付</div>
+      <div class="dim-count">1 条重要发布</div>
+    </div>
+    <div class="dim-body">
+      <div class="item new"><div class="item-title"><span class="tag new">重大能力</span>微信支付 AI 原生接入 Skill 正式发布（5月11日官宣）</div><p>发布面向 AI 的支付接入全套工具：① <strong>Skill技能包</strong>：预置官方验证代码模板，支持金融级代码诊断与智能排障，可加载至 Cursor、腾讯 CodeBuddy 等 AI 开发工具；② <strong>AI友好文档</strong>：结构化接入规范；③ <strong>AI友好API</strong>：自然语言描述需求即可生成调试代码。当前已支持分账、小程序支付、退款、合单支付、账单下载等 20+ 功能。</p><a class="link-btn" href="https://k.sina.com.cn/article_7857201856_1d45362c001905mvrs.html" target="_blank">查看报道</a></div>
+    </div>
+  </div>
+</div><!-- /p45 -->
+
+
+<!-- ════ 期次4：2026.4.28–5.5 ════ -->
+<div class="period-content" id="p4">
+  <div class="overview-card">
+    <div class="card-title">▌ 本期要点速览（2026.4.28–5.5）</div>
+    <table class="overview-table">
+      <thead><tr><th>#</th><th>维度</th><th>核心内容</th><th style="text-align:center;width:80px">重要程度</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><div class="dim-cell"><img src="${ICONS.work}" alt="">企业微信</div></td><td>5.0.8版本上线「记录面聊」灰度+智能表格AI技能卡片+智能文档轻网页+贴表情快捷回复</td><td class="stars" style="text-align:center">★★★</td></tr>
+        <tr><td>2</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店</div></td><td>功能调整汇总-20260430：第三方货源接入 + 开发者使用指南 + 小程序连接小店指南</td><td class="stars" style="text-align:center">★★★</td></tr>
+        <tr><td>3</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店</div></td><td>5月新商成长激励计划 + 商家服务商激励政策 + 品牌代运营服务商增量激励（3条政策落地）</td><td class="stars" style="text-align:center">★★</td></tr>
+        <tr><td>4</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店</div></td><td>「不正当营销、违规宣传封建迷信」专项治理公告（4月28日发布）</td><td class="stars" style="text-align:center">★★★</td></tr>
+        <tr><td>5</td><td><div class="dim-cell"><img src="${ICONS.pay}" alt="">微信支付</div></td><td>持续提醒：旧机房IP <strong>5月18日下线</strong>，商户需立即确认白名单</td><td class="stars" style="text-align:center">★★★</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.mp}" alt=""></div>
+      <div class="dim-title-text">公众号</div>
+      <div class="dim-count">本期无更新</div>
+    </div>
+    <div class="dim-body"><div class="item none"><div class="item-title">本期无更新</div></div></div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.mini}" alt=""></div>
+      <div class="dim-title-text">小程序</div>
+      <div class="dim-count">本期无重大更新</div>
+    </div>
+    <div class="dim-body"><div class="item none"><div class="item-title">本期暂未发布每周问题反馈进度公告</div><p>预计 5月8日前后发布「上周问题反馈处理进度（04.27–05.01）」周报。</p></div></div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#fff0f0"><img src="${ICONS.channels}" alt=""></div>
+      <div class="dim-title-text">视频号</div>
+      <div class="dim-count">本期无更新</div>
+    </div>
+    <div class="dim-body"><div class="item none"><div class="item-title">本期无更新</div></div></div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#fff3ee"><img src="${ICONS.store}" alt=""></div>
+      <div class="dim-title-text">微信小店</div>
+      <div class="dim-count">5 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item api"><div class="item-title"><span class="tag api">API更新</span>微信小店本周功能调整汇总-20260430</div><p>新增「第三方货源信息」接口；新增「开发者使用指南」「小程序连接小店」2份开发指南，覆盖鉴权机制、商品定制、礼物营销、订单事件通知等核心模块。</p><a class="link-btn" href="https://developers.weixin.qq.com/community/minihome/doc/0004cc93c1c378e9ad05640bd66001" target="_blank">查看原文</a></div>
+      <div class="item alert"><div class="item-title"><span class="alert-badge">专项</span>关于「不正当营销、违规宣传封建迷信」专项治理公告 2026/04/28</div><p>平台对借迷信内容进行营销宣传的行为展开专项整治，违规商家和达人将面临扣分、限流、下架商品等处理。</p><a class="link-btn" href="https://developers.weixin.qq.com/community/minihome/doc/00000045d4c4206399050eb136b801?source=indexnew" target="_blank">查看公告</a></div>
+      <div class="item activity"><div class="item-title"><span class="tag activity">激励政策</span>微信小店｜新商成长激励计划（26年5月）2026/04/29</div><p>5月新商家专项激励，包含开店礼包、流量扶持、佣金返还等多重权益。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9306/d80eb26da82b15fa/growth_center_platform_notice/2" target="_blank">查看公告</a></div>
+      <div class="item activity"><div class="item-title"><span class="tag activity">激励政策</span>微信小店服务商｜2026年05月「商家服务商」激励政策 2026/04/29</div><p>面向服务商的5月激励政策更新，含交易量阶梯返佣、新商招募激励等。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9274/9bcf2e22b74b173c/growth_center_platform_notice/2" target="_blank">查看公告</a></div>
+      <div class="item activity"><div class="item-title"><span class="tag activity">激励政策</span>商家服务商｜2026年05月热招品牌代运营服务商增量激励政策 2026/04/30</div><p>定向招募品牌代运营服务商，5月推出增量激励政策，鼓励服务商带动新品牌入驻。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9304/8062d0361feac96f/growth_center_platform_notice/2" target="_blank">查看公告</a></div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8f4ff"><img src="${ICONS.work}" alt=""></div>
+      <div class="dim-title-text">企业微信</div>
+      <div class="dim-count">4 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item new"><div class="item-title"><span class="tag new">新功能</span>「记录面聊」能力灰度上线（5.0.8版本）</div><p>新增线下面对面交流的记录功能，自动整理会话要点。当前处于灰度测试阶段，部分用户先开放体验。</p><a class="link-btn" href="https://finance.sina.com.cn/wm/2026-04-28/doc-inhwaicx1557463.shtml" target="_blank">查看报道</a></div>
+      <div class="item new"><div class="item-title"><span class="tag new">能力升级</span>智能表格打通微信生态 + AI字段「技能卡片」</div><p>智能表格支持微信生态内数据自动汇总，新增AI字段类型「技能卡片」，提升数据处理与协作效率。</p></div>
+      <div class="item new"><div class="item-title"><span class="tag new">能力升级</span>智能文档支持轻量化排版 + 一键发布「轻网页」</div><p>智能文档新增轻量化排版能力，可一键将内容对外发布为轻网页，便于客户与合作方查看。</p></div>
+      <div class="item new"><div class="item-title"><span class="tag new">交互优化</span>「贴表情」快捷回复</div><p>支持对消息直接贴表情，便捷表达「收到」「感谢」等回应，减少冗余消息。</p></div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#edf2ff"><img src="${ICONS.open}" alt=""></div>
+      <div class="dim-title-text">微信开放平台 / 推客</div>
+      <div class="dim-count">本期无更新</div>
+    </div>
+    <div class="dim-body"><div class="item none"><div class="item-title">本期无更新</div></div></div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#fffbea"><img src="${ICONS.pay}" alt=""></div>
+      <div class="dim-title-text">微信支付</div>
+      <div class="dim-count">1 条提醒</div>
+    </div>
+    <div class="dim-body">
+      <div class="item alert"><div class="item-title"><span class="alert-badge">倒计时</span>距旧IP下线仅剩12天，商户白名单需立即确认</div><p>微信支付旧核心域名IP将于 <strong>2026年5月18日</strong> 正式下线。如商户系统通过IP白名单访问微信支付接口，请尽快完成新IP的添加，避免业务中断。</p><a class="link-btn" href="https://developers.weixin.qq.com/community/pay/doc/0006e4c18f8a88fdfbe4f9c0161401" target="_blank">查看公告</a></div>
+    </div>
+  </div>
+</div><!-- /p4 -->
+
+
+<!-- ════ 期次3：2026.4.21–4.27 ════ -->
+<div class="period-content" id="p3">
+  <div class="overview-card">
+    <div class="card-title">▌ 本期要点速览（2026.4.21–4.27）</div>
+    <table class="overview-table">
+      <thead><tr><th>#</th><th>维度</th><th>核心内容</th><th style="text-align:center;width:80px">重要程度</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><div class="dim-cell"><img src="${ICONS.mini}" alt="">小程序</div></td><td>问题反馈处理进度双期（04.14–04.17 + 04.21–04.24）</td><td class="stars" style="text-align:center">★★</td></tr>
+        <tr><td>2</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店</div></td><td>功能调整汇总-20260424：新增5项接口（订单/商品/资金/佣金）+ 6项开发指南</td><td class="stars" style="text-align:center">★★★</td></tr>
+        <tr><td>3</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店</div></td><td>第18周治理公告 + 售假专项 + 短剧刷单专项 + 母婴类目调整</td><td class="stars" style="text-align:center">★★★</td></tr>
+        <tr><td>4</td><td><div class="dim-cell"><img src="${ICONS.pay}" alt="">微信支付</div></td><td>4月20日机房IP切换已执行，旧IP <strong>5月18日正式下线</strong>，商户需确认白名单</td><td class="stars" style="text-align:center">★★★</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.mp}" alt=""></div>
+      <div class="dim-title-text">公众号</div>
+      <div class="dim-count">本期无更新</div>
+    </div>
+    <div class="dim-body"><div class="item none"><div class="item-title">本期无更新</div></div></div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.mini}" alt=""></div>
+      <div class="dim-title-text">小程序</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item api"><div class="item-title"><span class="tag api">问题追踪</span>社区每周｜上周问题反馈处理进度（04.14–04.17）</div><p>官方跟进社区开发者反馈的问题处理进度，含 Bug 修复与接口异常说明。</p><a class="link-btn" href="https://developers.weixin.qq.com/community/develop/doc/000e80ad29815085a7f407c916bc01" target="_blank">查看原文</a></div>
+      <div class="item api"><div class="item-title"><span class="tag api">问题追踪</span>社区每周｜上周问题反馈处理进度（04.21–04.24）</div><p>官方跟进上周开发者反馈的问题处理情况。</p><a class="link-btn" href="https://developers.weixin.qq.com/community/develop/list/2" target="_blank">查看原文</a></div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#fff0f0"><img src="${ICONS.channels}" alt=""></div>
+      <div class="dim-title-text">视频号</div>
+      <div class="dim-count">本期无更新</div>
+    </div>
+    <div class="dim-body"><div class="item none"><div class="item-title">本期无更新</div></div></div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#fff3ee"><img src="${ICONS.store}" alt=""></div>
+      <div class="dim-title-text">微信小店</div>
+      <div class="dim-count">6 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item notice"><div class="item-title"><span class="tag notice">治理公告</span>微信小店每周治理公告（26年第18周）2026/04/27</div><p>平台依据《微信小店入驻规则》等规则对违规商家和达人进行处理。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9310/bb712892deac93a4/growth_center_platform_notice/4?bpath=%252Fnotice" target="_blank">查看公告</a></div>
+      <div class="item api"><div class="item-title"><span class="tag api">API更新</span>微信小店本周功能调整汇总-20260424</div><p>新增5项接口：订单 / 商品 / 资金流水 / 佣金单；新增6项开发指南：客诉工单 / 物流发货 / 店铺管理 / 售后管理 / 资金结算 / 服务保障。</p><a class="link-btn" href="https://developers.weixin.qq.com/community/minihome/doc/00062256d10dd0e13005a035e61001" target="_blank">查看原文</a></div>
+      <div class="item rule"><div class="item-title"><span class="tag rule">规则调整</span>关于「微信小店一级类目母婴」调整公告 2026/04/27</div><p>母婴类目准入标准与资质要求调整，相关经营商家需关注。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9237/814eba6ec0a88ca7/growth_center_platform_notice/1?bpath=%252Fnotice" target="_blank">查看公告</a></div>
+      <div class="item notice"><div class="item-title"><span class="tag notice">专项治理</span>关于「商家售假行为」专项治理公告 2026/04/23</div><p>平台对售假违规行为展开专项治理，公告处理标准与典型案例。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9297/03acb2624cbc13ba/growth_center_platform_notice/3?bpath=%252Fnotice" target="_blank">查看公告</a></div>
+      <div class="item notice"><div class="item-title"><span class="tag notice">专项治理</span>关于「短剧机构违规刷单」专项治理公告 2026/04/22</div><p>针对短剧机构刷单行为展开专项整治，违规将面临扣分、限流、封号等处理。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9285/8befc1f0b59c21d2/growth_center_platform_notice/3?bpath=%252Fnotice" target="_blank">查看公告</a></div>
+      <div class="item activity"><div class="item-title"><span class="tag activity">活动</span>微信小店｜2026年春日文玩珠宝节商达双选会 2026/04/22</div><p>文玩珠宝品类专项活动，商家与带货达人双向对接，限时开放报名。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9294/9438bb1789b1e725/growth_center_platform_notice/2?bpath=%252Fnotice" target="_blank">查看活动</a></div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8f4ff"><img src="${ICONS.work}" alt=""></div>
+      <div class="dim-title-text">推客 / 企业微信 / 微信开放平台</div>
+      <div class="dim-count">本期无更新</div>
+    </div>
+    <div class="dim-body"><div class="item none"><div class="item-title">本期无更新</div></div></div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#fffbea"><img src="${ICONS.pay}" alt=""></div>
+      <div class="dim-title-text">微信支付</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item notice"><div class="item-title"><span class="tag notice">重要提醒</span>机房IP切换已执行，旧IP 5月18日下线</div><p>微信支付于2026年4月20日完成机房网络调整，旧核心域名IP将于 <strong>5月18日正式下线</strong>。尚未更新防火墙白名单的商户需立即操作。</p><a class="link-btn" href="https://developers.weixin.qq.com/community/pay/doc/0006e4c18f8a88fdfbe4f9c0161401" target="_blank">查看公告</a></div>
+    </div>
+  </div>
+</div><!-- /p3 -->
+
+
+<!-- ════ 期次2：2026.4.14–4.20 ════ -->
+<div class="period-content" id="p2">
+  <div class="overview-card">
+    <div class="card-title">▌ 本期要点速览（2026.4.14–4.20）</div>
+    <table class="overview-table">
+      <thead><tr><th>#</th><th>维度</th><th>核心内容</th><th style="text-align:center;width:80px">重要程度</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">公众号</div></td><td>微信表情助手小程序手机端上架，面向个人视频号作者开放，支持一键制作表情包</td><td class="stars" style="text-align:center">★★</td></tr>
+        <tr><td>2</td><td><div class="dim-cell"><img src="${ICONS.mini}" alt="">小程序</div></td><td>基础库 3.15.2 正式推送（04.07）；上周问题反馈处理进度（04.06–04.10）</td><td class="stars" style="text-align:center">★★</td></tr>
+        <tr><td>3</td><td><div class="dim-cell"><img src="${ICONS.channels}" alt="">视频号</div></td><td>封面/文案修改功能上线（近三月视频可改一次，最多20字）；运营规范2026版更新</td><td class="stars" style="text-align:center">★★★</td></tr>
+        <tr><td>4</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店</div></td><td>功能汇总-20260417 + 第15周治理公告 + 9条活动激励政策</td><td class="stars" style="text-align:center">★★★</td></tr>
+        <tr><td>5</td><td><div class="dim-cell"><img src="${ICONS.pay}" alt="">微信支付</div></td><td>4月20日机房IP切换正式执行，旧IP 5月18日下线</td><td class="stars" style="text-align:center">★★★</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="dim-block"><div class="dim-header"><div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.mp}" alt=""></div><div class="dim-title-text">公众号</div><div class="dim-count">1 条更新</div></div><div class="dim-body"><div class="item new"><div class="item-title"><span class="tag new">新功能</span>微信表情助手小程序手机端上架（2026年4月13日）</div><p>面向个人视频号作者开放，支持一键上传图片制作表情包。</p><a class="link-btn" href="https://finance.sina.com.cn/wm/2026-04-14/doc-inhunicu4803582.shtml" target="_blank">查看报道</a></div></div></div>
+    <div class="dim-block"><div class="dim-header"><div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.mini}" alt=""></div><div class="dim-title-text">小程序</div><div class="dim-count">2 条更新</div></div><div class="dim-body">
+    <div class="item api"><div class="item-title"><span class="tag api">问题追踪</span>上周问题反馈处理进度（04.06–04.10）</div><a class="link-btn" href="https://developers.weixin.qq.com/community/develop/doc/000e80ad29815085a7f407c916bc01" target="_blank">查看原文</a></div>
+    <div class="item new"><div class="item-title"><span class="tag new">版本更新</span>小程序基础库 3.15.2 正式推送（04.07）</div><p>Skyline 支持 selection 组件；贴图组件优化（小尾巴支持自定义）；修复 iOS 内存过高时 WXS 无法执行的 Bug。</p><a class="link-btn" href="https://developers.weixin.qq.com/community/develop/doc/000482dece87702814f433f5f64401" target="_blank">查看日志</a></div>
+  </div></div>
+  <div class="dim-block"><div class="dim-header"><div class="dim-icon" style="background:#fff0f0"><img src="${ICONS.channels}" alt=""></div><div class="dim-title-text">视频号</div><div class="dim-count">2 条更新</div></div><div class="dim-body">
+    <div class="item new"><div class="item-title"><span class="tag new">新功能</span>视频号封面/文案修改功能上线</div><p>发布<strong>近三个月内</strong>的视频支持修改封面和文案，每条视频<strong>仅限修改一次</strong>，文案最多 20 字。</p></div>
+    <div class="item rule"><div class="item-title"><span class="tag rule">规则更新</span>视频号运营规范 2026 年版本正式更新</div><a class="link-btn" href="https://support.weixin.qq.com/cgi-bin/mmsupportacctnodeweb-bin/pages/bHwUU86V3aZ43Dzm" target="_blank">查看规范</a></div>
+  </div></div>
+  <div class="dim-block"><div class="dim-header"><div class="dim-icon" style="background:#fff3ee"><img src="${ICONS.store}" alt=""></div><div class="dim-title-text">微信小店</div><div class="dim-count">11 条更新</div></div><div class="dim-body">
+    <div class="item notice"><div class="item-title"><span class="tag notice">治理公告</span>微信小店每周治理公告（26年第15周）</div><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/notice/all" target="_blank">查看公告</a></div>
+    <div class="item api"><div class="item-title"><span class="tag api">API更新</span>微信小店本周功能调整汇总-20260417</div><p>接口更新 + 4项新增开发指南，覆盖商品管理、订单流程等核心模块。</p><a class="link-btn" href="https://developers.weixin.qq.com/community/minihome/doc/00022a27da8bb894adf4e480467801" target="_blank">查看原文</a></div>
+    <div class="item notice"><div class="item-title"><span class="tag notice">治理公告</span>冒用平台名义专项治理公告</div><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9251/7a49c7fa7432d821/growth_center_platform_notice/3?bpath=%252Fnotice" target="_blank">查看公告</a></div>
+    <div class="item notice"><div class="item-title"><span class="tag notice">治理公告</span>虚假宣传名家书画专项治理公告</div><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9246/5fec9302408be650/growth_center_platform_notice/3?bpath=%252Fnotice" target="_blank">查看公告</a></div>
+    <div class="item activity"><div class="item-title"><span class="tag activity">活动</span>美妆个护春夏出游焕肤季</div><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9256/885d7458c09b5de4/growth_center_platform_notice/2?bpath=%252Fnotice" target="_blank">查看活动</a></div>
+    <div class="item activity"><div class="item-title"><span class="tag activity">活动</span>优选联盟品牌好物激励计划</div><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9216/88f6fe1b069a9846/growth_center_platform_notice/2?bpath=%252Fnotice" target="_blank">查看活动</a></div>
+    <div class="item activity"><div class="item-title"><span class="tag activity">活动</span>母婴亲子出游季</div><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9245/c44ac41df7adfcde/growth_center_platform_notice/2?bpath=%252Fnotice" target="_blank">查看活动</a></div>
+    <div class="item activity"><div class="item-title"><span class="tag activity">活动</span>厨具家具家装建材商达双选会</div><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9248/20212d67544a6532/growth_center_platform_notice/2?bpath=%252Fnotice" target="_blank">查看活动</a></div>
+    <div class="item activity"><div class="item-title"><span class="tag activity">活动</span>服饰家居夏焕新</div><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9238/02166c9318bc458f/growth_center_platform_notice/2?bpath=%252Fnotice" target="_blank">查看活动</a></div>
+    <div class="item activity"><div class="item-title"><span class="tag activity">活动</span>春日文玩珠宝节</div><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9226/67a3ac207c5f007e/growth_center_platform_notice/2?bpath=%252Fnotice" target="_blank">查看活动</a></div>
+    <div class="item activity"><div class="item-title"><span class="tag activity">活动</span>微信小店芍药季</div><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9233/522627df3c9659f9/growth_center_platform_notice/2?bpath=%252Fnotice" target="_blank">查看活动</a></div>
+  </div></div>
+  <div class="dim-block"><div class="dim-header"><div class="dim-icon" style="background:#e8f4ff"><img src="${ICONS.work}" alt=""></div><div class="dim-title-text">推客 / 企业微信 / 微信开放平台</div><div class="dim-count">本期无更新</div></div><div class="dim-body"><div class="item none"><div class="item-title">本期无更新</div></div></div></div>
+  <div class="dim-block"><div class="dim-header"><div class="dim-icon" style="background:#fffbea"><img src="${ICONS.pay}" alt=""></div><div class="dim-title-text">微信支付</div><div class="dim-count">2 条更新</div></div><div class="dim-body">
+    <div class="item notice"><div class="item-title"><span class="tag notice">重要提醒</span>4月20日机房IP切换正式执行，旧IP 5月18日下线</div><p>旧核心域名IP将于<strong>5月18日正式下线</strong>，商户需尽快检查防火墙白名单。</p><a class="link-btn" href="https://developers.weixin.qq.com/community/pay/doc/0006e4c18f8a88fdfbe4f9c0161401" target="_blank">查看公告</a></div>
+    <div class="item rule"><div class="item-title"><span class="tag rule">停服公告</span>微信支付「有优惠」小程序将于2026年12月31日停服</div><p>服务整合升级至「微信支付提现笔笔省」小程序（2026年4月2日公告）。</p></div>
+  </div></div>
+</div><!-- /p2 -->
+
+
+<!-- ════ 期次1：2026.3.1–4.14 ════ -->
+<div class="period-content" id="p1">
+  <div class="overview-card">
+    <div class="card-title">▌ 本期要点速览（2026.3.1–4.14）</div>
+    <table class="overview-table">
+      <thead><tr><th>#</th><th>维度</th><th>核心内容</th><th style="text-align:center;width:80px">重要程度</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">公众号</div></td><td>话题聚合功能上线；公众平台助手小程序 3月2日停服</td><td class="stars" style="text-align:center">★★</td></tr>
+        <tr><td>2</td><td><div class="dim-cell"><img src="${ICONS.mini}" alt="">小程序</div></td><td>基础库 3.15.1/3.15.2 更新；iOS 画中画支持；贴图组件优化</td><td class="stars" style="text-align:center">★★</td></tr>
+        <tr><td>3</td><td><div class="dim-cell"><img src="${ICONS.channels}" alt="">视频号</div></td><td>带货短视频发布条数扩容；直播实名制新规落地；小游戏激励计划启动</td><td class="stars" style="text-align:center">★★★</td></tr>
+        <tr><td>4</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店</div></td><td>新商家六大权益（0保证金+1%费率）；热搜品/机会品标签上线；多类目开放调整</td><td class="stars" style="text-align:center">★★★</td></tr>
+        <tr><td>5</td><td><div class="dim-cell"><img src="${ICONS.work}" alt="">企业微信</div></td><td>智能机器人支持长连接+MCP工具接口；连接龙虾AI Agent（3月22日）</td><td class="stars" style="text-align:center">★★★</td></tr>
+        <tr><td>6</td><td><div class="dim-cell"><img src="${ICONS.open}" alt="">微信开放平台</div></td><td>ClawBot官方插件发布（3月22日）；表情助手小程序上线（4月13日）</td><td class="stars" style="text-align:center">★★★</td></tr>
+        <tr><td>7</td><td><div class="dim-cell"><img src="${ICONS.pay}" alt="">微信支付</div></td><td>同行码上线；有优惠小程序停服公告；首尔地铁支持微信支付</td><td class="stars" style="text-align:center">★★</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="dim-block"><div class="dim-header"><div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.mp}" alt=""></div><div class="dim-title-text">公众号</div><div class="dim-count">2 条更新</div></div><div class="dim-body">
+    <div class="item new"><div class="item-title"><span class="tag new">新功能</span>公众号话题聚合功能上线（3月）</div><p>创作者可主动发起话题，将自身内容与粉丝同类内容聚合，实现流量聚拢效果。</p></div>
+    <div class="item notice"><div class="item-title"><span class="tag notice">停服公告</span>公众平台助手小程序于 2026年3月2日停止服务</div><p>原功能可通过下载数据迁移至其他管理工具，建议运营者尽快完成数据备份。</p></div>
+  </div></div>
+    <div class="dim-block"><div class="dim-header"><div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.mini}" alt=""></div><div class="dim-title-text">小程序</div><div class="dim-count">2 条更新</div></div><div class="dim-body">
+    <div class="item api"><div class="item-title"><span class="tag api">版本更新</span>基础库 3.15.1（03.06–03.13）</div><p>小程序复制链接增加自定义标题；video/live-player 支持 iOS 系统画中画；微信小店新增送礼物下单半屏。</p><a class="link-btn" href="https://developers.weixin.qq.com/community/develop/doc/000482dece87702814f433f5f64401" target="_blank">查看日志</a></div>
+    <div class="item api"><div class="item-title"><span class="tag api">版本更新</span>基础库 3.15.2（03.18–03.25）</div><p>Skyline 支持 selection 组件；贴图组件优化；修复 iOS 内存过高时 WXS 无法执行的 Bug。</p><a class="link-btn" href="https://developers.weixin.qq.com/community/develop/doc/000482dece87702814f433f5f64401" target="_blank">查看日志</a></div>
+  </div></div>
+  <div class="dim-block"><div class="dim-header"><div class="dim-icon" style="background:#fff0f0"><img src="${ICONS.channels}" alt=""></div><div class="dim-title-text">视频号</div><div class="dim-count">3 条更新</div></div><div class="dim-body">
+    <div class="item new"><div class="item-title"><span class="tag new">规则更新</span>带货短视频发布条数扩容</div><p>10万粉以下每日最多发布 <strong>5条</strong>；10万粉及以上每日最多 <strong>10条</strong>；支持挂载商品合集（3月上线）。</p><a class="link-btn" href="https://support.weixin.qq.com/cgi-bin/mmsupportacctnodeweb-bin/pages/bHwUU86V3aZ43Dzm" target="_blank">查看规定</a></div>
+    <div class="item rule"><div class="item-title"><span class="tag rule">规则更新</span>视频号直播实名制新规落地（2026年3月13日起）</div><p>主播全员须完成实名认证，提交姓名、证件号、经常居住地址、所属服务机构；直播记录留存不少于3年。</p></div>
+    <div class="item activity"><div class="item-title"><span class="tag activity">激励计划</span>视频号小游戏优质作者激励计划（至4月30日）</div><p>粉丝超1000可参与；基础现金激励 + 爆款额外激励上不封顶。</p></div>
+  </div></div>
+  <div class="dim-block"><div class="dim-header"><div class="dim-icon" style="background:#fff3ee"><img src="${ICONS.store}" alt=""></div><div class="dim-title-text">微信小店</div><div class="dim-count">本期更新最密集</div></div><div class="dim-body">
+    <div class="item new"><div class="item-title"><span class="tag new">重大更新</span>新商家六大权益上线（3月）</div><p>0保证金开店 · 自营交易额技术服务费率降至 <strong>1%</strong> · 流量激励 · 百款经营工具免费试用。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/notice/all" target="_blank">查看公告</a></div>
+    <div class="item new"><div class="item-title"><span class="tag new">新功能</span>商品标签上新：热搜品 · 机会品（3月）</div><p>腾讯广告（小店版）上线两类新标签，系统自动标注高潜商品，节省测品时间。</p></div>
+    <div class="item api"><div class="item-title"><span class="tag api">API更新</span>功能调整汇总-20260410</div><p>新增商品头部视频字段；订单详情新增优惠枚举值；调整库存批量获取接口字段。</p><a class="link-btn" href="https://developers.weixin.qq.com/community/minihome/doc/00002c0fe84a002814f44cab76bc01" target="_blank">查看原文</a></div>
+    <div class="item notice"><div class="item-title"><span class="tag notice">治理公告</span>每周治理公告（第14周 · 2026/04/03）</div><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/notice/all" target="_blank">查看公告</a></div>
+    <div class="item rule"><div class="item-title"><span class="tag rule">类目调整</span>多类目开放 / 质检 / 预售功能调整</div><p>教育培训 · 家具 · 文玩文创 · 家用电器 新增开放类目；珠宝首饰新增质检 & 预售功能。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/notice/all" target="_blank">查看公告合集</a></div>
+    <div class="item activity"><div class="item-title"><span class="tag activity">活动</span>春日好物 · 私域激励 · 新商成长 · 推客带货激励计划（4月–6月）</div><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/notice/all" target="_blank">查看计划</a></div>
+  </div></div>
+  <div class="dim-block"><div class="dim-header"><div class="dim-icon" style="background:#f0f5ff"><img src="${ICONS.tuike}" alt=""></div><div class="dim-title-text">推客</div><div class="dim-count">本期无更新</div></div><div class="dim-body"><div class="item none"><div class="item-title">本期无更新</div></div></div></div>
+  <div class="dim-block"><div class="dim-header"><div class="dim-icon" style="background:#e8f4ff"><img src="${ICONS.work}" alt=""></div><div class="dim-title-text">企业微信</div><div class="dim-count">2 条更新</div></div><div class="dim-body">
+    <div class="item new"><div class="item-title"><span class="tag new">新能力</span>智能机器人支持长连接 + MCP工具接口（3月）</div><p>机器人支持长连接并主动推送消息；支持调用文档MCP工具接口；长连接机器人支持推送图片/语音/视频/文件。</p><a class="link-btn" href="https://developer.work.weixin.qq.com/document/path/93221" target="_blank">查看文档</a></div>
+    <div class="item new"><div class="item-title"><span class="tag new">生态开放</span>微信/企业微信支持连接龙虾 AI Agent（3月22日）</div><p>企业微信扫码接入龙虾，CLI 开源项目上架 GitHub，面向10人及以下企业开放。</p></div>
+  </div></div>
+  <div class="dim-block"><div class="dim-header"><div class="dim-icon" style="background:#edf2ff"><img src="${ICONS.open}" alt=""></div><div class="dim-title-text">微信开放平台</div><div class="dim-count">2 条更新</div></div><div class="dim-body">
+    <div class="item new"><div class="item-title"><span class="tag new">重大发布</span>微信 ClawBot 官方插件正式发布（2026年3月22日）</div><p>通过 iLink 协议开放个人微信 Bot API，支持 Claude Code / Codex / WorkBuddy / QClaw 等主流 AI Agent 接入微信生态。</p></div>
+    <div class="item new"><div class="item-title"><span class="tag new">新功能</span>微信表情助手小程序上线（2026年4月13日）</div><p>面向个人视频号作者开放，支持一键上传图片制作表情包。</p></div>
+  </div></div>
+  <div class="dim-block"><div class="dim-header"><div class="dim-icon" style="background:#fffbea"><img src="${ICONS.pay}" alt=""></div><div class="dim-title-text">微信支付</div><div class="dim-count">3 条更新</div></div><div class="dim-body">
+    <div class="item new"><div class="item-title"><span class="tag new">新功能</span>微信支付同行码上线（近期）</div><p>升级「搭车码」小程序，联同港铁推出同行码，可为最多两名同行者刷码过闸。</p><a class="link-btn" href="https://baike.baidu.com/item/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%E5%90%8C%E8%A1%8C%E7%A0%81/67343507" target="_blank">查看介绍</a></div>
+    <div class="item notice"><div class="item-title"><span class="tag notice">停服公告</span>微信支付「有优惠」小程序将于2026年12月31日停服</div><p>服务整合升级至「微信支付提现笔笔省」小程序（2026年4月2日公告）。</p></div>
+    <div class="item new"><div class="item-title"><span class="tag new">新场景</span>首尔地铁1–8号线全站新型售票机支持微信支付（3月上线）</div><p>覆盖首尔市内地铁1至8号线全站新型售票机，访韩用户可直接刷微信支付购票。</p></div>
+  </div></div>
+</div><!-- /p1 -->
+
+</div><!-- /container -->
+<div class="no-result" id="noResult">🔍 没有找到匹配的内容，换个关键词试试？</div>
+
+<div class="footer">
+  <div class="footer-update">
+    <span>🕐 最近更新：2026年6月2日</span>
+    <span class="footer-next">📅 下次更新：2026年6月9日（周二）</span>
+  </div>
+  <div class="footer-credit">
+    <strong>微信生态每周更新汇总</strong> · 数据来源：腾讯智慧零售、微信公开渠道
+  </div>
+</div>
+
+<script>
+// ══ 下载 PDF（调用浏览器打印）══
+function printPDF() {
+  window.print();
+}
+
+// ══ 搜索 & 标签筛选 ══
+let currentFilter = 'all';
+let currentKeyword = '';
+
+function onSearch() {
+  const input = document.getElementById('searchInput');
+  const clear = document.getElementById('searchClear');
+  currentKeyword = input.value.trim();
+  clear.classList.toggle('show', currentKeyword.length > 0);
+  applyFilter();
+}
+
+function clearSearch() {
+  const input = document.getElementById('searchInput');
+  input.value = '';
+  currentKeyword = '';
+  document.getElementById('searchClear').classList.remove('show');
+  applyFilter();
+}
+
+function onFilter(btn) {
+  document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  currentFilter = btn.dataset.tag;
+  applyFilter();
+}
+
+function applyFilter() {
+  const kw = currentKeyword.toLowerCase();
+  const tag = currentFilter;
+  const activeContent = document.querySelector('.period-content.active');
+  if (!activeContent) return;
+
+  const items = activeContent.querySelectorAll('.item');
+  let visible = 0;
+
+  items.forEach(item => {
+    // 标签匹配
+    const tagMatch = tag === 'all' || item.classList.contains(tag);
+    // 关键词匹配（在 item 文本范围内）
+    const text = item.textContent;
+    const kwMatch = !kw || text.toLowerCase().includes(kw);
+
+    if (tagMatch && kwMatch) {
+      item.style.display = '';
+      // 高亮关键词
+      if (kw) highlightItem(item, kw);
+      else clearHighlight(item);
+      visible++;
+    } else {
+      item.style.display = 'none';
+      clearHighlight(item);
+    }
+  });
+
+  // 控制 dim-block 显示（如果块内所有 item 都隐藏，隐藏整个块）
+  activeContent.querySelectorAll('.dim-block').forEach(block => {
+    const blockItems = block.querySelectorAll('.item');
+    const anyVisible = Array.from(blockItems).some(i => i.style.display !== 'none');
+    block.style.display = anyVisible ? '' : 'none';
+  });
+
+  // 概览卡片在搜索/筛选时隐藏（避免干扰）
+  const overviewCard = activeContent.querySelector('.overview-card');
+  if (overviewCard) overviewCard.style.display = (kw || tag !== 'all') ? 'none' : '';
+
+  // 更新计数
+  const countEl = document.getElementById('resultCount');
+  if (kw || tag !== 'all') {
+    countEl.textContent = '共 ' + visible + ' 条';
+  } else {
+    countEl.textContent = '';
+  }
+
+  // 无结果提示
+  document.getElementById('noResult').classList.toggle('show', visible === 0 && (kw || tag !== 'all'));
+}
+
+function highlightItem(item, kw) {
+  // 只对 item-title 和 p 标签做高亮，避免破坏 HTML 结构
+  const targets = item.querySelectorAll('.item-title, p');
+  targets.forEach(el => {
+    if (el._origHTML === undefined) el._origHTML = el.innerHTML;
+    const escaped = kw.split('').map(c => c.replace(/[-/\\^$*+?.()|]/g, '\\\\$&')).join('');
+    const re = new RegExp(escaped, 'gi');
+    el.innerHTML = el._origHTML.replace(re, m => '<mark class="hl">' + m + '</mark>');
+  });
+}
+
+function clearHighlight(item) {
+  item.querySelectorAll('.item-title, p').forEach(el => {
+    if (el._origHTML !== undefined) {
+      el.innerHTML = el._origHTML;
+      delete el._origHTML;
+    }
+  });
+}
+
+
+// ══ 数据：各期次对应的日期范围和ID ══
+const PERIODS = [
+  { id: 'p7',  label: '2026.5.26–6.1',  start: new Date(2026, 4, 26), end: new Date(2026, 5,  1) },
+  { id: 'p6',  label: '2026.5.19–5.25', start: new Date(2026, 4, 19), end: new Date(2026, 4, 25) },
+  { id: 'p5',  label: '2026.5.12–5.18', start: new Date(2026, 4, 12), end: new Date(2026, 4, 18) },
+  { id: 'p45', label: '2026.5.6–5.11',  start: new Date(2026, 4,  6), end: new Date(2026, 4, 11) },
+  { id: 'p4',  label: '2026.4.28–5.5',  start: new Date(2026, 3, 28), end: new Date(2026, 4,  5) },
+  { id: 'p3',  label: '2026.4.21–4.27', start: new Date(2026, 3, 21), end: new Date(2026, 3, 27) },
+  { id: 'p2',  label: '2026.4.14–4.20', start: new Date(2026, 3, 14), end: new Date(2026, 3, 20) },
+  { id: 'p1',  label: '2026.3.1–4.14',  start: new Date(2026, 2,  1), end: new Date(2026, 3, 14) },
+];
+
+// 当前选中期次
+let activePeriodId = 'p7';
+// 日历当前显示的月份
+let calYear = 2026, calMonth = 4; // 0-indexed，4=5月
+
+function switchTab(btn, id) {
+  activePeriodId = id;
+  document.querySelectorAll('.period-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  if (btn) btn.classList.add('active');
+  renderCal();
+  // 切换期次时重置搜索和筛选状态
+  clearSearch();
+  currentFilter = 'all';
+  document.querySelectorAll('.filter-tag').forEach(t => t.classList.toggle('active', t.dataset.tag === 'all'));
+  document.getElementById('noResult').classList.remove('show');
+  window.scrollTo(0, 0);
+}
+
+// 判断某天是否在某期次范围内
+function inPeriod(date, p) {
+  const d = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+  const s = new Date(p.start.getFullYear(), p.start.getMonth(), p.start.getDate());
+  const e = new Date(p.end.getFullYear(), p.end.getMonth(), p.end.getDate());
+  return d >= s && d <= e;
+}
+
+// 找某天属于哪个期次
+function getPeriodForDate(date) {
+  return PERIODS.find(p => inPeriod(date, p)) || null;
+}
+
+function renderCal() {
+  const grid = document.getElementById('calGrid');
+  const label = document.getElementById('calMonthLabel');
+  const monthNames = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+  label.textContent = calYear + '年 ' + monthNames[calMonth];
+
+  // 清空（保留星期头）
+  const headers = Array.from(grid.querySelectorAll('.cal-day-header'));
+  grid.innerHTML = '';
+  headers.forEach(h => grid.appendChild(h));
+
+  // 计算本月第一天是周几（0=周日，转为周一起）
+  const firstDay = new Date(calYear, calMonth, 1);
+  const lastDay  = new Date(calYear, calMonth + 1, 0);
+  let startDow = firstDay.getDay(); // 0=Sun
+  startDow = (startDow === 0) ? 6 : startDow - 1; // 转为0=Mon
+
+  // 填充空白
+  for (let i = 0; i < startDow; i++) {
+    const blank = document.createElement('div');
+    blank.className = 'cal-cell empty';
+    grid.appendChild(blank);
+  }
+
+  // 填充日期
+  for (let d = 1; d <= lastDay.getDate(); d++) {
+    const date = new Date(calYear, calMonth, d);
+    const period = getPeriodForDate(date);
+    const cell = document.createElement('div');
+    const isActive = period && period.id === activePeriodId;
+    const isRange = period && !isActive;
+
+    cell.className = 'cal-cell' +
+      (period ? (isActive ? ' active-period' : ' has-data') : '') +
+      (isRange ? ' period-range' : '');
+
+    cell.innerHTML = '<span class="day-num">' + d + '</span>' +
+      (period ? '<span class="week-label">' + (isActive ? '●' : '→') + '</span>' : '');
+
+    if (period) {
+      cell.title = period.label;
+      cell.onclick = () => {
+        // 找对应的Tab按钮并激活
+        const tabs = document.querySelectorAll('.tab-btn');
+        let targetBtn = null;
+        tabs.forEach(btn => {
+          if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(period.id)) targetBtn = btn;
+        });
+        switchTab(targetBtn, period.id);
+      };
+    }
+    grid.appendChild(cell);
+  }
+}
+
+function calMove(dir) {
+  calMonth += dir;
+  if (calMonth < 0)  { calMonth = 11; calYear--; }
+  if (calMonth > 11) { calMonth = 0;  calYear++; }
+  renderCal();
+}
+
+// 初始化
+renderCal();
+
+// ══ 截止日期提醒：扫描所有期次中含日期的 alert 条目 ══
+(function initDeadlines() {
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  // 未来90天内的截止日期才展示（过去的不超过7天也展示以提示"刚过期"）
+  const PAST_DAYS = 7, FUTURE_DAYS = 90;
+  const chips = [];
+
+  // 提取日期：匹配"X月X日""YYYY年X月X日""X/XX"等格式
+  function extractDates(text) {
+    const results = [];
+    // 格式1: 2026年5月18日 / 5月18日
+    const re1 = /(?:(\d{4})年)?(\d{1,2})月(\d{1,2})日/g;
+    let m;
+    while ((m = re1.exec(text)) !== null) {
+      const year = m[1] ? parseInt(m[1]) : 2026;
+      const date = new Date(year, parseInt(m[2])-1, parseInt(m[3]));
+      results.push({ date, raw: m[0] });
+    }
+    return results;
+  }
+
+  document.querySelectorAll('.period-content').forEach(period => {
+    const periodId = period.id;
+    // 从 PERIODS 找 label
+    const periodMeta = (typeof PERIODS !== 'undefined') ? PERIODS.find(p => p.id === periodId) : null;
+    const periodLabel = periodMeta ? periodMeta.label : periodId;
+
+    period.querySelectorAll('.item.alert, .item.notice').forEach((item, idx) => {
+      const titleEl = item.querySelector('.item-title');
+      const linkEl = item.querySelector('.link-btn');
+      if (!titleEl) return;
+      const text = item.textContent;
+      const dates = extractDates(text);
+      dates.forEach(({ date, raw }) => {
+        const diff = Math.round((date - today) / 86400000);
+        if (diff < -PAST_DAYS || diff > FUTURE_DAYS) return;
+        const title = titleEl.textContent.replace(/^[专项新功能规则API更新激励治理活动]+\\s*/,'').slice(0,28);
+        chips.push({ date, diff, raw, title, periodId, periodLabel, linkEl });
+      });
+    });
+  });
+
+  if (chips.length === 0) {
+    document.getElementById('deadlineBar').classList.add('hidden');
+    return;
+  }
+
+  // 按日期升序排列
+  chips.sort((a, b) => a.date - b.date);
+
+  const list = document.getElementById('deadlineList');
+  chips.forEach(({ date, diff, raw, title, periodId, periodLabel }) => {
+    const chip = document.createElement('span');
+    chip.className = 'deadline-chip' + (diff < 0 ? ' overdue' : '');
+    const dateStr = (date.getMonth()+1) + '月' + date.getDate() + '日';
+    const diffStr = diff === 0 ? '今天' : diff < 0 ? Math.abs(diff) + '天前' : diff + '天后';
+    chip.innerHTML = '<span class="dc-date">' + dateStr + '（' + diffStr + '）</span>' + title + (title.length >= 28 ? '…' : '');
+    chip.title = '点击跳转 ' + periodLabel + ' 期次';
+    chip.onclick = () => {
+      const tabs = document.querySelectorAll('.tab-btn');
+      let targetBtn = null;
+      tabs.forEach(btn => { if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(periodId)) targetBtn = btn; });
+      switchTab(targetBtn, periodId);
+      setTimeout(() => {
+        // 尝试滚动到第一个 alert 条目
+        const alertItem = document.querySelector('#' + periodId + ' .item.alert');
+        if (alertItem) alertItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
+    };
+    list.appendChild(chip);
+  });
+})();
+
+// ══ 分享单条：为每个 item 注入分享按钮 ══
+(function initShareBtns() {
+  const SVG_ICON = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>';
+
+  document.querySelectorAll('.item').forEach(item => {
+    const linkBtn = item.querySelector('.link-btn');
+    const url = linkBtn ? linkBtn.href : null;
+    if (!url) return;
+
+    // 标题：去掉 span 标签（tag/badge）只留纯文字
+    const titleEl = item.querySelector('.item-title');
+    let titleText = '';
+    if (titleEl) {
+      const clone = titleEl.cloneNode(true);
+      clone.querySelectorAll('span').forEach(s => s.remove());
+      titleText = clone.textContent.trim();
+    }
+
+    // 正文：取所有 p 标签文字，拼成一段
+    const bodyParts = [];
+    item.querySelectorAll('p').forEach(p => {
+      const t = p.textContent.trim();
+      if (t) bodyParts.push(t);
+    });
+    const bodyText = bodyParts.join(' ');
+
+    // 组合：标题 + 正文（若有）+ 链接
+    const parts = [titleText, bodyText, url].filter(Boolean);
+    const copyText = parts.join('\\n');
+
+    const btn = document.createElement('button');
+    btn.className = 'share-btn';
+    btn.title = '复制内容+链接';
+    btn.innerHTML = SVG_ICON;
+    btn.onclick = (e) => {
+      e.stopPropagation();
+      navigator.clipboard.writeText(copyText).then(() => {
+        btn.innerHTML = '✓';
+        btn.classList.add('copied');
+        btn.title = '已复制';
+        setTimeout(() => {
+          btn.innerHTML = SVG_ICON;
+          btn.classList.remove('copied');
+          btn.title = '复制内容+链接';
+        }, 1800);
+      }).catch(() => {
+        prompt('复制以下内容：', copyText);
+      });
+    };
+    item.appendChild(btn);
+  });
+})();
+
+</script>
+</body>
+</html>`;
+
+fs.writeFileSync('index.html', html, 'utf8');
+console.log('✅ index.html 已生成，大小：', (html.length/1024).toFixed(1), 'KB');
