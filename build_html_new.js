@@ -286,7 +286,7 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
       <thead><tr><th>#</th><th>维度</th><th>核心内容</th><th style="text-align:center;width:80px">重要程度</th></tr></thead>
       <tbody>
         <tr><td>1</td><td><div class="dim-cell"><img src="${ICONS.pay}" alt="">微信支付</div></td><td>「组合支付」灰度上线（转账场景，最多两种支付方式组合）；入境支付升级三大举措（外卡内绑手续费减免+16语种指引+与PayPal合作）</td><td class="stars" style="text-align:center">★★★</td></tr>
-        <tr><td>2</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店</div></td><td>功能调整汇总-20260529：新增「今日发」功能（5.26上线）+ 7个供货商API接口（获取发货协商结果/提交发货协商申请/获取类目下商品发布规则/批量获取库存信息/获取库存/获取库存流水/快速更新库存）</td><td class="stars" style="text-align:center">★★★</td></tr>
+        <tr><td>2</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店</div></td><td>「食品礼券」定向准入新规公示（品牌方注册资本≥1亿+近1年GMV≥300万，6.1生效）；功能调整汇总-20260529：新增「今日发」功能（5.26上线）+ 7个供货商API接口</td><td class="stars" style="text-align:center">★★★</td></tr>
         <tr><td>3</td><td><div class="dim-cell"><img src="${ICONS.work}" alt="">企业微信</div></td><td>「记录面聊」功能正式推出（声纹识别+实时转写+AI生成会议纪要）；3.0.36版本：聊天敏感词+群防骚扰+收集表应用+语音消息转文字+标记未读聊天+企业培训直播+线上会议横屏展示</td><td class="stars" style="text-align:center">★★★</td></tr>
         <tr><td>4</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">公众号</div></td><td>公众号官方图标灰度变更（叶片样式替换书本样式）；iOS 8.0.69内测：公众号主页改版（头条大封面完整展示）；服务号可设置为不显示未读数字（小红点提醒）</td><td class="stars" style="text-align:center">★★</td></tr>
         <tr><td>5</td><td><div class="dim-cell"><img src="${ICONS.channels}" alt="">视频号</div></td><td>iOS 8.0.27正式版：视频号「自动上滑」功能；鸿蒙版：视频号支持查看图片类作品+评论区支持查看和评论图片+支持展示直播预约+小红点提醒支持显示在底部「发现」tab</td><td class="stars" style="text-align:center">★★</td></tr>
@@ -335,9 +335,10 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
     <div class="dim-header">
       <div class="dim-icon" style="background:#fff3ee"><img src="${ICONS.store}" alt=""></div>
       <div class="dim-title-text">微信小店</div>
-      <div class="dim-count">5 条更新</div>
+      <div class="dim-count">6 条更新</div>
     </div>
     <div class="dim-body">
+      <div class="item alert"><div class="item-title"><span class="alert-badge">新规公示</span>《微信小店「二级类目-食品礼券」定向准入和清退标准》公示通知 2026/05/25</div><p>平台针对「食品饮料-食品礼券」二级类目制定定向准入标准：① <strong>主体要求</strong>：仅接受企业主体（注册资本≥100万），需提供《食品经营许可证》；② <strong>品牌要求</strong>：品牌方注册资本≥1亿元，且需在天猫/抖音/京东至少两平台开设旗舰店；③ <strong>店铺标准</strong>：入驻≥6个月，近1年GMV≥300万元；④ <strong>商品要求</strong>：仅支持实体卡券，标题须含"卡券/兑换卡"等关键词，不得出现"过期作废"等不公平条款。<strong>公示期至5月31日，预计6月1日生效。</strong></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9420/f78803fea032a9dd/growth_center_rule_for_store/28" target="_blank">查看公示</a></div>
       <div class="item api"><div class="item-title"><span class="tag api">API更新</span>微信小店本周功能调整汇总-20260529</div><p>① 新增「今日发」功能（5月26日上线），商家设置后可在商品详情页等多场景外显发货时效承诺，助力提升曝光和下单转化；② 新增7个供货商API接口（获取发货协商结果/提交发货协商申请/获取类目下商品发布规则/批量获取库存信息/获取库存/获取库存流水/快速更新库存）；③ 获取售后单接口字段更正（address_info → user_address_info）。</p><a class="link-btn" href="https://developers.weixin.qq.com/community/minihome/doc/000c82b5ab86d091ff258a10f61401" target="_blank">查看原文</a></div>
       <div class="item rule"><div class="item-title"><span class="tag rule">规则修订</span>《微信小店｜新商技术服务费激励政策(26年2月-6月)-20260526版本》修订公示通知 2026/05/19</div><p>为优化平台生态，对激励政策进行修订，新商需关注最新条款，以免影响激励资格。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9378/d14f315004899bfe/growth_center_rule_for_store" target="_blank">查看公示</a></div>
       <div class="item rule"><div class="item-title"><span class="tag rule">规则修订</span>《微信小店「价格保护」服务规则-20260527版本》修订公示通知 2026/05/27</div><p>调整价保服务适用范围：国补订单、礼物订单、一起买订单、朋友赞订单及本地生活/同城等特殊类型订单不再支持价保申请。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9374/228a56bf96ed3c4a/growth_center_rule_for_store/28?bpath=%252Fhome%252Fweekly-rules" target="_blank">查看公示</a></div>
