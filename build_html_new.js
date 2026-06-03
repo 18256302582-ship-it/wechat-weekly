@@ -305,6 +305,17 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
       <div class="item new"><div class="item-title"><span class="tag new">内测功能</span>iOS 微信 8.0.69 内测：公众号主页改版 +「整理文字」功能下线</div><p>公众号主页「全部」板块中头条文章的 2.35:1 大封面可完整展示，视觉层级更清晰。另「整理文字」功能正式取消，安卓/iOS 双端均无法调用。</p><a class="link-btn" href="http://m.sxssysh.cn/news/7e475395239.html" target="_blank">查看详情</a></div>
       <div class="item new"><div class="item-title"><span class="tag new">功能上线</span>服务号消息提醒可设置为不显示未读数字（5月19日版本）</div><p>iOS 微信 8.0.22 版本中，服务号可被设置为不显示未读数字，改用小红点提醒，有效减少消息列表的数字焦虑。</p><a class="link-btn" href="http://weihai.jingyanla.com/a/13/05196204962022.html" target="_blank">查看报道</a></div>
     </div>
+
+      <div class="item notice"><div class="item-title"><span class="tag notice">活动上线</span>微信小店｜端午粮油茗茶商达双选会活动 2026/06/02</div><p>平台精选粮油茗茶类目品牌商家与达人撮合对接，助力商家拓展销路、达人挖掘优质货盘。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9458/1873a52680b3e8bd/growth_center_platform_notice/2" target="_blank">查看通知</a></div>
+      <div class="item rule"><div class="item-title"><span class="tag rule">类目调整</span>微信小店一级类目珠宝首饰新增类目 2026/06/02</div><p>平台对珠宝首饰一级类目进行类目扩充，新增若干三级类目，商家可按更新后的类目规则进行商品发布与经营。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9443/fad0b1813e3cb518/growth_center_platform_notice/1" target="_blank">查看公告</a></div>
+      <div class="item notice"><div class="item-title"><span class="tag notice">活动政策</span>微信小店｜618 爆品加补活动政策 2026/05/29</div><p>平台在618大促期间推出爆品加补活动，入选商品可获得额外流量补贴与爆品标识，助力商家提升大促爆发力。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9392/fb5af4d28e4be444/growth_center_platform_notice/2" target="_blank">查看通知</a></div>
+      <div class="item notice"><div class="item-title"><span class="tag notice">激励政策</span>微信小店服务商｜2026年6月「商家服务商」激励政策 2026/05/29</div><p>针对服务商的商家引入与运营激励政策更新，6月政策在5月基础上调整了部分类目激励系数，服务商需关注最新条款。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9411/14d8a8750fb343d6/growth_center_platform_notice/2" target="_blank">查看通知</a></div>
+      <div class="item notice"><div class="item-title"><span class="tag notice">激励计划</span>微信小店｜新商成长激励计划（26年6月）2026/05/28</div><p>新入驻商家满足一定GMV门槛后可获得平台流量券奖励，6月激励计划调整了部分类目的达标要求，新商需以最新版本为准。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9436/3d9e25c07b7ededd/growth_center_platform_notice/2" target="_blank">查看通知</a></div>
+      <div class="item notice"><div class="item-title"><span class="tag notice">活动规则</span>微信小店「10天签到」活动规则说明 2026/05/28</div><p>商家参与10天签到活动可获得流量奖励，活动规则详细说明商家参与条件、签到天数对应的奖励矩阵及兑换方式。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9438/81cea35b5b684eba/growth_center_platform_notice/1" target="_blank">查看通知</a></div>
+      <div class="item notice"><div class="item-title"><span class="tag notice">活动规则</span>微信小店「7天签到」活动规则说明 2026/05/28</div><p>商家参与7天签到活动可获得流量奖励，活动周期更短、奖励兑现更快，适合新商家快速体验平台激励玩法。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9437/d4964fd33868e670/growth_center_platform_notice/1" target="_blank">查看通知</a></div>
+      <div class="item manual"><div class="item-title"><span class="tag manual">手册更新</span>微信小店「类目准入类型」说明文档更新 2026/05/26</div><p>更新类目准入类型说明文档，明确各一级/二级类目对应的准入资质要求、定向邀约类目范围及申请入口，商家发布商品前建议查阅。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9388/d0cfbe8f1258129c/growth_center_manual_for_store/1" target="_blank">查看文档</a></div>
+
+    
   </div>
 
   <div class="dim-block">
@@ -335,7 +346,7 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
     <div class="dim-header">
       <div class="dim-icon" style="background:#fff3ee"><img src="${ICONS.store}" alt=""></div>
       <div class="dim-title-text">微信小店</div>
-      <div class="dim-count">6 条更新</div>
+      <div class="dim-count">12 条更新</div>
     </div>
     <div class="dim-body">
       <div class="item alert"><div class="item-title"><span class="alert-badge">新规公示</span>《微信小店「二级类目-食品礼券」定向准入和清退标准》公示通知 2026/05/25</div><p>平台针对「食品饮料-食品礼券」二级类目制定定向准入标准：① <strong>主体要求</strong>：仅接受企业主体（注册资本≥100万），需提供《食品经营许可证》；② <strong>品牌要求</strong>：品牌方注册资本≥1亿元，且需在天猫/抖音/京东至少两平台开设旗舰店；③ <strong>店铺标准</strong>：入驻≥6个月，近1年GMV≥300万元；④ <strong>商品要求</strong>：仅支持实体卡券，标题须含"卡券/兑换卡"等关键词，不得出现"过期作废"等不公平条款。<strong>公示期至5月31日，预计6月1日生效。</strong></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9420/f78803fea032a9dd/growth_center_rule_for_store/28" target="_blank">查看公示</a></div>
