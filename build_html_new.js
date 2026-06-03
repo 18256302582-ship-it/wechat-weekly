@@ -307,12 +307,7 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
     </div>
   </div>
 
-  <div class="dim-block">
-    <div class="dim-header">
-      <div class="dim-icon" style="background:#fff3ee"><img src="${ICONS.store}" alt=""></div>
-      <div class="dim-title-text">微信小店</div>
-      <div class="dim-count">10 条更新</div>
-    </div>
+      </div>
     <div class="dim-body">
       <div class="item notice"><div class="item-title"><span class="tag notice">活动政策</span>微信小店｜618 爆品加补活动政策 2026/05/29</div><p>平台在618大促期间推出爆品加补活动，入选商品可获得额外流量补贴与爆品标识，助力商家提升大促爆发力。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9392/fb5af4d28e4be444/growth_center_platform_notice/2" target="_blank">查看通知</a></div>
       <div class="item notice"><div class="item-title"><span class="tag notice">激励政策</span>微信小店服务商｜2026年6月「商家服务商」激励政策 2026/05/29</div><p>针对服务商的商家引入与运营激励政策更新，6月政策在5月基础上调整了部分类目激励系数，服务商需关注最新条款。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9411/14d8a8750fb343d6/growth_center_platform_notice/2" target="_blank">查看通知</a></div>
