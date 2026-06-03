@@ -305,9 +305,15 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
       <div class="item new"><div class="item-title"><span class="tag new">内测功能</span>iOS 微信 8.0.69 内测：公众号主页改版 +「整理文字」功能下线</div><p>公众号主页「全部」板块中头条文章的 2.35:1 大封面可完整展示，视觉层级更清晰。另「整理文字」功能正式取消，安卓/iOS 双端均无法调用。</p><a class="link-btn" href="http://m.sxssysh.cn/news/7e475395239.html" target="_blank">查看详情</a></div>
       <div class="item new"><div class="item-title"><span class="tag new">功能上线</span>服务号消息提醒可设置为不显示未读数字（5月19日版本）</div><p>iOS 微信 8.0.22 版本中，服务号可被设置为不显示未读数字，改用小红点提醒，有效减少消息列表的数字焦虑。</p><a class="link-btn" href="http://weihai.jingyanla.com/a/13/05196204962022.html" target="_blank">查看报道</a></div>
     </div>
+  </div>
 
-      
-      
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#fff3ee"><img src="${ICONS.store}" alt=""></div>
+      <div class="dim-title-text">微信小店</div>
+      <div class="dim-count">10 条更新</div>
+    </div>
+    <div class="dim-body">
       <div class="item notice"><div class="item-title"><span class="tag notice">活动政策</span>微信小店｜618 爆品加补活动政策 2026/05/29</div><p>平台在618大促期间推出爆品加补活动，入选商品可获得额外流量补贴与爆品标识，助力商家提升大促爆发力。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9392/fb5af4d28e4be444/growth_center_platform_notice/2" target="_blank">查看通知</a></div>
       <div class="item notice"><div class="item-title"><span class="tag notice">激励政策</span>微信小店服务商｜2026年6月「商家服务商」激励政策 2026/05/29</div><p>针对服务商的商家引入与运营激励政策更新，6月政策在5月基础上调整了部分类目激励系数，服务商需关注最新条款。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9411/14d8a8750fb343d6/growth_center_platform_notice/2" target="_blank">查看通知</a></div>
       <div class="item notice"><div class="item-title"><span class="tag notice">激励计划</span>微信小店｜新商成长激励计划（26年6月）2026/05/28</div><p>新入驻商家满足一定GMV门槛后可获得平台流量券奖励，6月激励计划调整了部分类目的达标要求，新商需以最新版本为准。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9436/3d9e25c07b7ededd/growth_center_platform_notice/2" target="_blank">查看通知</a></div>
@@ -407,7 +413,7 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
 </div><!-- /p7 -->
 
 <!-- ════ 期次6：2026.5.19–5.25 ════ -->
-<div class="period-content active" id="p6">
+<div class="period-content" id="p6">
   <div class="overview-card">
     <div class="card-title">▌ 本期要点速览（2026.5.19–5.25）</div>
     <table class="overview-table">
