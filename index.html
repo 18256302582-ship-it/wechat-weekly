@@ -1344,18 +1344,30 @@ let activePeriodId = 'p8';
 let calYear = 2026, calMonth = 5; // 0-indexed，5=6月
 
 function switchTab(btn, id) {
-  activePeriodId = id;
-  document.querySelectorAll('.period-content').forEach(el => el.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  if (btn) btn.classList.add('active');
-  renderCal();
-  // 切换期次时重置搜索和筛选状态
-  clearSearch();
-  currentFilter = 'all';
-  document.querySelectorAll('.filter-tag').forEach(t => t.classList.toggle('active', t.dataset.tag === 'all'));
-  document.getElementById('noResult').classList.remove('show');
-  window.scrollTo(0, 0);
+  try {
+    console.log('switchTab called:', id);
+    activePeriodId = id;
+    document.querySelectorAll('.period-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    var targetEl = document.getElementById(id);
+    if (!targetEl) {
+      console.error('Element not found:', id);
+      return;
+    }
+    targetEl.classList.add('active');
+    console.log('Added active class to:', id, 'display=', targetEl.style.display, 'classes=', targetEl.className);
+    if (btn) btn.classList.add('active');
+    renderCal();
+    // 切换期次时重置搜索和筛选状态
+    clearSearch();
+    currentFilter = 'all';
+    document.querySelectorAll('.filter-tag').forEach(t => t.classList.toggle('active', t.dataset.tag === 'all'));
+    var noResultEl = document.getElementById('noResult');
+    if (noResultEl) noResultEl.classList.remove('show');
+    window.scrollTo(0, 0);
+  } catch(e) {
+    console.error('switchTab error:', e);
+  }
 }
 
 // 判断某天是否在某期次范围内
