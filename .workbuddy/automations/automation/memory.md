@@ -236,10 +236,22 @@
 - 校验 wechat-weekly/index.html：12 个 period 块全部 `<div>` 开合数一致，1 个 active（p9），12 个闭合注释齐全 ✅
 - 校验父目录 build_html.js（构建源）：12 个 period 块全部平衡，p9 含完整内容块 ✅
 - 本次无需新增期次：p9（6.23–6.29）即本周完整周，下一期 6.30–7.06 尚未结束
-- 提交：index.html + build_html.js + .workbuddy 记忆文件，推送至 main（GitHub Actions 部署）
+- 提交：index.html + build_html.js + .workbuddy 记忆文件，推送至 main
+- ⚠️ 部署备注：首次推送后的 workflow 运行（7343aca）在 `deploy-pages@v4` 步骤偶发失败（conclusion: failure），COS 步骤因此被跳过，线上页一度停留在旧的 fa2650b 版本（仅 10 期、p8 active）。经 `POST /repos/.../actions/runs/{id}/rerun` 重跑后成功（conclusion: success），线上页面恢复 12 期全部内容、p9 active
+- 💡 经验：若后续部署后线上页仍旧，先查 `actions/runs` 结论；若是 `deploy-pages` 失败（非代码问题），直接 rerun 该 run 即可，无需改代码
+- 🔎 线上验证方式：用 `curl` 抓取**原始 HTML**（grep `period-content...id="pN"` 和 `class="period-content active"`）确认，不要用 WebFetch（它会把 HTML 转成 markdown，看不到 DOM 属性）。两个部署目标都要查：GitHub Pages 与 COS（`https://wx-report-1309543112.cos.ap-shanghai.myqcloud.com/index.html`）
+- ⚠️ 用户称"线上没修复"但 curl 抓取确认已更新 → 99% 是浏览器/CDN 缓存，指导用户硬刷新（Ctrl+F5 / Cmd+Shift+R）即可；若用自定义域名+CDN，需到 CDN 后台刷新缓存
 
 **根因复盘**：`p8` 内「公众号推荐算法转向观察」条目缺少闭合 `</div>`，导致后续所有 period-content 块被嵌套进 p8（默认 display:none），浏览器中不显示历史内容。修复方式：在正确位置补 `</div>`。
 
 **技术备注**：
 - 部署文件 index.html 与构建源 build_html.js（父目录）必须同步保持 DOM 平衡，二者已分别用 Node 脚本逐 period 校验 `<div>` 开合数
 - 发布前对每期做 div 开合校验是防范「历史期次消失」类问题的有效手段，建议固化为发布前检查项
+
+## 2026-07-03 运行记录（第3次修复）
+- 现象：用户反馈"又出问题了"。curl 抓取线上确认 12 期、p9 激活、字节数对——但页面 JS 全部不工作（Tab 切不了、截止日提醒/分享按钮不出现）。
+- **根因**：`index.html` 与构建源 `build_html.js` 都**缺失 `<script>` 开标签**（只有 `</script>` 闭标签）。是此前反复折腾 p8 div、re-sync 时把 `<script>` 这一行弄丢了。浏览器把整段 JS 当纯文本，故 `switchTab` 等全不执行。
+- **验证手法**：`grep -c '<script' index.html` 返回 0（仅靠 `</script>` 无法匹配开标签，因为 `</script>` 中 `<` 后是 `/` 不是 `s`）→ 再读到 JS 内容起止行确认开标签缺失。
+- **修复**：在 `build_html.js` 中 `const PERIODS` 前补 `<script>`；`cp` 同步给 wechat-weekly 副本；父目录 `node build_html.js` 重建 → wechat-weekly 跑 `node ../clean_tags.js`。重建后 `wc -c` = 495,062 > 已提交 494,522（内容未丢），各期 item 数与修复前一致。
+- **提交**：`790a3a1`（index.html + build_html.js），工作流 success，线上已更正（script 开标签=1，12 期，p9 active）。
+- 💡 新增发布前检查项：构建后必须验证 `<script>` 开标签存在（`grep -c '<script>' index.html` ≥ 1），否则 JS 不执行、页面功能全瘫。
