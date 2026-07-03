@@ -50,7 +50,7 @@ body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; background: #f
 .header-meta img { width: 14px; height: 14px; object-fit: contain; border-radius: 3px; }
 
 /* ── Tabs ── */
-.tabs { background: #fff; border-bottom: 1px solid #e5e9e5; padding: 0 40px; display: flex; overflow-x: auto; }
+.tabs { background: #fff; border-bottom: 1px solid #e5e9e5; padding: 0 40px; display: flex; flex-wrap: wrap; }
 .tab-btn { padding: 13px 20px; font-size: 13px; font-weight: 500; color: #9ca3af; background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; white-space: nowrap; transition: all .2s; margin-bottom: -1px; }
 .tab-btn:hover { color: #2d8b61; }
 .tab-btn.active { color: #2d8b61; border-bottom-color: #2d8b61; font-weight: 600; }
@@ -1346,6 +1346,7 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
   </div></div>
 </div><!-- /p1 -->
 
+<script>
 const PERIODS = [
   { id: 'p9',   label: '2026.6.23–6.29', start: new Date(2026, 5, 23), end: new Date(2026, 5, 29) },
   { id: 'p85',  label: '2026.6.16–6.22', start: new Date(2026, 5, 16), end: new Date(2026, 5, 22) },
