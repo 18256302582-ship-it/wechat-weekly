@@ -12,7 +12,7 @@
 body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; background: #f5f7f5; color: #374151; font-size: 14px; line-height: 1.7; }
 
 /* ── Header ── */
-.header { background: linear-gradient(135deg, #1b6b48 0%, #2d8b61 55%, #52b888 100%); color: #fff; padding: 36px 48px 28px; display: flex; align-items: center; gap: 24px; position: relative; }
+.header { background: linear-gradient(135deg, #1b6b48 0%, #2d8b61 55%, #52b888 100%); color: #fff; padding: 36px 48px 28px; display: flex; align-items: center; gap: 24px; position: relative; max-width: 1200px; margin: 0 auto; }
 .header-actions { position: absolute; top: 28px; right: 48px; display: flex; gap: 8px; }
 .action-btn { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.3); color: #fff; font-size: 12px; font-weight: 500; padding: 7px 16px; border-radius: 20px; cursor: pointer; transition: background .2s; }
 .action-btn:hover { background: rgba(255,255,255,.22); }
@@ -29,13 +29,13 @@ body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; background: #f
 .header-meta img { width: 14px; height: 14px; object-fit: contain; border-radius: 3px; }
 
 /* ── Tabs ── */
-.tabs { background: #fff; border-bottom: 1px solid #e5e9e5; padding: 0 40px; display: flex; flex-wrap: wrap; }
+.tabs { background: #fff; border-bottom: 1px solid #e5e9e5; padding: 0 40px; display: flex; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
 .tab-btn { padding: 13px 20px; font-size: 13px; font-weight: 500; color: #9ca3af; background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; white-space: nowrap; transition: all .2s; margin-bottom: -1px; }
 .tab-btn:hover { color: #2d8b61; }
 .tab-btn.active { color: #2d8b61; border-bottom-color: #2d8b61; font-weight: 600; }
 
 /* ── Layout ── */
-.container { max-width: 980px; margin: 0 auto; padding: 24px 20px 60px; }
+.container { max-width: 1200px; margin: 0 auto; padding: 24px 20px 60px; }
 .period-content { display: none; }
 .period-content.active { display: block; }
 
@@ -81,7 +81,7 @@ body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; background: #f
 .link-btn:hover { opacity: 1; }
 
 /* ── 周历选择器 ── */
-.cal-wrap { background: #fff; border-bottom: 1px solid #e5e9e5; padding: 16px 40px 12px; }
+.cal-wrap { background: #fff; border-bottom: 1px solid #e5e9e5; padding: 16px 40px 12px; max-width: 1200px; margin: 0 auto; }
 .cal-nav { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
 .cal-nav-btn { background: none; border: 1px solid #e5e9e5; border-radius: 6px; padding: 4px 12px; cursor: pointer; font-size: 13px; color: #6b7280; transition: all .15s; }
 .cal-nav-btn:hover { border-color: #2d8b61; color: #2d8b61; }
@@ -110,7 +110,7 @@ body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; background: #f
 .footer-credit strong { color: #6b7280; }
 
 /* ── 搜索 & 筛选栏 ── */
-.search-bar { background: #fff; border-bottom: 1px solid #e5e9e5; padding: 12px 40px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.search-bar { background: #fff; border-bottom: 1px solid #e5e9e5; padding: 12px 40px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
 .search-input-wrap { position: relative; flex: 1; min-width: 200px; max-width: 360px; }
 .search-input-wrap svg { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); color: #9ca3af; pointer-events: none; }
 .search-input { width: 100%; padding: 8px 12px 8px 34px; border: 1px solid #e5e9e5; border-radius: 20px; font-size: 13px; color: #374151; background: #f9fafb; outline: none; transition: border-color .15s; }
@@ -130,7 +130,7 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
 .no-result.show { display: block; }
 
 /* ── 截止日期提醒栏 ── */
-.deadline-bar { background: #fffbeb; border-bottom: 1px solid #fde68a; padding: 10px 40px; display: flex; align-items: flex-start; gap: 12px; }
+.deadline-bar { background: #fffbeb; border-bottom: 1px solid #fde68a; padding: 10px 40px; display: flex; align-items: flex-start; gap: 12px; max-width: 1200px; margin: 0 auto; }
 .deadline-bar.hidden { display: none; }
 .deadline-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
 .deadline-label { font-size: 12px; font-weight: 700; color: #92400e; white-space: nowrap; margin-top: 2px; }
@@ -156,6 +156,7 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
   .period-content { display: block !important; }
   .period-content:not(.active) { display: none !important; }
   .container { max-width: 100%; padding: 0; }
+  .header, .cal-wrap, .tabs, .search-bar, .deadline-bar { max-width: 100%; padding-left: 24px; padding-right: 24px; }
   .dim-block { box-shadow: none; border: 1px solid #e2e8f0; break-inside: avoid; margin-bottom: 12px; }
   .item { break-inside: avoid; }
   .link-btn { display: none; }
