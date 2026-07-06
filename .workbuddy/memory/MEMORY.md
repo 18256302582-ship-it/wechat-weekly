@@ -126,11 +126,12 @@
 
 ## 发布前检查清单（2026-06-16 新增）
 每次推送前必须检查以下项目：
-1. ✅ **active 类**：只在最新期次的 tab-btn 和 period-content 上
+1. ✅ **active 类**：只在最新期次的 period-content 上（2026-07-06 起 Tab 栏改为「按月分组下拉选择器」：切换高亮由 `.period-opt.active` + `.month-group.open` 控制，不再有 `tab-btn`）
 2. ✅ **HTML 结构**：每个 period-content 标签正确配对（无重复/嵌套错误）
 3. ✅ **去重**：与上期对比，删除重复条目
 4. ✅ **条数计数**：与实际条目数量一致
 5. ✅ **链接检查**：所有链接必须是官方来源，非官方链接已标注说明
 6. ✅ **内容过滤**：无警方通报/行政处罚等社会新闻
 7. ✅ **`<script>` 开标签**：`grep -c '<script>' index.html` ≥ 1（2026-07-03 曾因缺开标签导致整段 JS 不执行、Tab/截止日/分享按钮全瘫）
-8. 以上全部通过后再 push
+8. ✅ **JS 语法**：构建后 `node -e "new Function(脚本)"` 必须可解析（2026-07-06 曾在 build_html.js 模板内用字符串拼接内联 `onclick` 带引号被模板转义破坏，报 "Unexpected string"；**一律用纯 DOM API createElement + .onclick 构建动态内容，禁止在模板字符串里拼引号内联事件**）
+9. 以上全部通过后再 push
