@@ -166,7 +166,7 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
 /* ── 打印/PDF 样式 ── */
 @media print {
   body { background: #fff; font-size: 12px; }
-  .cal-wrap, .tabs, .download-btn, .footer { display: none !important; }
+  .cal-wrap, .tabs, .download-btn, .pdf-btn, .footer { display: none !important; }
   .period-content { display: block !important; }
   .period-content:not(.active) { display: none !important; }
   .container { max-width: 100%; padding: 0; }
@@ -1343,6 +1343,11 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
 </div>
 
 <script>
+// ══ 下载 PDF（调用浏览器打印）══
+function printPDF() {
+  window.print();
+}
+
 const PERIODS = [
   { id: 'p9',   label: '2026.6.23–6.29', start: new Date(2026, 5, 23), end: new Date(2026, 5, 29) },
   { id: 'p85',  label: '2026.6.16–6.22', start: new Date(2026, 5, 16), end: new Date(2026, 5, 22) },
