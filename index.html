@@ -28,11 +28,24 @@ body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; background: #f
 .header-meta span { background: rgba(255,255,255,.12); border-radius: 20px; padding: 3px 12px; display: flex; align-items: center; gap: 5px; }
 .header-meta img { width: 14px; height: 14px; object-fit: contain; border-radius: 3px; }
 
-/* ── Tabs ── */
-.tabs { background: #fff; border-bottom: 1px solid #e5e9e5; padding: 0 40px; display: flex; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
+/* ── Tabs（按月分组选择器）── */
+.tabs { background: #fff; border-bottom: 1px solid #e5e9e5; padding: 10px 40px; display: flex; flex-wrap: wrap; gap: 8px; max-width: 1200px; margin: 0 auto; }
 .tab-btn { padding: 13px 20px; font-size: 13px; font-weight: 500; color: #9ca3af; background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; white-space: nowrap; transition: all .2s; margin-bottom: -1px; }
 .tab-btn:hover { color: #2d8b61; }
 .tab-btn.active { color: #2d8b61; border-bottom-color: #2d8b61; font-weight: 600; }
+
+/* 按月分组下拉 */
+.month-group { position: relative; }
+.month-btn { display: inline-flex; align-items: center; gap: 5px; padding: 9px 15px; font-size: 13px; font-weight: 600; color: #2d8b61; background: #f0f7f3; border: 1px solid #cfe6da; border-radius: 8px; cursor: pointer; white-space: nowrap; transition: all .2s; }
+.month-btn:hover { background: #e3f1ea; }
+.month-group.open .month-btn { background: #2d8b61; color: #fff; border-color: #2d8b61; }
+.month-btn .caret { font-size: 10px; opacity: .85; transition: transform .2s; }
+.month-group.open .month-btn .caret { transform: rotate(180deg); }
+.period-dropdown { display: none; position: absolute; top: calc(100% + 6px); left: 0; min-width: 172px; background: #fff; border: 1px solid #e5e9e5; border-radius: 10px; box-shadow: 0 8px 24px rgba(20,60,40,.15); padding: 6px; z-index: 30; flex-direction: column; }
+.month-group.open .period-dropdown { display: flex; }
+.period-opt { display: block; width: 100%; text-align: left; background: none; border: none; padding: 9px 12px; border-radius: 6px; cursor: pointer; font-size: 13px; color: #374151; white-space: nowrap; transition: background .15s; }
+.period-opt:hover { background: #f0f7f3; }
+.period-opt.active { background: #2d8b61; color: #fff; }
 
 /* ── Layout ── */
 .container { max-width: 1200px; margin: 0 auto; padding: 24px 20px 60px; }
@@ -227,19 +240,7 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
 </div>
 
 <!-- ══ Tabs ══ -->
-<div class="tabs" id="tabsBar">
-<button class="tab-btn active" onclick="switchTab(this,'p9')">📅 2026.6.23–6.29</button>
-  <button class="tab-btn" onclick="switchTab(this,'p85')">📅 2026.6.16–6.22</button>
-  <button class="tab-btn" onclick="switchTab(this,'p8')">📅 2026.6.9–6.15</button>
-  <button class="tab-btn" onclick="switchTab(this,'p7')">📅 2026.6.2–6.8</button>
-  <button class="tab-btn" onclick="switchTab(this,'p65')">📅 2026.5.26–6.1</button>
-  <button class="tab-btn" onclick="switchTab(this,'p6')">📅 2026.5.19–5.25</button>
-  <button class="tab-btn" onclick="switchTab(this,'p5')">📅 2026.5.12–5.18</button>
-  <button class="tab-btn" onclick="switchTab(this,'p45')">📅 2026.5.6–5.11</button>
-  <button class="tab-btn" onclick="switchTab(this,'p4')">📅 2026.4.28–5.5</button>
-  <button class="tab-btn" onclick="switchTab(this,'p3')">📅 2026.4.21–4.27</button>
-  <button class="tab-btn" onclick="switchTab(this,'p2')">📅 2026.4.14–4.20</button>
-  <button class="tab-btn" onclick="switchTab(this,'p1')">📅 2026.3.1–4.14</button>
+<div class="tabs" id="tabsRoot"></div>
   
 
 <!-- ══ 搜索 & 筛选栏 ══ -->
@@ -1351,17 +1352,68 @@ let calYear = 2026, calMonth = 5; // 0-indexed，5=6月
 
 function switchTab(btn, id) {
   activePeriodId = id;
+  // 内容区切换
   document.querySelectorAll('.period-content').forEach(el => el.classList.remove('active'));
+  const target = document.getElementById(id);
+  if (target) target.classList.add('active');
+  // 下拉里对应期次高亮
+  document.querySelectorAll('.period-opt').forEach(el => el.classList.toggle('active', el.dataset.pid === id));
+  // 展开所属月份、收起其他月份
+  document.querySelectorAll('.month-group').forEach(g => {
+    g.classList.toggle('open', !!g.querySelector('.period-opt[data-pid="' + id + '"]'));
+  });
+  // 兼容旧引用（若存在 tab-btn）
   document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
   if (btn) btn.classList.add('active');
   renderCal();
   // 切换期次时重置搜索和筛选状态
   clearSearch();
   currentFilter = 'all';
   document.querySelectorAll('.filter-tag').forEach(t => t.classList.toggle('active', t.dataset.tag === 'all'));
-  document.getElementById('noResult').classList.remove('show');
+  const nr = document.getElementById('noResult'); if (nr) nr.classList.remove('show');
   window.scrollTo(0, 0);
+}
+
+// 从下拉选择某个期次
+function selectPeriod(id) { switchTab(null, id); }
+// 根据 PERIODS 按月分组生成 Tab（纯 DOM 构建，避免引号转义问题）
+function renderTabs() {
+  const root = document.getElementById('tabsRoot');
+  if (!root) return;
+  const monthNames = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+  const groups = {};
+  PERIODS.forEach(p => {
+    const key = p.start.getFullYear() + '-' + p.start.getMonth();
+    (groups[key] = groups[key] || []).push(p);
+  });
+  const keys = Object.keys(groups).sort().reverse(); // 最近月份在前
+  root.innerHTML = '';
+  keys.forEach(key => {
+    const list = groups[key];
+    const y = list[0].start.getFullYear();
+    const m = list[0].start.getMonth();
+    const isActive = list.some(p => p.id === activePeriodId);
+    const g = document.createElement('div');
+    g.className = 'month-group' + (isActive ? ' open' : '');
+    const btn = document.createElement('button');
+    btn.className = 'month-btn';
+    btn.innerHTML = y + '年' + monthNames[m] + '<span class="caret">▾</span>';
+    btn.onclick = () => g.classList.toggle('open');
+    const dd = document.createElement('div');
+    dd.className = 'period-dropdown';
+    list.forEach(p => {
+      const label = p.label.replace(/^d{4}./, '');
+      const opt = document.createElement('button');
+      opt.className = 'period-opt' + (p.id === activePeriodId ? ' active' : '');
+      opt.dataset.pid = p.id;
+      opt.textContent = label;
+      opt.onclick = () => selectPeriod(p.id);
+      dd.appendChild(opt);
+    });
+    g.appendChild(btn);
+    g.appendChild(dd);
+    root.appendChild(g);
+  });
 }
 
 // 判断某天是否在某期次范围内
@@ -1418,15 +1470,7 @@ function renderCal() {
 
     if (period) {
       cell.title = period.label;
-      cell.onclick = () => {
-        // 找对应的Tab按钮并激活
-        const tabs = document.querySelectorAll('.tab-btn');
-        let targetBtn = null;
-        tabs.forEach(btn => {
-          if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(period.id)) targetBtn = btn;
-        });
-        switchTab(targetBtn, period.id);
-      };
+      cell.onclick = () => { switchTab(null, period.id); };
     }
     grid.appendChild(cell);
   }
@@ -1448,6 +1492,7 @@ function toggleCalendar() {
 
 // 初始化
 renderCal();
+renderTabs();
 
 // ══ 截止日期提醒：扫描所有期次中含日期的 alert 条目 ══
 (function initDeadlines() {
@@ -1509,10 +1554,7 @@ renderCal();
     chip.innerHTML = '<span class="dc-date">' + dateStr + '（' + diffStr + '）</span>' + title + (title.length >= 28 ? '…' : '');
     chip.title = '点击跳转 ' + periodLabel + ' 期次';
     chip.onclick = () => {
-      const tabs = document.querySelectorAll('.tab-btn');
-      let targetBtn = null;
-      tabs.forEach(btn => { if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(periodId)) targetBtn = btn; });
-      switchTab(targetBtn, periodId);
+      switchTab(null, periodId);
       setTimeout(() => {
         // 尝试滚动到第一个 alert 条目
         const alertItem = document.querySelector('#' + periodId + ' .item.alert');
