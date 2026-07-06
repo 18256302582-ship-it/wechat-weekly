@@ -1,0 +1,9 @@
+视频号</div></td><td>iOS 8.0.27正式版：视频号「自动上滑」功能；鸿蒙版：视频号支持查看图片类作品+评论区支持查看和评论图片+支持展示直播预约+小红点提醒支持显示在底部「发现」tab</td><td class="stars" style="text-align:center">★★</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.mp}" alt=""></div>
+      <div class="dim-title-text">
