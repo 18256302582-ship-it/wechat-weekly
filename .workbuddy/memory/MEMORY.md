@@ -12,9 +12,10 @@
 
 ## 构建流程规范
 - b64图标文件路径：`C:\Users\v_yiicao\WorkBuddy\20260413140616\`（非Desktop）
-- 构建命令（从Desktop的20260413140616目录执行）：`node build_html.js && node clean_tags.js`
-- 构建后推送：`git add index.html && git commit -m "..." && git push origin main`
-- automation memory路径：`C:\Users\v_yiicao\Desktop\WorkBuddy\20260413140616\.workbuddy\automations\automation\memory.md`
+- **⚠️ 双构建源陷阱（2026-07-06 发现）**：真正生效的源是仓库外的 `C:\Users\v_yiicao\WorkBuddy\20260413140616\build_html.js`（自动化从父目录 `node build_html.js` 执行，写向 `wechat-weekly/index.html`）；仓库内 `wechat-weekly/build_html.js` 只是镜像副本，且父目录源**不受 git 版本控制**。改东西务必改父目录那份，或统一收敛到仓库内一份（待用户确认）。
+- 当前可用构建命令（保持与自动化一致）：在父目录 `20260413140616` 执行 `node build_html.js`，再到 `wechat-weekly` 执行 `node ../clean_tags.js`
+- 构建后推送：`git add index.html build_html.js && git commit -m "..." && git push origin main`
+- automation memory路径：`C:\Users\v_yiicao\WorkBuddy\20260413140616\wechat-weekly\.workbuddy\automations\automation\memory.md`（注意：实际路径在 wechat-weekly 下，非 Desktop）
 
 ## 内容规范（用户确认，2026-06-16 更新）
 - 每条内容必须配原始链接，不允许无链接条目
