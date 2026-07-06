@@ -81,7 +81,8 @@ body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; background: #f
 .link-btn:hover { opacity: 1; }
 
 /* ── 周历选择器 ── */
-.cal-wrap { background: #fff; border-bottom: 1px solid #e5e9e5; padding: 16px 40px 12px; max-width: 1200px; margin: 0 auto; }
+.cal-wrap { background: #fff; border-bottom: 1px solid #e5e9e5; padding: 16px 40px 12px; max-width: 1200px; margin: 0 auto; display: none; }
+.cal-wrap.show { display: block; }
 .cal-nav { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
 .cal-nav-btn { background: none; border: 1px solid #e5e9e5; border-radius: 6px; padding: 4px 12px; cursor: pointer; font-size: 13px; color: #6b7280; transition: all .15s; }
 .cal-nav-btn:hover { border-color: #2d8b61; color: #2d8b61; }
@@ -189,6 +190,7 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
     </div>
   </div>
   <div class="header-actions">
+    <button class="action-btn cal-toggle-btn" onclick="toggleCalendar()" id="calToggleBtn">📅 日历</button>
     <button class="action-btn pdf-btn" onclick="printPDF()">📄 下载 PDF</button>
   </div>
 </div>
@@ -1435,6 +1437,13 @@ function calMove(dir) {
   if (calMonth < 0)  { calMonth = 11; calYear--; }
   if (calMonth > 11) { calMonth = 0;  calYear++; }
   renderCal();
+}
+
+function toggleCalendar() {
+  const wrap = document.getElementById('calWrap');
+  const btn = document.getElementById('calToggleBtn');
+  const showing = wrap.classList.toggle('show');
+  btn.textContent = showing ? '× 收起日历' : '📅 日历';
 }
 
 // 初始化
