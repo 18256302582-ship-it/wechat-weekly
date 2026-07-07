@@ -255,3 +255,30 @@
 - **修复**：在 `build_html.js` 中 `const PERIODS` 前补 `<script>`；`cp` 同步给 wechat-weekly 副本；父目录 `node build_html.js` 重建 → wechat-weekly 跑 `node ../clean_tags.js`。重建后 `wc -c` = 495,062 > 已提交 494,522（内容未丢），各期 item 数与修复前一致。
 - **提交**：`790a3a1`（index.html + build_html.js），工作流 success，线上已更正（script 开标签=1，12 期，p9 active）。
 - 💡 新增发布前检查项：构建后必须验证 `<script>` 开标签存在（`grep -c '<script>' index.html` ≥ 1），否则 JS 不执行、页面功能全瘫。
+
+## 2026-07-06 运行记录（第4次修复：页脚丢失）
+- 现象：用户反馈"页面最末尾的部分丢失了"。
+- **根因**：上一轮重建（Tab 改造 + script 标签修复）时，build_html.js 在 `</div><!-- /p1 -->` 之后误删了三块：① `</div><!-- /container -->` 容器闭合、② `<div class="no-result" id="noResult">` 搜索空结果提示、③ 整个 `<div class="footer">` 页脚。线上页无页脚、容器未闭合（浏览器兜底故内容仍显示，但页脚彻底消失）。
+- **修复**：在 build_html.js 中 `</div><!-- /p1 -->` 后补回上述三块；重建校验：130 条目 / 103 图标 / 12 期全部保留，div 开合平衡 1019/1019，footer=1、noResult=1，文件 498,139 字节。
+- **提交**：`2c8e46e`（index.html + wechat-weekly/build_html.js），已推送；GitHub Pages 与 COS 双部署均确认页脚恢复。
+- 💡 新增发布前检查项：构建后除验证 `<script>` 开标签外，还必须确认 **footer 与 container 闭合存在**（`grep -c '<div class="footer"'` ≥ 1 且 div 开合平衡），避免"整体显示正常但末尾缺一块"。
+- ⚠️ 双构建源隐患仍未根除（父目录 build_html.js 不受 git 控制），是反复漏块的根因。
+
+## 2026-07-06 运行记录（第5次修复：下载PDF失效）
+- 现象：用户反馈"下载pdf能力好像失效了"。页面"📄 下载 PDF"按钮（`onclick="printPDF()"`）点击无反应。
+- **根因**：`printPDF()` 函数（仅 `window.print()`）在早前提交 7343aca 附近被误删，按钮 HTML/CSS 残留 → 点击调用未定义函数。另：打印样式 `@media print` 隐藏的是旧类名 `.download-btn`，按钮实际类名已改为 `.pdf-btn`，打印会残留按钮。
+- **修复**：在 build_html.js `<script>` 开头恢复 `function printPDF(){window.print();}`；打印样式 `.download-btn`→`.pdf-btn`（旧名保留）。重建校验 printPDF=1、div 平衡 1019/1019。
+- **提交**：`05c1002`，双部署确认 `function printPDF` 存在。
+- 💡 新增发布前检查项：构建后必须确认 **`printPDF` 函数存在**（`grep -c 'function printPDF'` ≥ 1）。凡"按钮在但点了没反应"，优先查对应 onclick 函数是否还在。
+
+## 2026-07-07 运行记录（p10 终稿发布：2026.6.30–7.6）
+- **状态**：✅ 内容终稿 + 构建 + 全项校验 + 提交 + 推送 完成
+- **背景**：p10（覆盖 2026.6.30–7.6）由上一会话创建于工作区但**未提交**；本期完成三处修正后正式发布为本年度第10期。
+- **三处修正**（改在父目录 `20260413140616/build_html.js` 构建源，再 cp 同步仓库副本）：
+  1. 虚假发货条目：去掉手动 `alert` 类与多余灰字"专项治理"，改由 `clean_tags.js` 按"专项治理"关键词**自动**加红标 + 徽章；
+  2. 官方旗舰店条目：补手动 `公示中` 徽章（保留手动 `alert`，`clean_tags` 不重复处理）；
+  3. 推客生态升级条目：把"专项治理提示"改写为"等治理风险"，避免 `clean_tags` 误标红。
+- **发布前校验全绿**：13/13 期块开合平衡；active 唯一=p10；p10 alert=2（虚假发货自动 + 官方旗舰店手动）、badge=2（专项治理 + 公示中）；`<script>` 开标签=1；`printPDF`=1；footer=1；div 开合平衡 1118/1118；页脚"最近更新 2026年7月7日 / 下次更新 2026年7月14日"。
+- **链接合规**：p10 全部 15 个链接按钮均官方域名（store.weixin.qq.com / developers.weixin.qq.com / cloud.tencent.com 腾讯云一手文档）；非官方条目（微信客户端媒体汇总、视频号鸿蒙版专属、微信支付媒体汇总、推客第三方观察）均无链接按钮且标注"非官方公告"灰字。
+- **提交**：`index.html` + `build_html.js` + `.workbuddy` 记忆，推送 main；GitHub Pages 与 COS 双部署。
+- 💡 经验：`clean_tags` 已按"条目独立匹配"（`class="item">` 精确 + lookahead 边界）杜绝跨条目级联；标题/正文含"专项治理""停服公告"关键词的默认 `item` 会被自动标红加徽章，手动 `alert` 不重复处理。撰写时避免在非专项治理语境出现"专项治理"四字。
