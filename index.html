@@ -165,9 +165,10 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
 
 /* ── 手机端适配 (≤768px) ── */
 @media (max-width: 768px) {
-  /* Header 改 stack */
-  .header { flex-direction: column; align-items: flex-start; padding: 20px 16px 16px; gap: 12px; }
-  .header-actions { position: static; align-self: flex-end; margin-top: -34px; }
+  /* Header 改 stack + 右上角 actions 绝对定位 */
+  .header { flex-direction: column; align-items: flex-start; padding: 50px 16px 16px; gap: 12px; position: relative; }
+  .header-actions { position: absolute; top: 12px; right: 16px; display: flex; gap: 6px; align-self: auto; margin: 0; }
+  .header-actions .action-btn { padding: 5px 12px; font-size: 11px; }
   .header-text h1 { font-size: 19px; letter-spacing: 1px; }
   .header-text p { font-size: 12px; }
   .header-update { font-size: 11px; gap: 6px; }
@@ -175,12 +176,14 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
   .header-meta { font-size: 11px; gap: 6px; }
   .header-meta span { padding: 2px 9px; }
 
-  /* Tabs 横向滚动 */
-  .tabs { padding: 8px 12px; gap: 6px; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  /* Tabs 取消横向滚动（避免裁剪下拉）改成多行换行 */
+  .tabs { padding: 8px 12px; gap: 6px; flex-wrap: wrap; overflow: visible; }
   .tabs::-webkit-scrollbar { display: none; }
   .tab-btn { padding: 10px 14px; font-size: 12px; }
-  .month-btn { padding: 7px 12px; font-size: 12px; }
-  .period-dropdown { right: 0; left: auto; min-width: 160px; max-height: 70vh; overflow-y: auto; }
+  .month-btn { padding: 6px 10px; font-size: 11px; }
+  /* 下拉提权 + 钉在按钮下方，覆盖在内容区之上 */
+  .month-group { position: relative; z-index: 50; }
+  .period-dropdown { right: 0; left: auto; min-width: 170px; max-height: 65vh; overflow-y: auto; z-index: 100; box-shadow: 0 8px 24px rgba(20,60,40,.25); }
 
   /* Calendar 收紧 */
   .cal-wrap { padding: 10px 12px 8px; }
