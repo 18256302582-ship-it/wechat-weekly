@@ -282,3 +282,12 @@
 - **链接合规**：p10 全部 15 个链接按钮均官方域名（store.weixin.qq.com / developers.weixin.qq.com / cloud.tencent.com 腾讯云一手文档）；非官方条目（微信客户端媒体汇总、视频号鸿蒙版专属、微信支付媒体汇总、推客第三方观察）均无链接按钮且标注"非官方公告"灰字。
 - **提交**：`index.html` + `build_html.js` + `.workbuddy` 记忆，推送 main；GitHub Pages 与 COS 双部署。
 - 💡 经验：`clean_tags` 已按"条目独立匹配"（`class="item">` 精确 + lookahead 边界）杜绝跨条目级联；标题/正文含"专项治理""停服公告"关键词的默认 `item` 会被自动标红加徽章，手动 `alert` 不重复处理。撰写时避免在非专项治理语境出现"专项治理"四字。
+
+## 第6次执行（2026-07-08）—— 移动端响应式适配
+- **背景**：用户反馈 PC 适配良好但手机端有问题；根因 = `index.html` 完全无 `@media (max-width)` 断点，只有 `@media print`。
+- **改动**：在 `build_html.js` 模板 `<style>` 中、`@media print` **之前**插入 `@media (max-width: 768px) { ... }` 块（53 条规则 / 覆盖 45 个 class）。
+- **关键设计**：Header 改 stack 纵列；Tabs 改横向滚动+隐藏滚动条；Calendar 字号 padding 全面收紧；`.link-btn` 改 `display: block` 单独成行；Footer 单列。
+- **校验**：13/13 期块 + active=p10 + p10 alert=2 + 移动端块存在 + `<script>`/printPDF/footer/div 开合 1118/1118 全绿；GitHub Pages 线上确认（mobile media blocks=1, active=p10, p10 alert=2）。
+- **文件大小**：488.9 KB → 491.8 KB（+2.4 KB mobile CSS）。
+- **提交**：`79b1612 feat: 移动端响应式适配 (≤768px)`，推送 `fdd52f5..79b1612 main -> main`。
+- 💡 经验：移动端 `@media` 块必须放在 `@media print` 之前（CSS 级联），否则 print 样式会被 mobile 覆盖；`.link-btn` 在窄屏必须 `display: block` 而非只缩 padding。

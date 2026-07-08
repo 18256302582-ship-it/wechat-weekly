@@ -134,4 +134,19 @@
 6. ✅ **内容过滤**：无警方通报/行政处罚等社会新闻
 7. ✅ **`<script>` 开标签**：`grep -c '<script>' index.html` ≥ 1（2026-07-03 曾因缺开标签导致整段 JS 不执行、Tab/截止日/分享按钮全瘫）
 8. ✅ **JS 语法**：构建后 `node -e "new Function(脚本)"` 必须可解析（2026-07-06 曾在 build_html.js 模板内用字符串拼接内联 `onclick` 带引号被模板转义破坏，报 "Unexpected string"；**一律用纯 DOM API createElement + .onclick 构建动态内容，禁止在模板字符串里拼引号内联事件**）
-9. 以上全部通过后再 push
+9. ✅ **mobile 适配块**：`grep -c '@media (max-width: 768px)' index.html` ≥ 1（2026-07-08 加入移动端适配）
+10. 以上全部通过后再 push
+
+## 移动端响应式（2026-07-08 加入）
+- **断点位置**：build_html.js 模板 `<style>` 中、`@media print` **之前**插入 `@media (max-width: 768px) { ... }` 块
+- **块大小**：约 53 条规则、覆盖 45 个 class（header / tabs / cal / search / deadline / container / overview-table / dim-block / item / footer 全家）
+- **关键设计**：
+  - `.header` 改 `flex-direction: column; align-items: flex-start; padding: 20px 16px 16px`，header-actions 浮右上
+  - `.tabs` 改 `flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch` 横向滚动 + 隐藏滚动条
+  - `.period-dropdown` 改 `right: 0; left: auto; min-width: 160px; max-height: 70vh; overflow-y: auto`
+  - `.link-btn` 改 `display: block; width: fit-content` 单独成行（窄屏不被挤）
+  - `.item` padding-right 保留 30px 给 share-btn
+- **常见错误**：
+  - ⚠️ 移动端 `@media` 块必须放在 `@media print` 之前（CSS 级联），否则 print 样式被 mobile 覆盖
+  - ⚠️ header 不要保留 `position: absolute` 的 actions，要用 `position: static; align-self: flex-end` 重定位
+  - ⚠️ 链接按钮 `.link-btn` 在窄屏必须 `display: block`，不能只缩 padding
