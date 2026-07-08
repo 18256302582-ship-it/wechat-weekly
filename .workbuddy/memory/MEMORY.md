@@ -150,3 +150,7 @@
   - ⚠️ 移动端 `@media` 块必须放在 `@media print` 之前（CSS 级联），否则 print 样式被 mobile 覆盖
   - ⚠️ header 不要保留 `position: absolute` 的 actions，要用 `position: static; align-self: flex-end` 重定位
   - ⚠️ 链接按钮 `.link-btn` 在窄屏必须 `display: block`，不能只缩 padding
+- **2026-07-08 反馈修复**：
+  - **header-actions 漂移**：禁止用 `margin-top: 负值` 假定位；改 `position: absolute; top: 12px; right: 16px`，header 加 `padding-top: 50px` 留位
+  - **月份下拉被裁剪**：mobile `.tabs` 用 `overflow-x: auto` 会裁剪所有 absolute 子元素（包括 `.period-dropdown`），**改 `flex-wrap: wrap; overflow: visible` 即可修复**；同时 `.month-group` z-index: 50、`.period-dropdown` z-index: 100 提权防遮挡
+  - **普世规则**：`overflow: auto/scroll` 的容器**绝对不能**作为 dropdown/popover 的祖先

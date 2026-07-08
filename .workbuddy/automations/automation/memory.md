@@ -291,3 +291,9 @@
 - **文件大小**：488.9 KB → 491.8 KB（+2.4 KB mobile CSS）。
 - **提交**：`79b1612 feat: 移动端响应式适配 (≤768px)`，推送 `fdd52f5..79b1612 main -> main`。
 - 💡 经验：移动端 `@media` 块必须放在 `@media print` 之前（CSS 级联），否则 print 样式会被 mobile 覆盖；`.link-btn` 在窄屏必须 `display: block` 而非只缩 padding。
+
+## 第7次执行（2026-07-08 11:25）—— 手机端2个 bug 修复
+- **问题 A**：header 右上角「日历/下载PDF」按钮漂在 header 中间（用了 `margin-top: -34px` hack）。修复：`.header { position: relative; padding-top: 50px }` + `.header-actions { position: absolute; top: 12px; right: 16px }`
+- **问题 B**：月份下拉看不到期次列表。根因：mobile `.tabs { overflow-x: auto }` **裁剪了内部所有 absolute 子元素**，`.period-dropdown`（z-index 30）被裁了。修复：mobile `.tabs` 改 `flex-wrap: wrap; overflow: visible`；`.month-group` z-index: 50；`.period-dropdown` z-index: 100
+- **普世规则**：`overflow: auto/scroll` 的容器**绝对不能**作为 dropdown/popover 的祖先，否则子元素会被裁剪
+- **提交**：`29332c4 fix(mobile): 修正header actions定位 + 解决月份下拉被tabs裁剪`，推送 `591dab3..29332c4`
