@@ -395,7 +395,118 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
 <div class="container">
 
 <!-- ════ 期次10：2026.6.30–7.6 ════ -->
-<div class="period-content active" id="p10">
+<div class="period-content active" id="p11">
+  <div class="overview-card">
+    <div class="card-title">▌ 本期要点速览（2026.7.6–7.12）</div>
+    <table class="overview-table">
+      <thead><tr><th>#</th><th>维度</th><th>核心内容</th><th style="text-align:center;width:80px">重要程度</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店</div></td><td>新规速递-20260713；母婴类目调整；集团品牌规则生效；本周API调整</td><td style="text-align:center">★★★</td></tr>
+        <tr><td>2</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">微信客户端</div></td><td>8.0.54正式版：订阅号更名"公众号"、通讯录新增服务号分类、图片转发改版等11项</td><td style="text-align:center">★★★</td></tr>
+        <tr><td>3</td><td><div class="dim-cell"><img src="${ICONS.open}" alt="">开放平台/小程序</div></td><td>小程序AI开发模式改"账号卡片"；成长计划升级10亿Token+混元Hy3</td><td style="text-align:center">★★★</td></tr>
+        <tr><td>4</td><td><div class="dim-cell"><img src="${ICONS.pay}" alt="">微信支付</div></td><td>AI专属卡发布并接入WorkBuddy；AI接入工具箱；红包转账一键直达</td><td style="text-align:center">★★★</td></tr>
+        <tr><td>5</td><td><div class="dim-cell"><img src="${ICONS.work}" alt="">企业微信</div></td><td>治理过度营销、优化老年人上网环境：上线"拉群确认"机制</td><td style="text-align:center">★★★</td></tr>
+        <tr><td>6</td><td><div class="dim-cell"><img src="${ICONS.channels}" alt="">视频号</div></td><td>鸿蒙版创作者中心改版；视频号能力补全（注册/发布/直播）</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>7</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">公众号</div></td><td>向医院开放AI分身能力（7/1发布，上期遗漏补录）</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>8</td><td><div class="dim-cell"><img src="${ICONS.tuike}" alt="">推客</div></td><td>优选联盟带货机构星级体系生效；投流佣金功能上线；推客激励计划执行</td><td style="text-align:center">★★☆</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.store}" alt=""></div>
+      <div class="dim-title-text">微信小店</div>
+      <div class="dim-count">5 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item"><div class="item-title">微信小店新规速递-20260713（7月13日发布）</div><p>本周规则周报（7.6–7.12）：《微信小店"优选联盟带货机构星级体系"管理规则》（7/7新规发布）、《微信小店"官方旗舰店"管理规则》（7/7新规发布）、《微信小店"优选联盟投流佣金功能"使用须知》（7/6–7/12新规发布）。</p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9664/18c3b9ae4cb08ba6/growth_center_rule_for_store/24" target="_blank">查看公告</a></div>
+      <div class="item alert"><div class="item-title"><span class="alert-badge">即将生效</span>关于「微信小店一级类目母婴部分类目」调整公告（7月8日）</div><p>自2026年07月22日起，母婴【喂养用品】【洗护用品】下部分类目优化：原【水壶/水杯】更名【儿童水壶水杯】、原【奶瓶奶嘴】拆分为【奶瓶及配件】【奶嘴及配件】等，原类目同日关闭。<br><span style="color:#999;font-size:12px">生效日 2026.07.22</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9621/bcd03a5364c8d886/growth_center_platform_notice/1" target="_blank">查看公告</a></div>
+      <div class="item"><div class="item-title">《微信小店"集团品牌"管理规则》生效（7月6日）</div><p>规范同一实际控制人旗下多品牌构成的"集团品牌"，明确集团官方旗舰店开设与认证要求，已正式生效。<br><span style="color:#999;font-size:12px">规则生效</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9630/4d23665ad58938f3/growth_center_rule_for_store/1" target="_blank">查看公告</a></div>
+      <div class="item"><div class="item-title">微信小店本周功能调整汇总-20260710（API接口调整）</div><p>获取订单详情接口枚举值修改、present_send_type新增"商品抽奖送礼"；创建赠品活动接口新增字段；新增类目审核结果通知文档与供货管理开发指南。<br><span style="color:#999;font-size:12px">官方功能/接口变更</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9662/17f86f39370c64f1/growth_center_manual_for_store/6" target="_blank">查看公告</a></div>
+      <div class="item"><div class="item-title">联盟带货机构推客带货功能激励计划（2026年7月）执行中（6月30日发布）</div><p>活动期间通过"推客带货功能"结算的订单，平台向带货机构发现金激励、向同主体服务商发电商成长卡激励，激励期至2026.07.30。<br><span style="color:#999;font-size:12px">官方激励政策</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9608/2aefa9859e17eaa8/growth_center_platform_notice/2" target="_blank">查看公告</a></div>
+    </div>
+  </div>
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.mp}" alt=""></div>
+      <div class="dim-title-text">微信客户端</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item"><div class="item-title">微信 8.0.54 正式版更新（7月11日）</div><p>订阅号统一更名"公众号"，通讯录顶部新增"服务号"独立分类与公众号区分；图片消息转发由"小图+标题+摘要"改为"大图+标题"卡片；转发消息/文章可删减常联系人；打开第三方链接顶部显示网页地址；负一屏浮窗卡片改为置顶并新增格式图标等共11项新功能。<br><span style="color:#999;font-size:12px">此为媒体汇总，非官方公告</span></p></div>
+      <div class="item"><div class="item-title">鸿蒙版微信 8.0.19.37 邀测升级（7月7日）</div><p>视频号支持推荐给好友、评论区非话题评论长按可投诉；元宝由联系人态变更为AI功能态；微信游戏中心重构；搜索指定内容表情功能回归。<br><span style="color:#999;font-size:12px">鸿蒙版专属更新，非全平台公告</span></p></div>
+    </div>
+  </div>
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.channels}" alt=""></div>
+      <div class="dim-title-text">视频号</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item"><div class="item-title">鸿蒙版视频号能力补全（随 8.0.19.37/大版本）</div><p>修复此前无法注册、改资料、无直播入口、无法发布作品等问题；新版支持视频号新用户注册、作品发布、直播观看，播放支持横竖屏旋转、双击点赞，直播可标记位置、选类型、开关礼物特效。<br><span style="color:#999;font-size:12px">鸿蒙版专属更新，非全平台公告</span></p></div>
+      <div class="item"><div class="item-title">鸿蒙版微信大版本更新：视频号创作者中心改版（7月10日）</div><p>创作者中心打通认证、数据、运营、收益模块，帮助创作者更直观掌握账号运营情况。<br><span style="color:#999;font-size:12px">媒体观察，非官方公告</span></p></div>
+    </div>
+  </div>
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.open}" alt=""></div>
+      <div class="dim-title-text">微信开放平台 / 小程序</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item"><div class="item-title">小程序 AI 开发模式更新说明（7月3日，官方）</div><p>整体交互体验由"原子组件"调整为"账号卡片"，用户需进入小程序完成后续服务流程；原子接口内可调用的 API 同步调整，建议开发者主动适配跳转后页面响应。<br><span style="color:#999;font-size:12px">官方文档更新</span></p><a class="link-btn" href="https://developers.weixin.qq.com/community/develop/doc/000a6e426f0a80afa85531bcb6fc01" target="_blank">查看文档</a></div>
+      <div class="item"><div class="item-title">小程序成长计划升级：10亿Token扶持混元Hy3（7月7日）</div><p>通过云开发CloudBase开发的小程序，大模型Token额度由1亿提升至10亿、AI生图由1万张提升至10万张，模型升级混元最新Hy3与Hy Image 3.0；已入驻老开发者自动补发9亿Token+9万张生图额度，7月1日起分批到账。<br><span style="color:#999;font-size:12px">官方来源：微信公开课</span></p></div>
+    </div>
+  </div>
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.tuike}" alt=""></div>
+      <div class="dim-title-text">推客</div>
+      <div class="dim-count">3 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item"><div class="item-title">《微信小店"优选联盟带货机构星级体系"管理规则》生效（7月7日）</div><p>对带货机构按上一自然月经营数据综合评级，分1–5星，指标含有效支付GMV、品牌好物GMV、动销店铺数、动销带货者数、订单品退率，匹配对应平台权益。<br><span style="color:#999;font-size:12px">规则生效</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9605/ca804af41fbd10af/growth_center_rule_for_store/28" target="_blank">查看公告</a></div>
+      <div class="item"><div class="item-title">《微信小店"优选联盟投流佣金功能"使用须知》发布（7月6–7月12日）</div><p>新规发布商家、带货者可用的优选联盟投流佣金功能，明确使用规则与结算方式。<br><span style="color:#999;font-size:12px">新规发布</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9664/18c3b9ae4cb08ba6/growth_center_rule_for_store/24" target="_blank">查看公告</a></div>
+      <div class="item"><div class="item-title">联盟带货机构推客带货功能激励计划（2026年7月）执行中</div><p>通过"推客带货功能"结算订单，向带货机构发现金激励、向同主体服务商发电商成长卡激励，鼓励机构通过推客带货。<br><span style="color:#999;font-size:12px">官方激励政策</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9608/2aefa9859e17eaa8/growth_center_platform_notice/2" target="_blank">查看公告</a></div>
+    </div>
+  </div>
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.pay}" alt=""></div>
+      <div class="dim-title-text">微信支付</div>
+      <div class="dim-count">3 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item"><div class="item-title">微信支付发布「AI专属卡」（7月8日）</div><p>专为AI智能体支付场景设计、内置微信零钱的产品功能，不获取账户密码、不直动主账户资金，在用户设定范围内经许可完成消费、笔笔确认；当前已接入WorkBuddy桌面办公效率智能体。<br><span style="color:#999;font-size:12px">媒体/港股新闻，非官方公告</span></p></div>
+      <div class="item"><div class="item-title">微信支付发布 AI 接入工具箱（7月10日）</div><p>面向AI的支付接入能力体系，包含Skill技能包、AI友好文档、AI友好API三大核心模块，已逾七成商户开发者使用AI辅助编程接入。<br><span style="color:#999;font-size:12px">媒体/港股新闻，非官方公告</span></p></div>
+      <div class="item"><div class="item-title">红包/转账一键直达 + 组合支付（7月9–10日）</div><p>聊天页右上角出现红包/转账专属标识，点击一键跳转至资金消息位置；一对一转账支持零钱+银行卡组合支付，退款按原比例原路退回。<br><span style="color:#999;font-size:12px">媒体汇总，非官方公告</span></p></div>
+    </div>
+  </div>
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.work}" alt=""></div>
+      <div class="dim-title-text">企业微信</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item alert"><div class="item-title">企业微信关于治理过度营销、优化老年人上网环境的公告（7月7日，官方）</div><p>上线并升级四项举措：①加强拉群管控，针对退群率偏高企业上线"拉群时需被拉人确认"功能；②管控拉群频率，限制拉群过于频繁/退群率过高企业的拉群能力；③加大外挂打击；④联动微信协同治理。2026年至今平台已处罚违规营销账号20.2万个、涉及企业3.3万家；私域直播违规处罚账号26.8万个。<br><span style="color:#999;font-size:12px">官方公告（经腾讯新闻等转发）</span></p></div>
+    </div>
+  </div>
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.mp}" alt=""></div>
+      <div class="dim-title-text">公众号</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item"><div class="item-title">微信公众号向医院开放 AI 分身能力（7月1日发布，上期遗漏补录）</div><p>AI分身可7×24小时在线秒回患者问题，后台一键开通，支持设置提示词人设、上传知识库（Excel/Word/PDF）、配置关键词；支持开发者模式协同。香港大学深圳医院上线后日均回复咨询130+次。<br><span style="color:#999;font-size:12px">媒体汇总，非官方公告</span></p></div>
+    </div>
+  </div>
+</div><!-- /p11 -->
+
+
+  <div class="period-content" id="p10">
   <div class="overview-card">
     <div class="card-title">▌ 本期要点速览（2026.6.30–7.6）</div>
     <table class="overview-table">
@@ -1573,8 +1684,8 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
 
 <div class="footer">
   <div class="footer-update">
-    <span>🕐 最近更新：2026年7月7日</span>
-    <span class="footer-next">📅 下次更新：2026年7月14日（周二）</span>
+    <span>🕐 最近更新：2026年7月15日</span>
+    <span class="footer-next">📅 下次更新：2026年7月21日（周二）</span>
   </div>
   <div class="footer-credit">
     <strong>微信生态每周更新汇总</strong> · 数据来源：腾讯智慧零售、微信公开渠道
@@ -1606,6 +1717,7 @@ function printPDF() {
 })();
 
 const PERIODS = [
+  { id: 'p11',  label: '2026.7.6–7.12', start: new Date(2026, 6, 6), end: new Date(2026, 6, 12) },
   { id: 'p10',  label: '2026.6.30–7.6', start: new Date(2026, 5, 30), end: new Date(2026, 6, 6) },
   { id: 'p9',   label: '2026.6.23–6.29', start: new Date(2026, 5, 23), end: new Date(2026, 5, 29) },
   { id: 'p85',  label: '2026.6.16–6.22', start: new Date(2026, 5, 16), end: new Date(2026, 5, 22) },
@@ -1622,7 +1734,7 @@ const PERIODS = [
 ];
 
 // 当前选中期次
-let activePeriodId = 'p10';
+let activePeriodId = 'p11';
 // 日历当前显示的月份
 let calYear = 2026, calMonth = 6; // 0-indexed，6=7月
 

@@ -292,6 +292,10 @@
 - **提交**：`79b1612 feat: 移动端响应式适配 (≤768px)`，推送 `fdd52f5..79b1612 main -> main`。
 - 💡 经验：移动端 `@media` 块必须放在 `@media print` 之前（CSS 级联），否则 print 样式会被 mobile 覆盖；`.link-btn` 在窄屏必须 `display: block` 而非只缩 padding。
 
+## 发布地址变更（2026-07-08）
+- 线上地址已由 `https://18256302582-ship-it.github.io/wechat-weekly/` 改为 **`https://frost-cao.github.io/wechat-weekly/`**（GitHub 账号 `18256302582-ship-it` 弃用，统一为 `frost-cao`）。
+- 后续所有"验证线上部署 / 给用户链接 / 地址引用"一律用**新地址**；历史 daily log 中的旧地址是当时候事实记录，不回改。
+
 ## 第7次执行（2026-07-08 11:25）—— 手机端2个 bug 修复
 - **问题 A**：header 右上角「日历/下载PDF」按钮漂在 header 中间（用了 `margin-top: -34px` hack）。修复：`.header { position: relative; padding-top: 50px }` + `.header-actions { position: absolute; top: 12px; right: 16px }`
 - **问题 B**：月份下拉看不到期次列表。根因：mobile `.tabs { overflow-x: auto }` **裁剪了内部所有 absolute 子元素**，`.period-dropdown`（z-index 30）被裁了。修复：mobile `.tabs` 改 `flex-wrap: wrap; overflow: visible`；`.month-group` z-index: 50；`.period-dropdown` z-index: 100
