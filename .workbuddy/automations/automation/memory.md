@@ -301,3 +301,14 @@
 - **问题 B**：月份下拉看不到期次列表。根因：mobile `.tabs { overflow-x: auto }` **裁剪了内部所有 absolute 子元素**，`.period-dropdown`（z-index 30）被裁了。修复：mobile `.tabs` 改 `flex-wrap: wrap; overflow: visible`；`.month-group` z-index: 50；`.period-dropdown` z-index: 100
 - **普世规则**：`overflow: auto/scroll` 的容器**绝对不能**作为 dropdown/popover 的祖先，否则子元素会被裁剪
 - **提交**：`29332c4 fix(mobile): 修正header actions定位 + 解决月份下拉被tabs裁剪`，推送 `591dab3..29332c4`
+
+## 第8次执行（2026-07-15）—— p11 发布（2026.7.6–7.12）
+- **状态**：✅ 内容+构建+全项校验+提交+推送 完成
+- **期次**：p11（覆盖上周完整周 2026.7.6–7.12），新增于 PERIODS 数组头部并转移 active 至 p11；p10 去 active。本期为 8 维度（微信小店/微信客户端/视频号/开放平台·小程序/推客/微信支付/企业微信/公众号），共 19 条。
+- **方法**：沿用 `add_p9.py` 的 Python 精确替换写法（保留 `${ICONS.xx}` 模板引用，避免 Node 转义）；改**父目录** `20260413140616/build_html.js` 构建源，再 `cp` 同步 `wechat-weekly/build_html.js` 镜像。
+- **关键锚点修正**：p10 的 `<div class="period-content active" id="p10">` 实际是**顶格**无缩进（此前差点因多写 2 空格导致锚点匹配失败），脚本已修正。
+- **发布前校验全绿**：14/14 期块开合平衡；active 唯一=p11；`<script>` 开标签=1；`printPDF`=1；mobile `@media` 块=1；footer（最近更新 2026.7.15 / 下次更新 2026.7.21 周二）；p11 内 7 个链接按钮全部官方域名（store.weixin.qq.com / developers.weixin.qq.com），其余 12 条无链接条目均标注"媒体汇总/非官方公告"灰字。
+- **提交**：`b104f7b update: 微信生态第11期周报(2026.7.6-7.12) p11新增 + 源同步`，推送 main。
+- **⚠️ Remote 迁移已落地**：推送时 GitHub 返回 "This repository moved" → `frost-cao/wechat-weekly.git`。已 `git remote set-url origin` 更新为 frost-cao 路径；线上 `https://frost-cao.github.io/wechat-weekly/` 已确认渲染 p11（2026.7.6–7.12）。
+- **本期要点**：微信小店新规速递-20260713（星级体系/官方旗舰店/投流佣金）、母婴类目调整(7/22生效)、集团品牌规则生效、本周API调整；微信客户端 8.0.54（订阅号更名"公众号"、通讯录新增服务号分类）；小程序AI开发模式改账号卡片+成长计划10亿Token混元Hy3；微信支付 AI专属卡接入WorkBuddy + AI接入工具箱 + 红包转账一键直达；企业微信治理过度营销"拉群确认"机制(7/7)；公众号 AI分身补录(7/1)；推客星级体系生效。
+- **注**：本次自动化于 7/15（周三）执行，对应上周完整周 7.6–7.12（原周二定时任务延迟/未跑）。
