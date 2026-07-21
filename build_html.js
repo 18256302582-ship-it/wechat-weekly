@@ -395,7 +395,114 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
 <div class="container">
 
 <!-- ════ 期次10：2026.6.30–7.6 ════ -->
-<div class="period-content active" id="p11">
+<div class="period-content active" id="p12">
+  <div class="overview-card">
+    <div class="card-title">▌ 本期要点速览（2026.7.13–7.19）</div>
+    <table class="overview-table">
+      <thead><tr><th>#</th><th>维度</th><th>核心内容</th><th style="text-align:center;width:80px">重要程度</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店</div></td><td>多项类目调整扩容（工业品一级类目/个人护理冰凉贴/香水彩妆）；商品评价创作激励；入夏好物加补；灾害延迟发货报备</td><td style="text-align:center">★★★</td></tr>
+        <tr><td>2</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">微信客户端</div></td><td>PC 4.1.12内测(折叠发图PC展示/通话接听新通话)；创意表情小程序；8.0.76持续全量</td><td style="text-align:center">★★★</td></tr>
+        <tr><td>3</td><td><div class="dim-cell"><img src="${ICONS.channels}" alt="">视频号</div></td><td>点赞互动升级(拇指赞/爱心赞+爆款标签)；连击弹幕+评论区晒图</td><td style="text-align:center">★★★</td></tr>
+        <tr><td>4</td><td><div class="dim-cell"><img src="${ICONS.work}" alt="">企业微信</div></td><td>智能助理大圆新功能内测；WAIC 2026公开亮相</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>5</td><td><div class="dim-cell"><img src="${ICONS.open}" alt="">开放平台/小程序</div></td><td>小程序"被AI调用权"成新流量逻辑(媒体观察)</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>6</td><td><div class="dim-cell"><img src="${ICONS.tuike}" alt="">推客</div></td><td>推客激励计划执行中+潜力带货者免佣(媒体观察)</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>7</td><td><div class="dim-cell"><img src="${ICONS.pay}" alt="">微信支付</div></td><td>组合支付/定时红包等持续灰度(媒体观察)</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>8</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">公众号/服务号</div></td><td>PC端公众号与服务号入口合并(内测)</td><td style="text-align:center">★★☆</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.store}" alt=""></div>
+      <div class="dim-title-text">微信小店</div>
+      <div class="dim-count">6 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item"><div class="item-title">关于「微信小店新增一级类目工业品」调整公告（7月13日）</div><p>微信小店新增"工业品"一级类目，进一步拓宽B2B与产业带商家的经营类目边界，相关商家可据此申请入驻与发布商品。<br><span style="color:#999;font-size:12px">官方类目调整公告</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9660/2afb414015443d84/growth_center_platform_notice/1" target="_blank">查看公告</a></div>
+      <div class="item"><div class="item-title">关于「微信小店个人护理新增三级类目冰凉贴」调整公告（7月13日）</div><p>个人护理类目下新增"冰凉贴"三级类目，满足夏季降温类商品的专项经营与合规管理需求。<br><span style="color:#999;font-size:12px">官方类目调整公告</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9658/38a695f38b77fae0/growth_center_platform_notice/1" target="_blank">查看公告</a></div>
+      <div class="item"><div class="item-title">关于「微信小店二级类目香水彩妆/美妆工具新增类目」调整公告（7月13日）</div><p>香水彩妆、美妆工具二级类目下新增细分经营类目，完善美妆个护品类的结构覆盖。<br><span style="color:#999;font-size:12px">官方类目调整公告</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9657/d2143e2014aad0cf/growth_center_platform_notice/1" target="_blank">查看公告</a></div>
+      <div class="item"><div class="item-title">微信小店｜商品评价内容创作激励计划（7月14日）</div><p>鼓励商家引导用户产出优质商品评价内容，对符合标准的评价内容给予平台激励，助力提升商品转化与信任度。<br><span style="color:#999;font-size:12px">官方激励政策</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9646/2a7e32d0190a55d6/growth_center_platform_notice/2" target="_blank">查看公告</a></div>
+      <div class="item"><div class="item-title">微信小店｜"入夏好物"活动爆品加补政策（7月16日）</div><p>针对"入夏好物"营销活动进行爆品加补，对报名且表现优异的商品给予额外流量与资源倾斜，帮助商家把握夏季消费场景。<br><span style="color:#999;font-size:12px">官方活动通知</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9672/eef53ddb7b970fac/growth_center_platform_notice/2" target="_blank">查看公告</a></div>
+      <div class="item"><div class="item-title">关于「近期受自然灾害影响的微信小店商家延迟/无法发货」报备指引公告（7月17日更新）</div><p>针对受自然灾害影响、无法按期发货的商家，平台提供延迟/无法发货的报备指引与履约保护，商家可按指引提交受影响的订单与店铺信息。<br><span style="color:#999;font-size:12px">官方服务/治理公告</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/7812/d6eb975f1e8e8878/growth_center_platform_notice/8" target="_blank">查看公告</a></div>
+    </div>
+  </div>
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.mp}" alt=""></div>
+      <div class="dim-title-text">微信客户端</div>
+      <div class="dim-count">3 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item"><div class="item-title">PC微信 4.1.12 内测：折叠发图PC端展示 + 通话中可接听新通话（7月13日）</div><p>手机端"多图合并展示"的折叠效果现已可在PC微信查看（支持左右翻阅/展开/合并）；语音或视频通话中收到新的通话邀请时，可弹窗选择"挂断"或"接听"（不支持并线）。<br><span style="color:#999;font-size:12px">此为内测版能力，媒体汇总，非官方公告</span></p></div>
+      <div class="item"><div class="item-title">微信创意表情小程序上线（7月17日，微信派）</div><p>世界表情包日当天微信派官宣"微信创意表情"小程序：用户可拆解原生emoji、搭配配饰与贴纸自制表情包，一键添加到聊天面板，优秀作品可发布至表情助手供全网使用。<br><span style="color:#999;font-size:12px">微信派官宣，媒体汇总，非官方公告</span></p></div>
+      <div class="item"><div class="item-title">安卓微信 8.0.76 持续全量：撤回提示可本地删除、AI助手"小微"灰度（7月）</div><p>撤回消息的灰色提示支持长按本地删除（不影响对方）；聊天窗口右上角新增未领红包/待收款标识一键定位；原生AI助手"小微"继续灰度，可总结群聊、提炼公众号长文、调用小程序完成点外卖/打车等。<br><span style="color:#999;font-size:12px">媒体汇总，非官方公告</span></p></div>
+    </div>
+  </div>
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.channels}" alt=""></div>
+      <div class="dim-title-text">视频号</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item"><div class="item-title">视频号点赞互动升级：拇指赞（私密）+ 爱心赞（公开）+ 创作者首次爆款标签（7月15日，微信派）</div><p>双击触发"拇指赞"（仅自己可见），点底部爱心为公开"爱心赞"，两种赞创作者均可见；刷到创作者首个百/千/万赞爆款视频时，左下角显示"创作者首次爆款标签"，可捧场助力。<br><span style="color:#999;font-size:12px">微信派官宣，媒体汇总</span></p></div>
+      <div class="item"><div class="item-title">视频号弹幕与评论升级：连击弹幕 + 评论区晒图（7月15日，微信派）</div><p>新增"连击弹幕"，点一下即可发出统一弹幕与全网网友同频互动；视频完播后评论区顶部出现"晒图"入口，可发表情包/梗图/视频截图，优质图片会被顶至点赞区上方展示。<br><span style="color:#999;font-size:12px">微信派官宣，媒体汇总</span></p></div>
+    </div>
+  </div>
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.open}" alt=""></div>
+      <div class="dim-title-text">微信开放平台 / 小程序</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item"><div class="item-title">小程序"被AI理解/调用权"成为新流量分配逻辑（媒体观察）</div><p>微信开放平台明确开发者可申请让自家小程序具备"被微信AI理解、推荐和调用"的能力，未接入的小程序将无法被微信AI调用；在微信AI生态中，"AI推荐即成交"的经营范式加速成型。AI小程序成长计划加码（10亿Token/混元Hy3）已于上期收录。<br><span style="color:#999;font-size:12px">媒体观察，非官方公告</span></p></div>
+    </div>
+  </div>
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.tuike}" alt=""></div>
+      <div class="dim-title-text">推客</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item"><div class="item-title">推客激励计划执行中 + 潜力带货者免佣（媒体观察）</div><p>微信小店"联盟带货机构推客带货功能激励计划（2026年7月）"持续执行（至7/31），潜力带货者免佣优惠7/1–9/30生效；第三方观察显示平台以真金白银扶持推客分销，单机构月度现金激励最高达250万元。<br><span style="color:#999;font-size:12px">官方激励政策已于上期收录；本条目为媒体观察，非官方公告</span></p></div>
+    </div>
+  </div>
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.pay}" alt=""></div>
+      <div class="dim-title-text">微信支付</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item"><div class="item-title">组合支付 / 定时红包 / 分期转账等能力持续灰度（媒体观察）</div><p>微信支付"组合支付"（零钱+银行卡等多渠道自定义扣款）等功能持续灰度，媒体实测覆盖用户已超1亿；聊天页红包/转账一键直达与收款码长按直达已于上期收录。<br><span style="color:#999;font-size:12px">媒体观察，非官方公告</span></p></div>
+    </div>
+  </div>
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.work}" alt=""></div>
+      <div class="dim-title-text">企业微信</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item"><div class="item-title">智能助理"大圆"新功能内测（7月13日）</div><p>企业微信智能助理"大圆"新增唤起方式：连续按2次Ctrl键随时唤起，基于当前工作上下文处理任务，可总结聊天、读写文档表格、汇总项目进展、设置定时任务整理待办。<br><span style="color:#999;font-size:12px">内测能力，媒体观察，非官方公告</span></p></div>
+      <div class="item"><div class="item-title">企业微信AI Agent"大圆"WAIC 2026公开亮相（7月17日）</div><p>2026世界人工智能大会现场，企业微信AI智能助理"大圆"首次公开实机亮相：在任意工作界面左滑唤起，实时感知群聊/文档/会议等上下文，从"接入AI"走向"原生AI"，覆盖超1400万企业与组织。<br><span style="color:#999;font-size:12px">媒体观察，非官方公告</span></p></div>
+    </div>
+  </div>
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.mp}" alt=""></div>
+      <div class="dim-title-text">公众号 / 服务号</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item"><div class="item-title">PC微信 4.1.12 内测：通讯录"公众号"与"服务号"入口合并（7月13日）</div><p>PC微信内测版将通讯录中原本独立的"公众号"和"服务号"入口合并为统一的"公众号、服务号"入口，账号按首字母排列收纳；点开仍可分辨（公众号有"发消息"按钮）。本期公众号/服务号侧无其他独立产品更新。<br><span style="color:#999;font-size:12px">内测能力，媒体汇总，非官方公告</span></p></div>
+    </div>
+  </div>
+</div><!-- /p12 -->
+<div class="period-content" id="p11">
   <div class="overview-card">
     <div class="card-title">▌ 本期要点速览（2026.7.6–7.12）</div>
     <table class="overview-table">
@@ -1684,8 +1791,8 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
 
 <div class="footer">
   <div class="footer-update">
-    <span>🕐 最近更新：2026年7月15日</span>
-    <span class="footer-next">📅 下次更新：2026年7月21日（周二）</span>
+    <span>🕐 最近更新：2026年7月21日</span>
+    <span class="footer-next">📅 下次更新：2026年7月28日（周二）</span>
   </div>
   <div class="footer-credit">
     <strong>微信生态每周更新汇总</strong> · 数据来源：腾讯智慧零售、微信公开渠道
@@ -1717,6 +1824,7 @@ function printPDF() {
 })();
 
 const PERIODS = [
+  { id: 'p12',  label: '2026.7.13–7.19', start: new Date(2026, 6, 13), end: new Date(2026, 6, 19) },
   { id: 'p11',  label: '2026.7.6–7.12', start: new Date(2026, 6, 6), end: new Date(2026, 6, 12) },
   { id: 'p10',  label: '2026.6.30–7.6', start: new Date(2026, 5, 30), end: new Date(2026, 6, 6) },
   { id: 'p9',   label: '2026.6.23–6.29', start: new Date(2026, 5, 23), end: new Date(2026, 5, 29) },
@@ -1734,7 +1842,7 @@ const PERIODS = [
 ];
 
 // 当前选中期次
-let activePeriodId = 'p11';
+let activePeriodId = 'p12';
 // 日历当前显示的月份
 let calYear = 2026, calMonth = 6; // 0-indexed，6=7月
 
