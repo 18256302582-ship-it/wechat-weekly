@@ -401,13 +401,13 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
     <table class="overview-table">
       <thead><tr><th>#</th><th>维度</th><th>核心内容</th><th style="text-align:center;width:80px">重要程度</th></tr></thead>
       <tbody>
-        <tr><td>1</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店</div></td><td>多项类目调整扩容（工业品一级类目/个人护理冰凉贴/香水彩妆）；商品评价创作激励；入夏好物加补；灾害延迟发货报备</td><td style="text-align:center">★★★</td></tr>
+        <tr><td>1</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店</div></td><td>多项类目调整扩容；商品评价创作激励；入夏好物加补；灾害延迟发货报备；API接口调整（订单/赠品/商品）；新商技术服务费降至1%</td><td style="text-align:center">★★★</td></tr>
         <tr><td>2</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">微信客户端</div></td><td>PC 4.1.12内测(折叠发图PC展示/通话接听新通话)；创意表情小程序；8.0.76持续全量</td><td style="text-align:center">★★★</td></tr>
         <tr><td>3</td><td><div class="dim-cell"><img src="${ICONS.channels}" alt="">视频号</div></td><td>点赞互动升级(拇指赞/爱心赞+爆款标签)；连击弹幕+评论区晒图</td><td style="text-align:center">★★★</td></tr>
         <tr><td>4</td><td><div class="dim-cell"><img src="${ICONS.work}" alt="">企业微信</div></td><td>智能助理大圆新功能内测；WAIC 2026公开亮相</td><td style="text-align:center">★★☆</td></tr>
-        <tr><td>5</td><td><div class="dim-cell"><img src="${ICONS.open}" alt="">开放平台/小程序</div></td><td>小程序"被AI调用权"成新流量逻辑(媒体观察)</td><td style="text-align:center">★★☆</td></tr>
-        <tr><td>6</td><td><div class="dim-cell"><img src="${ICONS.tuike}" alt="">推客</div></td><td>推客激励计划执行中+潜力带货者免佣(媒体观察)</td><td style="text-align:center">★★☆</td></tr>
-        <tr><td>7</td><td><div class="dim-cell"><img src="${ICONS.pay}" alt="">微信支付</div></td><td>组合支付/定时红包等持续灰度(媒体观察)</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>5</td><td><div class="dim-cell"><img src="${ICONS.open}" alt="">开放平台/小程序</div></td><td>AI成长计划升级：10亿Token+Hy3模型（官方）；小程序"被AI调用权"成新流量逻辑（媒体观察）</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>6</td><td><div class="dim-cell"><img src="${ICONS.tuike}" alt="">推客</div></td><td>7月激励计划执行中（官方）+ 潜力带货者免佣（官方，7/1—9/30）</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>7</td><td><div class="dim-cell"><img src="${ICONS.pay}" alt="">微信支付</div></td><td>8·8扫码盒子方案首发（媒体）；组合支付/定时红包等持续灰度</td><td style="text-align:center">★★☆</td></tr>
         <tr><td>8</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">公众号/服务号</div></td><td>PC端公众号与服务号入口合并(内测)</td><td style="text-align:center">★★☆</td></tr>
       </tbody>
     </table>
@@ -416,7 +416,7 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
     <div class="dim-header">
       <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.store}" alt=""></div>
       <div class="dim-title-text">微信小店</div>
-      <div class="dim-count">6 条更新</div>
+      <div class="dim-count">8 条更新</div>
     </div>
     <div class="dim-body">
       <div class="item"><div class="item-title">关于「微信小店新增一级类目工业品」调整公告（7月13日）</div><p>微信小店新增"工业品"一级类目，进一步拓宽B2B与产业带商家的经营类目边界，相关商家可据此申请入驻与发布商品。<br><span style="color:#999;font-size:12px">官方类目调整公告</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9660/2afb414015443d84/growth_center_platform_notice/1" target="_blank">查看公告</a></div>
@@ -425,6 +425,8 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
       <div class="item"><div class="item-title">微信小店｜商品评价内容创作激励计划（7月14日）</div><p>鼓励商家引导用户产出优质商品评价内容，对符合标准的评价内容给予平台激励，助力提升商品转化与信任度。<br><span style="color:#999;font-size:12px">官方激励政策</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9646/2a7e32d0190a55d6/growth_center_platform_notice/2" target="_blank">查看公告</a></div>
       <div class="item"><div class="item-title">微信小店｜"入夏好物"活动爆品加补政策（7月16日）</div><p>针对"入夏好物"营销活动进行爆品加补，对报名且表现优异的商品给予额外流量与资源倾斜，帮助商家把握夏季消费场景。<br><span style="color:#999;font-size:12px">官方活动通知</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9672/eef53ddb7b970fac/growth_center_platform_notice/2" target="_blank">查看公告</a></div>
       <div class="item"><div class="item-title">关于「近期受自然灾害影响的微信小店商家延迟/无法发货」报备指引公告（7月17日更新）</div><p>针对受自然灾害影响、无法按期发货的商家，平台提供延迟/无法发货的报备指引与履约保护，商家可按指引提交受影响的订单与店铺信息。<br><span style="color:#999;font-size:12px">官方服务/治理公告</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/7812/d6eb975f1e8e8878/growth_center_platform_notice/8" target="_blank">查看公告</a></div>
+      <div class="item"><div class="item-title">微信小店API本周调整汇总：订单/赠品/商品接口更新（7月10日发布）</div><p>获取订单详情接口新增「商品抽奖送礼」枚举值与收礼换款信息；创建赠品活动接口新增3个字段；添加/更新商品接口title字段限制至少1个有效字符；新增供货商类目审核结果通知与供货管理开发指南。<br><span style="color:#999;font-size:12px">官方API文档更新，store.weixin.qq.com</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9662/17f86f39370c64f1/growth_center_manual_for_store/6" target="_blank">查看详情</a></div>
+      <div class="item"><div class="item-title">微信小店新商技术服务费激励政策（7月1日—12月31日）</div><p>首次创建的微信小店新店铺，首笔普通订单完成支付后90天内（不超过开店后180天），重点类目前150万/其他类目前100万自营交易额，技术服务费率降至1%。<br><span style="color:#999;font-size:12px">官方激励政策，store.weixin.qq.com</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9590/a971576daad2cadb/growth_center_platform_notice/2" target="_blank">查看详情</a></div>
     </div>
   </div>
   <div class="dim-block">
@@ -454,9 +456,10 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
     <div class="dim-header">
       <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.open}" alt=""></div>
       <div class="dim-title-text">微信开放平台 / 小程序</div>
-      <div class="dim-count">1 条更新</div>
+      <div class="dim-count">2 条更新</div>
     </div>
     <div class="dim-body">
+      <div class="item"><div class="item-title">小程序AI成长计划二期升级：10亿Token + 混元Hy3模型（7月1日起，官方公告）</div><p>二期（2026.7.1—12.31）Token额度从1亿升至10亿，AI生图额度从1万张升至10万张；模型全面升级至混元Hy3与Hy Image 3.0；存量一期用户自动补发9亿Token+9万张生图额度，无需重复申请。<br><span style="color:#999;font-size:12px">官方公告，developers.weixin.qq.com</span></p><a class="link-btn" href="https://developers.weixin.qq.com/minigame/dev/wxcloud/billing/ai-inspire-plan.html" target="_blank">查看详情</a></div>
       <div class="item"><div class="item-title">小程序"被AI理解/调用权"成为新流量分配逻辑（媒体观察）</div><p>微信开放平台明确开发者可申请让自家小程序具备"被微信AI理解、推荐和调用"的能力，未接入的小程序将无法被微信AI调用；在微信AI生态中，"AI推荐即成交"的经营范式加速成型。AI小程序成长计划加码（10亿Token/混元Hy3）已于上期收录。<br><span style="color:#999;font-size:12px">媒体观察，非官方公告</span></p></div>
     </div>
   </div>
@@ -464,19 +467,21 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
     <div class="dim-header">
       <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.tuike}" alt=""></div>
       <div class="dim-title-text">推客</div>
-      <div class="dim-count">1 条更新</div>
+      <div class="dim-count">2 条更新</div>
     </div>
     <div class="dim-body">
-      <div class="item"><div class="item-title">推客激励计划执行中 + 潜力带货者免佣（媒体观察）</div><p>微信小店"联盟带货机构推客带货功能激励计划（2026年7月）"持续执行（至7/31），潜力带货者免佣优惠7/1–9/30生效；第三方观察显示平台以真金白银扶持推客分销，单机构月度现金激励最高达250万元。<br><span style="color:#999;font-size:12px">官方激励政策已于上期收录；本条目为媒体观察，非官方公告</span></p></div>
+      <div class="item"><div class="item-title">微信小店联盟带货机构推客带货激励计划（2026年7月）（官方）</div><p>针对通过「推客带货功能」在7月结算的订单，向带货机构发放现金激励（额度=结算基数×（技术服务费率-1%）），向同主体服务商发放电商成长卡激励（按月度GMV梯度，最高月GMV≥1000万可得10万点），单机构月度现金激励上限250万元。<br><span style="color:#999;font-size:12px">官方激励政策，store.weixin.qq.com</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9608/2aefa9859e17eaa8/growth_center_platform_notice/2" target="_blank">查看详情</a></div>
+      <div class="item"><div class="item-title">潜力带货者免佣限时优惠（7月1日—9月30日）（官方）</div><p>过去3个月月均结算GMV≤1万元的带货者，与带货机构合作产生的订单中，每月结算GMV≤1万元部分，带货机构联盟技术服务费费率降至0%。<br><span style="color:#999;font-size:12px">官方规则修订，store.weixin.qq.com</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/8802/3da8b22500623158/growth_center_rule_for_promoter" target="_blank">查看详情</a></div>
     </div>
   </div>
   <div class="dim-block">
     <div class="dim-header">
       <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.pay}" alt=""></div>
       <div class="dim-title-text">微信支付</div>
-      <div class="dim-count">1 条更新</div>
+      <div class="dim-count">2 条更新</div>
     </div>
     <div class="dim-body">
+      <div class="item"><div class="item-title">微信支付8·8扫码盒子数字化经营方案首发（7月16日）</div><p>微信支付发布官方扫码盒子方案：商户使用扫码盒子完成有效收款可获经营激励（调高奖励比例、按月发放至2027年4月30日）；设备升级4G独立联网+实时语音播报，从单一收款工具升级为门店数字化经营入口；合作伙伴新增落地奖+激活奖，多重激励降低线下拓展门槛。<br><span style="color:#999;font-size:12px">媒体汇总，非官方公告；活动属商务部"8·8服务消费节"</span></p></div>
       <div class="item"><div class="item-title">组合支付 / 定时红包 / 分期转账等能力持续灰度（媒体观察）</div><p>微信支付"组合支付"（零钱+银行卡等多渠道自定义扣款）等功能持续灰度，媒体实测覆盖用户已超1亿；聊天页红包/转账一键直达与收款码长按直达已于上期收录。<br><span style="color:#999;font-size:12px">媒体观察，非官方公告</span></p></div>
     </div>
   </div>
