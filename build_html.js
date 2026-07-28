@@ -395,7 +395,118 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
 <div class="container">
 
 <!-- ════ 期次10：2026.6.30–7.6 ════ -->
-<div class="period-content active" id="p12">
+<!-- ════ 期次13：2026.7.20–7.26 ════ -->
+<div class="period-content active" id="p13">
+  <div class="overview-card">
+    <div class="card-title">▌ 本期要点速览（2026.7.20–7.26）</div>
+    <table class="overview-table">
+      <thead><tr><th>#</th><th>维度</th><th>核心内容</th><th style="text-align:center;width:80px">重要程度</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店</div></td><td>新规速递-20260727：酒类/文玩文创/虚拟及衍生商品/外设产品多类目调整；食品礼券开放联盟准入；工业品类目管理规则公示（7/27生效）；带货者「品牌好物」任务激励</td><td style="text-align:center">★★★</td></tr>
+        <tr><td>2</td><td><div class="dim-cell"><img src="${ICONS.channels}" alt="">视频号</div></td><td>点赞交互升级正式公布（拇指赞/爱心赞+弹幕式互动）；鸿蒙版灰度"视频号推荐给好友"、评论区投诉等</td><td style="text-align:center">★★★</td></tr>
+        <tr><td>3</td><td><div class="dim-cell"><img src="${ICONS.pay}" alt="">微信支付</div></td><td>"8·8服务消费节"三大举措：外卡内绑手续费减免升级+海外钱包互联+16语种支付指引；扫码盒子数字化经营方案落地</td><td style="text-align:center">★★★</td></tr>
+        <tr><td>4</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">微信客户端</div></td><td>8.0.76正式版分批全量（撤回提示本地删除、红包待收款定位、AI"小微"灰度）；鸿蒙版8.0.19.44尝鲜（35项优化）；通讯录改版</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>5</td><td><div class="dim-cell"><img src="${ICONS.work}" alt="">企业微信</div></td><td>智能助理"大圆"持续灰度内测；服务号/公众号PC入口合并延续观察</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>6</td><td><div class="dim-cell"><img src="${ICONS.tuike}" alt="">推客</div></td><td>带货者「品牌好物」任务激励上线（官方）；7月激励计划与免佣政策持续执行</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>7</td><td><div class="dim-cell"><img src="${ICONS.open}" alt="">开放平台/小程序</div></td><td>京东AI Agent接入腾讯元宝小程序生态（首个综合电商，媒体观察）；AI成长计划10亿Token持续</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>8</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">公众号/服务号</div></td><td>内容治理专项：下架近百部违规微短剧、升级青少年不良诱导打击（7/20）</td><td style="text-align:center">★★☆</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.store}" alt=""></div>
+      <div class="dim-title-text">微信小店</div>
+      <div class="dim-count">8 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item"><div class="item-title">微信小店新规速递-20260727（覆盖 2026.7.20–7.26）</div><p>本周规则周报汇总7条平台公告：酒类新增定向准入、文玩文创新增开放类目、虚拟及衍生商品新增类目、外设产品新增预售功能、食品饮料/生鲜商品参数调整、食品礼券开放联盟准入、违规售卖濒危动物制品专项治理；另含交易纠纷处理规则修订意见征集等。<br><span style="color:#999;font-size:12px">官方规则周报，store.weixin.qq.com</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9714/e6906638d4c10a59/growth_center_rule_for_store/24" target="_blank">查看公告</a></div>
+      <div class="item alert"><div class="item-title"><span class="alert-badge">即将生效</span>关于「微信小店酒类新增定向准入类目」调整公告（7月20日）</div><p>自2026年08月03日起，平台对二级类目「白酒」项下新增定向准入三级类目「其他白酒」，原三级类目「白酒」改名为「品牌白酒」。<br><span style="color:#999;font-size:12px">生效日 2026.08.03，官方类目调整公告</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9655/d77e4b001cb1e16c/growth_center_platform_notice/1" target="_blank">查看公告</a></div>
+      <div class="item alert"><div class="item-title"><span class="alert-badge">即将生效</span>关于「微信小店文玩文创新增开放类目」调整公告（7月20日）</div><p>自2026年08月03日起，微信小店一级类目「文玩文创」下新增开放二级类目「木艺制品」及三级类目「木雕」。<br><span style="color:#999;font-size:12px">生效日 2026.08.03，官方类目调整公告</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9649/cb099901c8efd39e/growth_center_platform_notice/1" target="_blank">查看公告</a></div>
+      <div class="item alert"><div class="item-title"><span class="alert-badge">即将生效</span>关于「微信小店虚拟及衍生商品新增类目」调整公告（7月24日）</div><p>自2026年08月07日起，原一级类目「其他」正式更名为「虚拟及衍生商品」，并在该一级类目下增设二、三、四级类目，完善虚拟及数字衍生商品的经营结构。<br><span style="color:#999;font-size:12px">生效日 2026.08.07，官方类目调整公告</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9666/b60cf4dd5bbd9a20/growth_center_platform_notice/1" target="_blank">查看公告</a></div>
+      <div class="item"><div class="item-title">关于「微信小店外设产品类目新增预售功能」调整公告（7月24日）</div><p>自2026年07月24日起，平台调整一级类目「电脑、办公」下二级类目「外设产品」的预售功能，支持全款预售，最长预售时间为15天。<br><span style="color:#999;font-size:12px">官方类目调整公告，已生效</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9689/fd7786a2d07cedb4/growth_center_platform_notice/1" target="_blank">查看公告</a></div>
+      <div class="item alert"><div class="item-title"><span class="alert-badge">即将生效</span>关于微信小店「食品饮料、生鲜部分类目」商品参数调整公告（7月24日）</div><p>平台将于2026年07月30日对「食品饮料」「生鲜」类目下的部分商品属性进行调整，商家需按新参数要求核对并完善在售商品信息。<br><span style="color:#999;font-size:12px">生效日 2026.07.30，官方类目调整公告</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9696/40d3e0e80937d7f2/growth_center_platform_notice/1" target="_blank">查看公告</a></div>
+      <div class="item"><div class="item-title">微信小店「食品礼券开放特定条件联盟准入」公告（7月24日）</div><p>自2026年06月21日起，平台对食品饮料类目下的二级类目「食品礼券」开放特定条件联盟准入，符合条件的商家、带货者可参与食品礼券的联盟带货经营。<br><span style="color:#999;font-size:12px">官方联盟准入公告，store.weixin.qq.com</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9687/e4da492e01051625/growth_center_platform_notice/1" target="_blank">查看公告</a></div>
+      <div class="item"><div class="item-title">微信小店｜带货者「品牌好物」任务激励（7月27日发布）</div><p>面向带货者推出「品牌好物」任务激励，引导带货者推广优质品牌商品并完成对应任务，达标可获得平台激励，助力提升品牌好物的分发与成交。<br><span style="color:#999;font-size:12px">官方激励政策，store.weixin.qq.com</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9688/dde3700959acef52/growth_center_platform_notice/2" target="_blank">查看公告</a></div>
+    </div>
+  </div>
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.channels}" alt=""></div>
+      <div class="dim-title-text">视频号</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item"><div class="item-title">视频号点赞交互方式升级正式公布（7月20日，微信派）</div><p>微信派公布视频号点赞交互新变化：双击视频触发"拇指赞"（仅自己可见），点底部爱心为公开"爱心赞"，创作者两种赞均可见；同时可参与弹幕式互动，优化观看与互动体验（本周为官方渠道正式对外说明）。<br><span style="color:#999;font-size:12px">微信派官宣，媒体汇总</span></p></div>
+      <div class="item"><div class="item-title">微信鸿蒙版 8.0.19.44 灰度：视频号推荐给好友、评论区投诉等（7月23日）</div><p>鸿蒙版微信开启 8.0.19.44 尝鲜（测试期 7/23–8/22），涉及视频号的改动包括：视频号支持"推荐给好友"、评论区不含话题的评论长按新增投诉选项、发现-视频号-搜索结果新增视频分类等。<br><span style="color:#999;font-size:12px">媒体汇总，非官方公告</span></p></div>
+    </div>
+  </div>
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.pay}" alt=""></div>
+      <div class="dim-title-text">微信支付</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item"><div class="item-title">微信支付参与"8·8服务消费节"：入境支付三大升级（7月17日启动，本周持续）</div><p>"8·8服务消费节"活动期间，微信支付推出三大措施：①外卡内绑升级——首次绑定国际银行卡用户完成首笔消费后，可享连续90个自然日、每日1000元额度内3%手续费减免，2026全年国际卡用户单笔200元内消费继续免3%手续费；②海外钱包互联互通，携手 PayPal World 等已支持数十个国家和地区电子钱包；③支付指引语言扩展至16种，覆盖多消费场景。<br><span style="color:#999;font-size:12px">媒体汇总，非官方公告；活动由中国国际电子商务中心引导</span></p></div>
+      <div class="item"><div class="item-title">微信支付"扫码盒子数字化经营方案"落地（消费节专项）</div><p>微信支付线下政务行业团队介绍，"8·8服务消费节"期间推出"扫码盒子数字化经营方案"与"入境支付便利升级"两大专项：向实体商圈和商户投入平台流量与资金支持，推动门店数字化经营升级，激发线上线下消费良性循环。<br><span style="color:#999;font-size:12px">媒体汇总，非官方公告</span></p></div>
+    </div>
+  </div>
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.mp}" alt=""></div>
+      <div class="dim-title-text">微信客户端</div>
+      <div class="dim-count">3 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item"><div class="item-title">安卓/鸿蒙微信 8.0.76 正式版分批全量（7月20日观察）</div><p>8.0.76 正式版安卓、鸿蒙优先分批放量、iOS 延后适配，落地四项高频优化：撤回消息灰色提示可长按本地删除（不影响对方）、聊天右上角新增未领红包/待收款标识一键定位、转账支付步骤优化，以及底层稳定性提升；同时灰度上线 AI 助手"小微"。<br><span style="color:#999;font-size:12px">媒体实测汇总，非官方公告</span></p></div>
+      <div class="item"><div class="item-title">微信鸿蒙版 8.0.19.44 尝鲜升级：35项功能优化与灰度（7月23日）</div><p>鸿蒙版微信开启 8.0.19.44 尝鲜（测试期 7/23–8/22），涵盖 AI 搜索入口、聊天双击文字放大、发送实况照片、状态支持动图背景、朋友圈长按收藏、翻译自动翻译收到的消息、AI 助手"小微"测试版、元宝由联系人态变为 AI 功能态等 35 项优化与灰度测试。<br><span style="color:#999;font-size:12px">媒体汇总，非官方公告</span></p></div>
+      <div class="item"><div class="item-title">微信通讯录改版：新增"仅聊天的朋友"入口、长文本描述、标签逻辑反转（7月观察）</div><p>新版通讯录顶部新增"仅聊天的朋友"专属入口；好友列表支持展示自定义长文本描述（铺在昵称下方）；标签分组改为先建标签名再批量勾选好友；朋友权限"其他"总开关可关闭陌生添加，仅保留二维码/名片/群聊三种加友渠道。<br><span style="color:#999;font-size:12px">媒体汇总，非官方公告</span></p></div>
+    </div>
+  </div>
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.work}" alt=""></div>
+      <div class="dim-title-text">企业微信</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item"><div class="item-title">企业微信智能助理"大圆"持续灰度内测（本周延续）</div><p>企业微信 AI 智能助理"大圆"继续灰度内测：可连按 2 次 Ctrl 随时唤起，基于当前工作上下文总结聊天、读写文档表格、汇总项目进展、设置定时任务整理待办；WAIC 2026 首次公开亮相后仍处内测放量阶段，本期无独立官方公告。<br><span style="color:#999;font-size:12px">媒体观察，非官方公告</span></p></div>
+    </div>
+  </div>
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.tuike}" alt=""></div>
+      <div class="dim-title-text">推客</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item"><div class="item-title">带货者「品牌好物」任务激励上线（7月27日，官方）</div><p>微信小店/推客生态面向带货者推出「品牌好物」任务激励：带货者推广指定优质品牌商品并完成任务目标后可获得平台激励，与 7 月带货机构激励计划、潜力带货者免佣（7/1–9/30）等政策形成组合，持续加码带货者侧运营。<br><span style="color:#999;font-size:12px">官方激励政策，store.weixin.qq.com</span></p><a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9688/dde3700959acef52/growth_center_platform_notice/2" target="_blank">查看详情</a></div>
+    </div>
+  </div>
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.open}" alt=""></div>
+      <div class="dim-title-text">微信开放平台 / 小程序</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item"><div class="item-title">京东 AI Agent 接入腾讯元宝小程序生态（媒体观察）</div><p>京东 AI Agent 与腾讯元宝完成小程序生态打通，京东成为首个接入元宝的综合电商，将电商入口从 App 延伸至对话场景。这进一步印证微信开放平台"小程序被 AI 理解/调用"的新流量逻辑，AI 推荐即成交的经营范式加速落地。<br><span style="color:#999;font-size:12px">媒体观察，非官方公告</span></p></div>
+      <div class="item"><div class="item-title">小程序 AI 成长计划二期（10亿Token+混元Hy3）持续执行</div><p>小程序 AI 成长计划二期（2026.7.1–12.31）持续开放：Token 额度 10 亿、AI 生图额度 10 万张，模型升级至混元 Hy3 与 Hy Image 3.0，存量用户自动补发额度。本周为持续执行期，无新增官方公告。<br><span style="color:#999;font-size:12px">官方公告（首发于上期），developers.weixin.qq.com</span></p><a class="link-btn" href="https://developers.weixin.qq.com/minigame/dev/wxcloud/billing/ai-inspire-plan.html" target="_blank">查看详情</a></div>
+    </div>
+  </div>
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.mp}" alt=""></div>
+      <div class="dim-title-text">公众号 / 服务号</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item"><div class="item-title">微信内容治理专项：下架近百部违规微短剧、升级青少年不良诱导打击（7月20日）</div><p>7月20日，微信根据广电部署及平台规范巡查，下架近百部存在不良价值观导向或侵权的违规微短剧并处置相关小程序；同时升级青少年不良诱导治理，暑期针对伪装零食饮料、开盒网暴、饭圈互撕等诱导行为加强打击。本期公众号/服务号侧无其他独立产品功能更新。<br><span style="color:#999;font-size:12px">媒体汇总，非官方公告</span></p></div>
+    </div>
+  </div>
+</div><!-- /p13 -->
+<div class="period-content" id="p12">
   <div class="overview-card">
     <div class="card-title">▌ 本期要点速览（2026.7.13–7.19）</div>
     <table class="overview-table">
@@ -1796,8 +1907,8 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
 
 <div class="footer">
   <div class="footer-update">
-    <span>🕐 最近更新：2026年7月21日</span>
-    <span class="footer-next">📅 下次更新：2026年7月28日（周二）</span>
+    <span>🕐 最近更新：2026年7月28日</span>
+    <span class="footer-next">📅 下次更新：2026年8月4日（周二）</span>
   </div>
   <div class="footer-credit">
     <strong>微信生态每周更新汇总</strong> · 数据来源：腾讯智慧零售、微信公开渠道
@@ -1829,6 +1940,7 @@ function printPDF() {
 })();
 
 const PERIODS = [
+  { id: 'p13',  label: '2026.7.20–7.26', start: new Date(2026, 6, 20), end: new Date(2026, 6, 26) },
   { id: 'p12',  label: '2026.7.13–7.19', start: new Date(2026, 6, 13), end: new Date(2026, 6, 19) },
   { id: 'p11',  label: '2026.7.6–7.12', start: new Date(2026, 6, 6), end: new Date(2026, 6, 12) },
   { id: 'p10',  label: '2026.6.30–7.6', start: new Date(2026, 5, 30), end: new Date(2026, 6, 6) },
@@ -1847,7 +1959,7 @@ const PERIODS = [
 ];
 
 // 当前选中期次
-let activePeriodId = 'p12';
+let activePeriodId = 'p13';
 // 日历当前显示的月份
 let calYear = 2026, calMonth = 6; // 0-indexed，6=7月
 
