@@ -340,3 +340,12 @@
 - **校验全绿**：17 期块、active 唯一、script=1、printPDF=1、mobile=1、footer=1、noResult=1、div 全局 1533/1533、JS 可解析、8 个 dim-count 与实际条目逐一核对一致。
 - 💡 **逐期 div 校验的正确读法**：若切片从 `id="pN">` 起（漏掉开头 `<div`），每期必然报 `N/N+1`。判据应为「所有期次同一偏移」+「全局开合相等」，切勿误判为结构损坏并去"修复"。
 - ⚠️ **本环境无 `sleep`、无 `gh` CLI**。等待部署用 `node -e "setTimeout(()=>{},90000)"`；线上验证用 `curl ...index.html?nocache=$RANDOM` 绕缓存。
+
+## 第12次执行（2026-08-04 09:33）—— 重复触发，仅做验证与补交
+- **状态**：⏭️ 未新增期次。同一自动化于本日 **09:25** 已完成 p14（2026.7.27–8.2）全流程并推送（`f2729af`），本次 09:33 触发为**同日二次触发**。
+- **判定依据**：`git log -1` 时间戳 2026-08-04 09:26:45；本地 HEAD == origin/main；index.html active=p14；footer「最近更新 2026年8月4日 / 下次更新 2026年8月11日（周二）」已是最新。
+- **线上验证**（curl 绕缓存）：HTTP 200 / 752,702 bytes；active=p14；period 块 17；`<script>`=1；`printPDF`=1；mobile `@media`=1；footer 下次更新 8/11 ✅
+- **p14 内容复核**：19 条 item、9 个 link-btn（全 store.weixin.qq.com 官方域名）、3 条 alert 红标，与上轮记录一致。
+- **补交**：`23d6ce6 docs: 补记 p12/p13/p14 执行记录与自动化 memory`（此前 .workbuddy/memory 下 3 个 daily log 与 automation memory 未纳入版本控制）。
+- 💡 **同日重复触发的标准处置**：先查 `git log -1 --format="%ci"` + `index.html` 的 active 期次与 footer 日期；若已覆盖上周完整周（周一至周日），**不要重复新增期次**，只做线上验证 + 补交未提交文件即可。盲目再插一期会造成 p15 与 p14 区间重复。
+- ⚠️ **本环境 `rm` 被 safe-delete 策略拦截**（相对路径会被拒），临时文件用绝对路径删或直接留下；`/tmp` 在 Git Bash 下不可用，curl 输出请写到工作目录内。
