@@ -395,8 +395,202 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
 <div class="container">
 
 <!-- ════ 期次10：2026.6.30–7.6 ════ -->
+<!-- ════ 期次15：2026.8.3–8.9 ════ -->
+<div class="period-content active" id="p15">
+  <div class="overview-card">
+    <div class="card-title">▌ 本期要点速览（2026.8.3–8.9）</div>
+    <table class="overview-table">
+      <thead><tr><th>#</th><th>维度</th><th>核心内容</th><th style="text-align:center;width:80px">重要程度</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店</div></td><td>「C2B 发货时间协商上行 API」调整（8/23 前必须完成接入）；一级类目「图书」大范围重构（8/19 生效）；烟草专卖品专项治理；家具类目调整</td><td style="text-align:center">★★★</td></tr>
+        <tr><td>2</td><td><div class="dim-cell"><img src="${ICONS.channels}" alt="">视频号</div></td><td>账号体系规则修订公示（8/13 生效）：年度关联商家变更上限由 3 次有条件放宽至最高 12 次；AI 带货标注新规 8/10 正式生效</td><td style="text-align:center">★★★</td></tr>
+        <tr><td>3</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">微信客户端</div></td><td>原生 AI 助手「小微」扩大灰度并打通小程序调用；朋友圈 AI 帮写、语音转文字指令、公众号 AI 总结多入口灰度</td><td style="text-align:center">★★★</td></tr>
+        <tr><td>4</td><td><div class="dim-cell"><img src="${ICONS.pay}" alt="">微信支付</div></td><td>「AI 专属卡」正式对外发布并首批接入 WorkBuddy；中越跨境二维码支付打通（NAPAS）；8 月服务商文档多项接口更新</td><td style="text-align:center">★★★</td></tr>
+        <tr><td>5</td><td><div class="dim-cell"><img src="${ICONS.open}" alt="">开放平台/小程序</div></td><td>取消小程序「电话卡销售」类目（非运营商主体不再支持号卡办理引流）；小程序 AI 开发模式首批服务商内测落地</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>6</td><td><div class="dim-cell"><img src="${ICONS.tuike}" alt="">推客</div></td><td>联盟带货机构推客带货功能激励计划（8-9 月）正式开跑：机构现金激励单月最高 250 万元</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>7</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">公众号/服务号</div></td><td>公众号及贴图号小店内容创作激励计划启动；「一键排版」能力持续迭代</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>8</td><td><div class="dim-cell"><img src="${ICONS.work}" alt="">企业微信</div></td><td>5.0.9.6063 版本发布（8/7）：智能助理「大圆」、分支回复、话题、智能表格 AI 字段解析文件/处理图片</td><td style="text-align:center">★★☆</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.store}" alt=""></div>
+      <div class="dim-title-text">微信小店</div>
+      <div class="dim-count">7 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item alert">
+        <div class="item-title">「C2B 发货时间协商上行 API 接口」调整通知（8 月 23 日前必须完成接入）</div>
+        <div class="item-desc">为支持用户下单后自行约定发货时间，平台对发货类 API 做三项改造：① 「订单其它信息更新」回调 <code>type</code> 新增枚举值 <code>25</code>（用户预约具体发货时间）、<code>26</code>（用户预约暂不发货）；② 获取订单详情接口 <code>delivery_info.delivery_time_type</code> 新增 <code>4</code>（用户预约）与 <code>100</code>（暂不发货）；③ 新增「获取用户预约发货列表 / pullshopuserbookinglist」接口。<b>适用类目：家用电器、家装建材、家具</b>（第三方服务商与店铺商家）。<b>逐期影响：未在 2026 年 8 月 23 日前完成改造的，若因未能感知用户预约时间引发争议，将以用户预约时间作为履约标准判定。</b>8/23 起平台逐步灰度生效。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9772/2d651e962bd870ab/growth_center_platform_notice/1?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+      <div class="item alert">
+        <div class="item-title">一级类目「图书」大范围调整公告（8 月 19 日生效）</div>
+        <div class="item-desc">平台对一级类目【图书】做系统性优化，涵盖类目更名、新增、关闭、拆分四类动作：新增<b>定向准入类目【中小学教材】</b>；新增二级类目【地图】【儿童读物】；新增三级类目【青春/都市/言情/轻小说】【学习报】【日历/台历/挂历】等；原三级类目【学习方法/报考指南】更名为【中小学教辅】并拆分为【中学教辅】【小学教辅】两个四级类目；同时<b>关闭 12 个旧三级类目</b>（如孕产妇饮食/保健、社会心理学、摄影技法、家常菜谱等）。关闭类目的存量商品将逐步迁移至新类目，<b>公告生效之日起原类目不可再新增商品</b>。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9734/d83cb0cd5fda1786/growth_center_platform_notice/1?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+      <div class="item">
+        <div class="item-title">「违规售卖烟草专卖品、烟草专用机械及相关产品」专项治理公告</div>
+        <div class="item-desc">平台已识别并拦截多类规避手法：以钓鱼饵料、水果等普通商品为伪装夹带烟丝/电子烟信息；将烟油、雾化液伪装为香薰精油、果味精油；直播间用谐音、行业黑话、代号口播暗示，引导用户私下添加客服后发送专用下单链接；直播间展示烟卡等香烟半成品。已公示 9 个违规账号处置：下架全部商品、暂停店铺新增商品、营业执照禁止开店、延长订单结算期 180 天、冻结支付资金 180 天、限制保证金提现 180 天。情节严重者将永久封禁橱窗/直播权限乃至店铺，平台保留依法移交公安机关的权利。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9775/a9132b890050f4c4/growth_center_platform_notice/3?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+      <div class="item">
+        <div class="item-title">「清凉季」+「开学季」活动政策发布（两阶段合并报名）</div>
+        <div class="item-desc"><b>报名：</b>8/3 18:00 — 9/6 23:59；<b>活动：</b>8/10 12:00 — 9/7 12:00。分两阶段：清凉季（8/10 12:00–8/24 11:59）、开学季（8/24 12:00–9/7 12:00），<b>一次报名可参与完整周期、无需重复报名</b>，8/24 会场氛围自动切换。门槛：非好店需 DSR ≥ 4.2、近 30 天无异常店铺重大违规处罚；商品需通过价格校验与信息质量审核。权益：活动会场及多场景推荐流量扶持 + 专属活动氛围标识。覆盖生鲜、食品饮料、服饰内衣、家用电器、图书等 26 个应季与通用畅销类目。入口：微信小店 - 营销中心 - 平台活动。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9739/7ba7332c3430871f/growth_center_platform_notice/2?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+      <div class="item">
+        <div class="item-title">新规速递-20260803：上周规则变更汇总（6 公告 / 5 征集 / 7 公示 / 1 生效）</div>
+        <div class="item-desc"><b>公示通知（本周陆续生效）：</b>交易纠纷处理规则-20260803 版本（修订「4.4 平台判责执行」）、文玩文创类目新增「木艺制品/木雕」、酒类新增定向准入「其他白酒」（原「白酒」改名「品牌白酒」）、「不正当参与营销活动」违规治理细则新规、虚拟及衍生商品类目管理规则与定向准入标准（8/7 生效，新增「AI 算力与服务 - 大模型服务」四级类目，保证金 10 万元）。<b>意见征集：</b>店铺体验分管理规则、医疗器械一级类目新规（定向准入 + 类目管理）、商品及服务评价规则、账号体系管理规则。<b>规则生效：</b>一级类目工业品类目管理规则。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9756/709c1a8ed3d8df84/growth_center_rule_for_store/24?bpath=%252Fhome%252Fweekly-rules" target="_blank">查看公告</a>
+      </div>
+      <div class="item">
+        <div class="item-title">一级类目「家具」调整公告</div>
+        <div class="item-desc">平台对一级类目【家具】下部分类目结构进行优化调整，商家需按新类目准入要求上架商品，并遵守对应类目管理规则、保证金与技术服务费要求。同期还发布了「公众号及贴图号小店内容创作激励计划」与受自然灾害影响商家延迟发货报备指引的 8/10 更新版。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9776/1da454ab33fce4d0/growth_center_platform_notice/1?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+      <div class="item">
+        <div class="item-title">8 月激励政策集中落地：新商成长 + 服务商双轨激励</div>
+        <div class="item-desc"><b>新商成长激励计划（26 年 8-9 月）</b>：面向新入驻商家，按阶段性 GMV 目标发放电商成长卡激励；<b>2026 年 8 月「商家服务商」激励政策</b>：服务商服务的店铺达成经营目标即可获取对应激励。两项政策均于 8/3 发布，与上期已报道的「优质经营商家增量激励」、「热招品牌代运营服务商激励」形成 8 月完整激励矩阵。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9744/0e92de6b10bdc942/growth_center_platform_notice/2?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#fff3e8"><img src="${ICONS.channels}" alt=""></div>
+      <div class="dim-title-text">视频号</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item alert">
+        <div class="item-title">账号体系管理规则修订公示：关联商家变更次数有条件放宽（8 月 13 日生效）</div>
+        <div class="item-desc">公示期 2026/8/6–8/12，预计 <b>8 月 13 日生效</b>。修订前：1 个视频号账号一个自然年内最多变更 3 次关联商家。修订后：达到 3 次后，若同时满足① 近 365 天内该账号在【自营】身份下推广小店商品支付 GMV ≥ 1000 万；② 账号当前对外身份非【带货】身份；③ 账号及新关联店铺近 180 天无严重违规，则可继续变更，<b>全年上限提至 12 次</b>。若发现违法违规或恶意绕开联盟带货，平台将收回或进一步限制可变更次数。面向头部自营账号的经营灵活度显著提升。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9745/b0fcc60d8df9142b/growth_center_rule_for_store/28?bpath=%252Fhome%252Fweekly-rules" target="_blank">查看公告</a>
+      </div>
+      <div class="item alert">
+        <div class="item-title">AI 带货短视频标注新规正式生效（8 月 10 日）</div>
+        <div class="item-desc">上期已预告的「短视频带货场景 AI 应用」治理公告于<b>本周日（8 月 10 日）正式生效</b>：发布含 AI 生成内容的带货短视频必须主动添加 AI 标注，否则限制分发。四类必标情形：AI 生成的商品展示画面/使用效果/场景演绎、AI 人物口播与数字人出镜、AI 生成商品海报与宣传图、其他 AI 生成画面。非带货普通视频仍以倡导为主，不影响正常分发。建议商家与服务商在本周内完成存量带货素材的标注自查。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9737/35ed5aa1b4f53c75/growth_center_platform_notice/3?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8f4ff"><img src="${ICONS.mp}" alt=""></div>
+      <div class="dim-title-text">微信客户端</div>
+      <div class="dim-count">3 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item">
+        <div class="item-title">原生 AI 助手「小微」扩大灰度，深度打通小程序调用</div>
+        <div class="item-desc">8 月 3–5 日多家媒体披露，微信原生 AI 助手「小微」在 8.0.75 及以上版本扩大灰度，可通过主界面左上角图标、右滑手势、聊天内「问小微」、公众号/视频号「…」菜单四种方式唤醒。最关键的变化是已打通小程序生态：用户一句话可直接调起对应小程序完成点单、打车、挂号等操作，仅在最后手动确认支付。<span style="color:#999;font-size:12px">⚠️ 此为媒体汇总，官方未发布独立公告页</span></div>
+      </div>
+      <div class="item">
+        <div class="item-title">AI 能力嵌入朋友圈、语音、公众号多个高频场景（灰度）</div>
+        <div class="item-desc">8 月 4 日起 iOS 端灰度批量上线：① 语音转文字新增指令功能，录制后可直接下达润色、翻译、调整文风指令；② 朋友圈上线「AI 帮写」入口，上传图片 + 简单思路即可生成多种风格文案；③ 公众号双端升级，读者可用 AI 总结快速抓取长文要点，创作者依靠智能一键排版简化图文编辑；④ 扫一扫新增 AI 能力。均未随版本强更，沿用分批放量机制。<span style="color:#999;font-size:12px">⚠️ 此为媒体汇总，官方未发布独立公告页</span></div>
+      </div>
+      <div class="item">
+        <div class="item-title">鸿蒙版 8.0.20.41 开启邀测（测试期 8/3–9/2）</div>
+        <div class="item-desc">新增特性包括：视频号分享新增「设为铃声」；视频号评论支持搜索表情与动画表情；聊天笔记右上角新增收藏；微信修复工具新增修复联系人/群聊/聊天记录搜索故障；灰度公众号文章与第三方网页支持浮窗；灰度朋友圈主图文支持话题/网址/小程序蓝色超链接；灰度发表视频号支持选择位置信息。鸿蒙版安装量已突破 6993 万次。<span style="color:#999;font-size:12px">⚠️ 此为媒体汇总，官方未发布独立公告页</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.pay}" alt=""></div>
+      <div class="dim-title-text">微信支付</div>
+      <div class="dim-count">3 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item">
+        <div class="item-title">2026 年 8 月服务商文档中心接口更新（官方更新日志）</div>
+        <div class="item-desc">①【停车缴费服务】新增《商户查费回调》接口；②【商户被管控能力及原因查询】《查询子商户管控情况》返回参数 <code>recover_way</code> 新增枚举值 <code>CONTACT_SERVICE_PROVIDER</code>（联系服务商处理）；③【商户开户意愿确认】《提交申请单》请求参数 <code>channel_id</code> 最大长度由 9 调整为 32；④【投放计划】新增过期通知能力，<code>plan_state</code> 新增 <code>EXPIRED</code> 取值。</div>
+        <a class="link-btn" href="https://pay.weixin.qq.com/doc/v3/partner/4012085442" target="_blank">查看文档</a>
+      </div>
+      <div class="item">
+        <div class="item-title">「AI 专属卡」正式对外发布，首批接入 WorkBuddy</div>
+        <div class="item-desc">微信支付正式发布「AI 专属卡」——一款专为 AI 智能体支付场景设计、内置于微信零钱内的产品功能，当前已接入腾讯桌面办公智能体 WorkBuddy。核心设计：<b>不获取用户账户密码等关键信息、不直接动用主账户资金</b>，而是在用户设定的额度范围内、经用户许可后完成购买，做到专款专用、笔笔确认。未来将面向更多符合接入规范的智能体平台开放。<span style="color:#999;font-size:12px">⚠️ 此为媒体汇总，官方未发布独立公告页</span></div>
+      </div>
+      <div class="item">
+        <div class="item-title">中越跨境二维码支付正式打通（8/6）</div>
+        <div class="item-desc">越南国家支付服务公司（NAPAS）、越南投资发展银行（BIDV）与微信支付在河内联合宣布扩大跨境二维码支付服务。中国游客在越南可直接用微信扫当地商户 VietQRGlobal 二维码完成支付，覆盖零售、餐饮、酒店、景区等全类型商户。微信支付成为继银联国际、支付宝之后第三个与 NAPAS 实现跨境 QR 对接的中国主流支付平台；反向支付（越南国民赴华扫码）已在推进中。<span style="color:#999;font-size:12px">⚠️ 此为媒体汇总，官方未发布独立公告页</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#eef0ff"><img src="${ICONS.open}" alt=""></div>
+      <div class="dim-title-text">微信开放平台 / 小程序</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item">
+        <div class="item-title">取消小程序「电话卡销售」类目（8/1 起执行）</div>
+        <div class="item-desc">微信于 8 月 3 日公告取消小程序「电话卡销售」类目，<b>自 2026 年 8 月 1 日起不再支持非运营商主体从事号卡办理引流业务</b>。此举落实三大运营商渠道规范要求，防范用户个人信息泄露与话费诈骗风险。存量小程序需尽快完成类目迁移或下线相关能力。<span style="color:#999;font-size:12px">⚠️ 此为媒体汇总，官方未发布公开公告页</span></div>
+      </div>
+      <div class="item">
+        <div class="item-title">小程序 AI 开发模式首批服务商内测落地</div>
+        <div class="item-desc">开放平台推出的「小程序 AI 开发模式」进入服务商内测阶段，首批内测团队已完成联合开发与测试。沿用 6 月发布的《关于开发者接入微信 AI 生态的指引》两种模式：<b>自动模式</b>（授权平台读取源码、AI 直接操作页面，零代码）与<b>开发模式</b>（核心能力封装为 Skill、通过 MCP 协议开放，获更高调用优先级）。平台规则明确：<b>未完成接入的小程序将无法被微信 AI 调用</b>。<span style="color:#999;font-size:12px">⚠️ 此为行业观察，非官方公告</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#fff0f0"><img src="${ICONS.tuike}" alt=""></div>
+      <div class="dim-title-text">推客</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item">
+        <div class="item-title">联盟带货机构推客带货功能激励计划（2026 年 8-9 月）正式开跑</div>
+        <div class="item-desc">活动期：<b>2026/8/1 00:00 — 2026/9/30 23:59</b>。针对通过「推客带货功能」在活动期间结算的订单，平台向带货机构发放<b>现金激励</b>，向同一注册主体的服务商发放<b>电商成长卡激励</b>。现金激励额度 = 每件结算商品结算基数 ×（该商品实际平台技术服务费率 − 1%），结算基数 = 用户实付金额 + 支付补贴 + 带货者优惠 + 平台优惠（不含商家券与运费）；电商成长卡按推客带货月结算 GMV 梯度发放。相比上期，机构现金奖励由单季度最高 500 万元调整为<b>单月最高 250 万元</b>，视频号电商成长卡由单季度 5 万点提至<b>单月 15 万点</b>。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9721/893ca3e8d136db45/growth_center_platform_notice/2?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8f4ff"><img src="${ICONS.mp}" alt=""></div>
+      <div class="dim-title-text">公众号 / 服务号</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item">
+        <div class="item-title">公众号及贴图号小店内容创作激励计划发布</div>
+        <div class="item-desc">微信小店面向<b>公众号与贴图号</b>创作者推出小店内容创作激励计划，鼓励创作者以图文、贴图内容形态推动小店成交。这是继视频号、直播、短视频之后，平台对<b>图文内容带货链路</b>的又一次投入，与上期报道的公众号 AI「一键排版」能力形成「创作降本 + 变现提效」的组合拳。公众号运营者可关注报名入口与考核门槛。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9784/eeffa4734d998875/growth_center_platform_notice/2?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#eafaf1"><img src="${ICONS.work}" alt=""></div>
+      <div class="dim-title-text">企业微信</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item">
+        <div class="item-title">5.0.9.6063 版本发布（8/7）：AI 能力与协作工具全面升级</div>
+        <div class="item-desc">本次版本围绕 AI 与协作效率做成套升级：① <b>智能助理「大圆」开启内测</b>，手机端贴边把手与电脑端快捷键（双击 Ctrl）随时唤起，可总结聊天、读写文档表格、汇总项目进展、设置定时任务；② <b>服务总结</b>：AI 自动总结客户需求、意向、成交卡点并每日推荐重点客户；③ <b>智能表格</b> AI 字段支持解析文件（提取合同到期日、发票金额等）与处理图片（水印、抠图、提清）；④ <b>智能文档</b>新增目录、划词评论、流程图/思维导图内容块；⑤ <b>分支回复</b>（大群内小范围讨论不打扰其他人）与<b>「话题」协作方式</b>（灰度中）；⑥ 新增葡萄牙语、匈牙利语界面语言。</div>
+        <a class="link-btn" href="https://work.weixin.qq.com/" target="_blank">查看官网</a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /p15 -->
+
 <!-- ════ 期次14：2026.7.27–8.2 ════ -->
-<div class="period-content active" id="p14">
+<div class="period-content" id="p14">
   <div class="overview-card">
     <div class="card-title">▌ 本期要点速览（2026.7.27–8.2）</div>
     <table class="overview-table">
@@ -2093,8 +2287,8 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
 
 <div class="footer">
   <div class="footer-update">
-    <span>🕐 最近更新：2026年8月4日</span>
-    <span class="footer-next">📅 下次更新：2026年8月11日（周二）</span>
+    <span>🕐 最近更新：2026年8月11日</span>
+    <span class="footer-next">📅 下次更新：2026年8月18日（周二）</span>
   </div>
   <div class="footer-credit">
     <strong>微信生态每周更新汇总</strong> · 数据来源：腾讯智慧零售、微信公开渠道
@@ -2126,6 +2320,7 @@ function printPDF() {
 })();
 
 const PERIODS = [
+  { id: 'p15',  label: '2026.8.3–8.9', start: new Date(2026, 7, 3), end: new Date(2026, 7, 9) },
   { id: 'p14',  label: '2026.7.27–8.2', start: new Date(2026, 6, 27), end: new Date(2026, 7, 2) },
   { id: 'p13',  label: '2026.7.20–7.26', start: new Date(2026, 6, 20), end: new Date(2026, 6, 26) },
   { id: 'p12',  label: '2026.7.13–7.19', start: new Date(2026, 6, 13), end: new Date(2026, 6, 19) },
@@ -2146,7 +2341,7 @@ const PERIODS = [
 ];
 
 // 当前选中期次
-let activePeriodId = 'p14';
+let activePeriodId = 'p15';
 // 日历当前显示的月份
 let calYear = 2026, calMonth = 6; // 0-indexed，6=7月
 
