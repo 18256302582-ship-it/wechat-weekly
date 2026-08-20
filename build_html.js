@@ -403,7 +403,7 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
       <thead><tr><th>#</th><th>维度</th><th>核心内容</th><th style="text-align:center;width:80px">重要程度</th></tr></thead>
       <tbody>
         <tr><td>1</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店</div></td><td>新规速递-20260817 发布（7 公告/2 征集/3 公示/6 生效）；家具类目调整 8/24 生效；公众号及贴图号小店内容创作激励计划 8/10 启动；违规售卖赌博博彩专项治理 8/11；2026 宠物嘉年华激励 8/12；组装电脑类目新增预售功能 8/13</td><td style="text-align:center">★★★</td></tr>
-        <tr><td>2</td><td><div class="dim-cell"><img src="${ICONS.work}" alt="">企业微信</div></td><td>5.0.10 版本发布（8/18）：AI 开放能力新增文档/待办/日程/会议/微盘/消息/邮件等多个核心模块 CLI/MCP 接口；智能表格新增 AI 分析报告（大圆）；智能文档新增描述字号字色与导出 Word/PDF/Markdown/打印</td><td style="text-align:center">★★★</td></tr>
+        <tr style="background:#fff5f5"><td>2</td><td><div class="dim-cell"><img src="${ICONS.work}" alt="">企业微信 <span style="color:#c0392b;font-weight:700">⭐重点</span></div></td><td><b style="color:#c0392b">5.0.10 版本发布（8/18）：AI 开放能力大幅扩展</b>——首次放出文档/待办/日程/会议/微盘/消息/邮件等核心模块 CLI/MCP 接口，企业微信 AI 从内测走向开放；智能表格新增 AI 分析报告（大圆）、智能文档支持导出 Word/PDF/Markdown</td><td style="text-align:center">★★★</td></tr>
         <tr><td>3</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">微信客户端</div></td><td>微信 8.0.20 for HarmonyOS 全新发布（8/10），修复若干已知问题，鸿蒙生态持续补齐</td><td style="text-align:center">★★☆</td></tr>
         <tr><td>4</td><td><div class="dim-cell"><img src="${ICONS.pay}" alt="">微信支付</div></td><td>2026 年 8 月更新：停车缴费新增《商户查费回调》接口；商户被管控查询 recover_way 新增 CONTACT_SERVICE_PROVIDER 枚举；开户意愿确认 channel_id 长度 9→32；投放计划新增过期状态变更通知 EXPIRED；商品券 send_channel 新增 MEMBER 枚举</td><td style="text-align:center">★★☆</td></tr>
         <tr><td>5</td><td><div class="dim-cell"><img src="${ICONS.open}" alt="">微信开放平台/小程序</div></td><td>开发者工具稳定版 2.02.2608040（8/18）：新增 Electron 版本工具、外观设置模拟器&调试器位置、小程序 AI 开发调试能力、开发者工具 Skill 能力；修复多项问题</td><td style="text-align:center">★★☆</td></tr>
@@ -465,10 +465,10 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
       <div class="dim-title-text">企业微信</div>
       <div class="dim-count">1 条更新</div>
     </div>
-    <div class="dim-body">
-      <div class="item">
-        <div class="item-title">5.0.10 版本发布（8/18）：AI 开放能力大幅扩展</div>
-        <div class="item-desc">本次版本围绕 AI 开放能力做成套升级：① <b>AI 开放能力新增多个核心模块 CLI/MCP 接口</b>，覆盖文档、待办、日程、会议、微盘、消息、邮件等能力，便于企业将企业微信 AI 嵌入自有系统；② <b>智能表格新增 AI 分析报告</b>（由智能助理「大圆」驱动，自动洞察表格数据并生成结论）；③ <b>智能文档</b>新增描述字号/字色设置，支持一键导出 Word/PDF/Markdown 并打印。与上期「大圆」内测形成 AI 能力的持续深化。</div>
+      <div class="dim-body">
+      <div class="item alert">
+        <div class="item-title">⭐ 重点 · 5.0.10 版本发布（8/18）：AI 开放能力大幅扩展</div>
+        <div class="item-desc">本次版本围绕 AI 开放能力做成套升级：① <b>AI 开放能力新增多个核心模块 CLI/MCP 接口</b>，覆盖文档、待办、日程、会议、微盘、消息、邮件等能力，便于企业将企业微信 AI 嵌入自有系统；② <b>智能表格新增 AI 分析报告</b>（由智能助理「大圆」驱动，自动洞察表格数据并生成结论）；③ <b>智能文档</b>新增描述字号/字色设置，支持一键导出 Word/PDF/Markdown 并打印。与上期「大圆」内测形成 AI 能力的持续深化。<br><b style="color:#c0392b">📌 重点提示：</b>本次 5.0.10 是<b>企业微信 AI 能力从「内测」走向「开放」的关键里程碑</b>——首次将文档/待办/日程/会议/微盘/消息/邮件等核心模块的 CLI/MCP 接口对外放出，意味着企业可把企业微信 AI 直接编排进自有业务系统，是本期最值得关注的产品动向。</div>
         <a class="link-btn" href="https://work.weixin.qq.com/" target="_blank">查看官网</a>
       </div>
     </div>
