@@ -409,7 +409,7 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
         <tr><td>5</td><td><div class="dim-cell"><img src="${ICONS.open}" alt="">微信开放平台/小程序</div></td><td>开发者工具稳定版 2.02.2608040（8/18）：新增 Electron 版本工具、外观设置模拟器&调试器位置、小程序 AI 开发调试能力、开发者工具 Skill 能力；修复多项问题</td><td style="text-align:center">★★☆</td></tr>
         <tr><td>6</td><td><div class="dim-cell"><img src="${ICONS.channels}" alt="">视频号</div></td><td>本周官方侧未检索到 8.10–8.18 重大新公告（仅第三方观察/媒体内容），持续关注 AI 带货标注落实与账号体系规则生效后的运行反馈</td><td style="text-align:center">★☆☆</td></tr>
         <tr><td>7</td><td><div class="dim-cell"><img src="${ICONS.tuike}" alt="">推客</div></td><td>带货者拉新激励计划 8/14 发布（属小店侧收录）；联盟带货机构推客带货功能激励计划（8-9 月）持续开跑，本期无新增官方公告点</td><td style="text-align:center">★☆☆</td></tr>
-        <tr><td>8</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">公众号/服务号</div></td><td>AI 助手「小微」新增 3 个入口灰度中（公众号消息页 AI 总结、文章底部 AI 总结、朋友圈 AI 点评/AI 帮写、聊天图片 AI 处理、扫一扫拍照给 AI、语音指令直达）；公众号 14 周年报告（贴图内容同比 +377%）</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>8</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">公众号/服务号</div></td><td>AI 助手「小微」新增 3 个入口灰度中（公众号消息页 AI 总结、文章底部 AI 总结、朋友圈 AI 点评/AI 帮写、聊天图片 AI 处理、扫一扫拍照给 AI、语音指令直达）；公众号 14 周年（媒体称贴图内容同比 +377%，未核实官方来源）</td><td style="text-align:center">★★☆</td></tr>
       </tbody>
     </table>
   </div>
@@ -555,7 +555,7 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
     <div class="dim-body">
       <div class="item">
         <div class="item-title">AI 助手「小微」新增多入口灰度 + 公众号 14 周年报告</div>
-        <div class="item-desc">本期多家媒体披露，原生 AI 助手「小微」新增多个入口灰度中：公众号消息页 AI 总结、文章底部 AI 总结、朋友圈 AI 点评/AI 帮写、聊天图片 AI 处理、扫一扫拍照给 AI、语音指令直达等。同期公众号迎来 14 周年，官方披露贴图内容同比 <b>+377%</b>，图文创作生态持续活跃。<span style="color:#999;font-size:12px">⚠️ 此为媒体汇总，官方未发布独立公告页</span></div>
+        <div class="item-desc">本期多家媒体披露，原生 AI 助手「小微」新增多个入口灰度中：公众号消息页 AI 总结、文章底部 AI 总结、朋友圈 AI 点评/AI 帮写、聊天图片 AI 处理、扫一扫拍照给 AI、语音指令直达等。同期公众号迎来 14 周年，媒体报道贴图内容同比 <b>+377%</b>（未核实官方来源），图文创作生态持续活跃。<span style="color:#999;font-size:12px">⚠️ 此为媒体汇总，官方未发布独立公告页</span></div>
       </div>
     </div>
   </div>
