@@ -395,8 +395,175 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
 <div class="container">
 
 <!-- ════ 期次10：2026.6.30–7.6 ════ -->
+<!-- ════ 期次16：2026.8.10–8.16 ════ -->
+<div class="period-content active" id="p16">
+  <div class="overview-card">
+    <div class="card-title">▌ 本期要点速览（2026.8.10–8.16）</div>
+    <table class="overview-table">
+      <thead><tr><th>#</th><th>维度</th><th>核心内容</th><th style="text-align:center;width:80px">重要程度</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店</div></td><td>新规速递-20260817 发布（7 公告/2 征集/3 公示/6 生效）；家具类目调整 8/24 生效；公众号及贴图号小店内容创作激励计划 8/10 启动；违规售卖赌博博彩专项治理 8/11；2026 宠物嘉年华激励 8/12；组装电脑类目新增预售功能 8/13</td><td style="text-align:center">★★★</td></tr>
+        <tr><td>2</td><td><div class="dim-cell"><img src="${ICONS.work}" alt="">企业微信</div></td><td>5.0.10 版本发布（8/18）：AI 开放能力新增文档/待办/日程/会议/微盘/消息/邮件等多个核心模块 CLI/MCP 接口；智能表格新增 AI 分析报告（大圆）；智能文档新增描述字号字色与导出 Word/PDF/Markdown/打印</td><td style="text-align:center">★★★</td></tr>
+        <tr><td>3</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">微信客户端</div></td><td>微信 8.0.20 for HarmonyOS 全新发布（8/10），修复若干已知问题，鸿蒙生态持续补齐</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>4</td><td><div class="dim-cell"><img src="${ICONS.pay}" alt="">微信支付</div></td><td>2026 年 8 月更新：停车缴费新增《商户查费回调》接口；商户被管控查询 recover_way 新增 CONTACT_SERVICE_PROVIDER 枚举；开户意愿确认 channel_id 长度 9→32；投放计划新增过期状态变更通知 EXPIRED；商品券 send_channel 新增 MEMBER 枚举</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>5</td><td><div class="dim-cell"><img src="${ICONS.open}" alt="">微信开放平台/小程序</div></td><td>开发者工具稳定版 2.02.2608040（8/18）：新增 Electron 版本工具、外观设置模拟器&调试器位置、小程序 AI 开发调试能力、开发者工具 Skill 能力；修复多项问题</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>6</td><td><div class="dim-cell"><img src="${ICONS.channels}" alt="">视频号</div></td><td>本周官方侧未检索到 8.10–8.16 重大新公告（仅第三方观察/媒体内容），持续关注 AI 带货标注落实与账号体系规则生效后的运行反馈</td><td style="text-align:center">★☆☆</td></tr>
+        <tr><td>7</td><td><div class="dim-cell"><img src="${ICONS.tuike}" alt="">推客</div></td><td>带货者拉新激励计划 8/14 发布（属小店侧收录）；联盟带货机构推客带货功能激励计划（8-9 月）持续开跑，本期无新增官方公告点</td><td style="text-align:center">★☆☆</td></tr>
+        <tr><td>8</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">公众号/服务号</div></td><td>AI 助手「小微」新增 3 个入口灰度中（公众号消息页 AI 总结、文章底部 AI 总结、朋友圈 AI 点评/AI 帮写、聊天图片 AI 处理、扫一扫拍照给 AI、语音指令直达）；公众号 14 周年报告（贴图内容同比 +377%）</td><td style="text-align:center">★★☆</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.store}" alt=""></div>
+      <div class="dim-title-text">微信小店</div>
+      <div class="dim-count">7 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item alert">
+        <div class="item-title">一级类目「家具」调整公告（8 月 24 日生效）</div>
+        <div class="item-desc">平台对一级类目【家具】下部分类目结构进行优化调整，商家需按新类目准入要求上架商品，并遵守对应类目管理规则、保证金与技术服务费要求。同步发布的成长中心公告显示，<b>调整预计于 2026 年 8 月 24 日正式生效</b>，存量商品将按新类目体系迁移。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9776/1da454ab33fce4d0/growth_center_platform_notice/1?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+      <div class="item">
+        <div class="item-title">公众号及贴图号小店内容创作激励计划启动（8/10）</div>
+        <div class="item-desc">平台面向<b>公众号与贴图号</b>创作者推出小店内容创作激励计划，鼓励以图文、贴图内容形态推动小店成交。这是继视频号、直播、短视频之后，平台对<b>图文内容带货链路</b>的又一次投入，与公众号 AI「一键排版」能力形成「创作降本 + 变现提效」组合拳。本期为该激励计划的正式启动节点。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9784/eeffa4734d998875/growth_center_platform_notice/2?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+      <div class="item alert">
+        <div class="item-title">「违规售卖赌博、博彩类商品」专项治理公告（8/11）</div>
+        <div class="item-desc">平台识别并拦截多类违规手法：以「娱乐」「解压」为包装上架涉赌类盲盒、抽奖类玩法；直播间以谐音、代号口播暗示赌博平台；以虚拟商品为掩护引导用户私下交易。已对违规账号采取下架商品、暂停新增、延长结算期、冻结资金等处置措施，情节严重者永久封禁并保留依法移交的权利。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9786/4c2f9b1a7e0d5532/growth_center_platform_notice/3?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+      <div class="item">
+        <div class="item-title">2026 宠物嘉年华激励政策发布（8/12）</div>
+        <div class="item-desc">面向宠物类目商家推出「宠物嘉年华」专项激励，对活动期间的宠物食品、用品、活体周边等类目商家按经营目标发放电商成长卡等激励，配合生鲜、食品饮料等应季类目形成 8 月完整激励矩阵。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9790/2b7e5c4d8f1a6690/growth_center_platform_notice/2?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+      <div class="item">
+        <div class="item-title">一级类目「组装电脑」新增预售功能（8/13）</div>
+        <div class="item-desc">平台在【组装电脑】类目新增预售能力，商家可按预售模式上架整机/定制机型，支持用户先付定金锁定配置、后付尾款发货，进一步丰富高客单 3C 品类的交易形态。平台同步更新预售相关的履约与售后规则要求。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9793/5d8c1f0a9b2e4471/growth_center_platform_notice/1?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+      <div class="item alert">
+        <div class="item-title">每周治理公告（第 33 周，8/13）与带货者拉新激励计划（8/14）</div>
+        <div class="item-desc"><b>每周治理公告第 33 周</b>：汇总本周平台对虚假宣传、诱导私下交易、劣质发货等违规的处置数据与典型场景。<b>带货者拉新激励计划</b>：面向带货车手推出拉新奖励，新带货者完成首单或达成阶段目标可获电商成长卡激励，与联盟机构推客激励形成「机构 + 个人」双轮驱动。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9795/0c7a3e9b6d4f5580/growth_center_platform_notice/1?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+      <div class="item">
+        <div class="item-title">新规速递-20260817：上周规则变更汇总（7 公告/2 征集/3 公示/6 生效）</div>
+        <div class="item-desc"><b>意见征集：</b>家具类目管理规则修订、好店标识管理规则修订。<b>公示：</b>中小学教材定向准入、图书类目管理规则修订、服务商代运营证明材料。<b>规则生效：</b>商品及服务评价规则、店铺体验分管理规则（8/11 生效）、虚拟及衍生商品定向准入/类目管理规则（8/11 生效）、医疗器械定向准入/类目管理规则（8/11 生效）。<b>指引指南：</b>二手奢侈品箱包开店开号、先检后发服务开通、先检后发答疑、带货者乘风计划、少发漏发投诉处理。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9756/709c1a8ed3d8df84/growth_center_rule_for_store/24?bpath=%252Fhome%252Fweekly-rules" target="_blank">查看公告</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#eafaf1"><img src="${ICONS.work}" alt=""></div>
+      <div class="dim-title-text">企业微信</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item">
+        <div class="item-title">5.0.10 版本发布（8/18）：AI 开放能力大幅扩展</div>
+        <div class="item-desc">本次版本围绕 AI 开放能力做成套升级：① <b>AI 开放能力新增多个核心模块 CLI/MCP 接口</b>，覆盖文档、待办、日程、会议、微盘、消息、邮件等能力，便于企业将企业微信 AI 嵌入自有系统；② <b>智能表格新增 AI 分析报告</b>（由智能助理「大圆」驱动，自动洞察表格数据并生成结论）；③ <b>智能文档</b>新增描述字号/字色设置，支持一键导出 Word/PDF/Markdown 并打印。与上期「大圆」内测形成 AI 能力的持续深化。</div>
+        <a class="link-btn" href="https://work.weixin.qq.com/" target="_blank">查看官网</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8f4ff"><img src="${ICONS.mp}" alt=""></div>
+      <div class="dim-title-text">微信客户端</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item">
+        <div class="item-title">微信 8.0.20 for HarmonyOS 全新发布（8/10）</div>
+        <div class="item-desc">微信鸿蒙版迎来 8.0.20 版本全新发布，主要修复若干已知问题并提升系统稳定性，持续补齐鸿蒙生态体验。此前邀测的 8.0.20.41 版本中视频号「设为铃声」、评论搜索表情、聊天笔记收藏、浮窗、朋友圈超链接等特性逐步向正式版收敛。<span style="color:#999;font-size:12px">⚠️ 此为官方版本更新，非独立公告页</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.pay}" alt=""></div>
+      <div class="dim-title-text">微信支付</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item">
+        <div class="item-title">2026 年 8 月接口更新：停车/管控/开户/投放/商品券多项调整</div>
+        <div class="item-desc">①【停车缴费服务】新增《商户查费回调》接口；②【商户被管控能力及原因查询】返回参数 <code>recover_way</code> 新增枚举值 <code>CONTACT_SERVICE_PROVIDER</code>（联系服务商处理）；③【商户开户意愿确认】《提交申请单》请求参数 <code>channel_id</code> 最大长度由 9 调整为 32；④【投放计划】新增过期状态变更通知，<code>plan_state</code> 新增 <code>EXPIRED</code> 取值；⑤【商品券】<code>send_channel</code> 新增 <code>MEMBER</code> 枚举（会员渠道发放）。</div>
+        <a class="link-btn" href="https://pay.weixin.qq.com/doc/v3/partner/4012085442" target="_blank">查看文档</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#eef0ff"><img src="${ICONS.open}" alt=""></div>
+      <div class="dim-title-text">微信开放平台 / 小程序</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item">
+        <div class="item-title">开发者工具稳定版 2.02.2608040 发布（8/18）</div>
+        <div class="item-desc">本次更新：① 新增 <b>Electron 版本工具</b>，支持在桌面端以独立进程运行开发者工具；② <b>外观设置</b>支持模拟器与调试器位置切换；③ 小程序 <b>AI 开发调试能力</b>升级，配合「小程序 AI 开发模式」便于服务商联调；④ 新增 <b>开发者工具 Skill 能力</b>，可将工具操作封装为可被 AI 调用的技能。同步修复了多项已知问题。</div>
+        <a class="link-btn" href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html" target="_blank">查看公告</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#fff3e8"><img src="${ICONS.channels}" alt=""></div>
+      <div class="dim-title-text">视频号</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item">
+        <div class="item-title">本周官方侧无重大新公告（持续观察）</div>
+        <div class="item-desc">检索微信小店成长中心、视频号官方社区与开发者公告，本期（8.10–8.16）未检索到视频号侧重大新功能或规则公告。前期已生效的「AI 带货短视频标注新规（8/10 起）」「账号体系规则修订（8/13 生效）」进入运行观察期，平台持续对未标注 AI 带货内容进行限流处置。<span style="color:#999;font-size:12px">⚠️ 此为第三方观察，非官方公告</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#fff0f0"><img src="${ICONS.tuike}" alt=""></div>
+      <div class="dim-title-text">推客</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item">
+        <div class="item-title">带货者拉新激励计划发布（8/14，小店侧收录）</div>
+        <div class="item-desc">微信小店发布带货者拉新激励计划，面向带货车手推出拉新奖励，新带货者完成首单或达成阶段目标可获电商成长卡激励。该计划与「联盟带货机构推客带货功能激励计划（8-9 月）」共同构成「机构 + 个人」双轮驱动的推客激励体系。本期无推客侧独立的额外官方公告点。<span style="color:#999;font-size:12px">⚠️ 拉新激励详情见小店侧条目，推客维度本期无新增独立公告</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8f4ff"><img src="${ICONS.mp}" alt=""></div>
+      <div class="dim-title-text">公众号 / 服务号</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item">
+        <div class="item-title">AI 助手「小微」新增多入口灰度 + 公众号 14 周年报告</div>
+        <div class="item-desc">本期多家媒体披露，原生 AI 助手「小微」新增多个入口灰度中：公众号消息页 AI 总结、文章底部 AI 总结、朋友圈 AI 点评/AI 帮写、聊天图片 AI 处理、扫一扫拍照给 AI、语音指令直达等。同期公众号迎来 14 周年，官方披露贴图内容同比 <b>+377%</b>，图文创作生态持续活跃。<span style="color:#999;font-size:12px">⚠️ 此为媒体汇总，官方未发布独立公告页</span></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /p16 -->
+
 <!-- ════ 期次15：2026.8.3–8.9 ════ -->
-<div class="period-content active" id="p15">
+<div class="period-content" id="p15">
   <div class="overview-card">
     <div class="card-title">▌ 本期要点速览（2026.8.3–8.9）</div>
     <table class="overview-table">
@@ -2287,8 +2454,8 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
 
 <div class="footer">
   <div class="footer-update">
-    <span>🕐 最近更新：2026年8月11日</span>
-    <span class="footer-next">📅 下次更新：2026年8月18日（周二）</span>
+    <span>🕐 最近更新：2026年8月18日</span>
+    <span class="footer-next">📅 下次更新：2026年8月25日（周二）</span>
   </div>
   <div class="footer-credit">
     <strong>微信生态每周更新汇总</strong> · 数据来源：腾讯智慧零售、微信公开渠道
@@ -2320,6 +2487,7 @@ function printPDF() {
 })();
 
 const PERIODS = [
+  { id: 'p16',  label: '2026.8.10–8.16', start: new Date(2026, 7, 10), end: new Date(2026, 7, 16) },
   { id: 'p15',  label: '2026.8.3–8.9', start: new Date(2026, 7, 3), end: new Date(2026, 7, 9) },
   { id: 'p14',  label: '2026.7.27–8.2', start: new Date(2026, 6, 27), end: new Date(2026, 7, 2) },
   { id: 'p13',  label: '2026.7.20–7.26', start: new Date(2026, 6, 20), end: new Date(2026, 6, 26) },
@@ -2341,9 +2509,9 @@ const PERIODS = [
 ];
 
 // 当前选中期次
-let activePeriodId = 'p15';
+let activePeriodId = 'p16';
 // 日历当前显示的月份
-let calYear = 2026, calMonth = 6; // 0-indexed，6=7月
+let calYear = 2026, calMonth = 7; // 0-indexed，6=7月
 
 function switchTab(btn, id) {
   activePeriodId = id;
