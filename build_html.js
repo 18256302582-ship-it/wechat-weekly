@@ -395,10 +395,10 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
 <div class="container">
 
 <!-- ════ 期次10：2026.6.30–7.6 ════ -->
-<!-- ════ 期次16：2026.8.10–8.16 ════ -->
+<!-- ════ 期次16：2026.8.10–8.18 ════ -->
 <div class="period-content active" id="p16">
   <div class="overview-card">
-    <div class="card-title">▌ 本期要点速览（2026.8.10–8.16）</div>
+    <div class="card-title">▌ 本期要点速览（2026.8.10–8.18）</div>
     <table class="overview-table">
       <thead><tr><th>#</th><th>维度</th><th>核心内容</th><th style="text-align:center;width:80px">重要程度</th></tr></thead>
       <tbody>
@@ -407,7 +407,7 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
         <tr><td>3</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">微信客户端</div></td><td>微信 8.0.20 for HarmonyOS 全新发布（8/10），修复若干已知问题，鸿蒙生态持续补齐</td><td style="text-align:center">★★☆</td></tr>
         <tr><td>4</td><td><div class="dim-cell"><img src="${ICONS.pay}" alt="">微信支付</div></td><td>2026 年 8 月更新：停车缴费新增《商户查费回调》接口；商户被管控查询 recover_way 新增 CONTACT_SERVICE_PROVIDER 枚举；开户意愿确认 channel_id 长度 9→32；投放计划新增过期状态变更通知 EXPIRED；商品券 send_channel 新增 MEMBER 枚举</td><td style="text-align:center">★★☆</td></tr>
         <tr><td>5</td><td><div class="dim-cell"><img src="${ICONS.open}" alt="">微信开放平台/小程序</div></td><td>开发者工具稳定版 2.02.2608040（8/18）：新增 Electron 版本工具、外观设置模拟器&调试器位置、小程序 AI 开发调试能力、开发者工具 Skill 能力；修复多项问题</td><td style="text-align:center">★★☆</td></tr>
-        <tr><td>6</td><td><div class="dim-cell"><img src="${ICONS.channels}" alt="">视频号</div></td><td>本周官方侧未检索到 8.10–8.16 重大新公告（仅第三方观察/媒体内容），持续关注 AI 带货标注落实与账号体系规则生效后的运行反馈</td><td style="text-align:center">★☆☆</td></tr>
+        <tr><td>6</td><td><div class="dim-cell"><img src="${ICONS.channels}" alt="">视频号</div></td><td>本周官方侧未检索到 8.10–8.18 重大新公告（仅第三方观察/媒体内容），持续关注 AI 带货标注落实与账号体系规则生效后的运行反馈</td><td style="text-align:center">★☆☆</td></tr>
         <tr><td>7</td><td><div class="dim-cell"><img src="${ICONS.tuike}" alt="">推客</div></td><td>带货者拉新激励计划 8/14 发布（属小店侧收录）；联盟带货机构推客带货功能激励计划（8-9 月）持续开跑，本期无新增官方公告点</td><td style="text-align:center">★☆☆</td></tr>
         <tr><td>8</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">公众号/服务号</div></td><td>AI 助手「小微」新增 3 个入口灰度中（公众号消息页 AI 总结、文章底部 AI 总结、朋友圈 AI 点评/AI 帮写、聊天图片 AI 处理、扫一扫拍照给 AI、语音指令直达）；公众号 14 周年报告（贴图内容同比 +377%）</td><td style="text-align:center">★★☆</td></tr>
       </tbody>
@@ -527,7 +527,7 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
     <div class="dim-body">
       <div class="item">
         <div class="item-title">本周官方侧无重大新公告（持续观察）</div>
-        <div class="item-desc">检索微信小店成长中心、视频号官方社区与开发者公告，本期（8.10–8.16）未检索到视频号侧重大新功能或规则公告。前期已生效的「AI 带货短视频标注新规（8/10 起）」「账号体系规则修订（8/13 生效）」进入运行观察期，平台持续对未标注 AI 带货内容进行限流处置。<span style="color:#999;font-size:12px">⚠️ 此为第三方观察，非官方公告</span></div>
+        <div class="item-desc">检索微信小店成长中心、视频号官方社区与开发者公告，本期（8.10–8.18）未检索到视频号侧重大新功能或规则公告。前期已生效的「AI 带货短视频标注新规（8/10 起）」「账号体系规则修订（8/13 生效）」进入运行观察期，平台持续对未标注 AI 带货内容进行限流处置。<span style="color:#999;font-size:12px">⚠️ 此为第三方观察，非官方公告</span></div>
       </div>
     </div>
   </div>
@@ -2487,7 +2487,7 @@ function printPDF() {
 })();
 
 const PERIODS = [
-  { id: 'p16',  label: '2026.8.10–8.16', start: new Date(2026, 7, 10), end: new Date(2026, 7, 16) },
+  { id: 'p16',  label: '2026.8.10–8.18', start: new Date(2026, 7, 10), end: new Date(2026, 7, 18) },
   { id: 'p15',  label: '2026.8.3–8.9', start: new Date(2026, 7, 3), end: new Date(2026, 7, 9) },
   { id: 'p14',  label: '2026.7.27–8.2', start: new Date(2026, 6, 27), end: new Date(2026, 7, 2) },
   { id: 'p13',  label: '2026.7.20–7.26', start: new Date(2026, 6, 20), end: new Date(2026, 6, 26) },
