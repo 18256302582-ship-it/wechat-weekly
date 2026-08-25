@@ -370,3 +370,14 @@
 - **校验全绿**：19 期块开合 19/19、active 唯一=p16、`<script>`=1、printPDF=1、mobile `@media`=1、footer=1、noResult=1、JS `compile` 逻辑有效（仅注释含 `═`/全角逗号，浏览器正常）、全局 div 1753/1753 平衡、8 个 dim-count 与实际条目逐一核对一致（7/1/1/1/1/1/1/1=14）。
 - 💡 **Python compile 误导性报错**：用 `compile(js)` 校验内联 JS 时，`═` 盒线字符（在 `//` 注释里）和全角逗号（在字符串里）会被 Python 报 invalid character，但浏览器解析 UTF-8 源码完全正常——属历史既有结构，非真错误。判据应为"strip 注释盒线字符后仍能 compile"即可，勿误判为语法损坏。
 - 💡 **active 转移两步法**：Python 插入脚本只能"加"新 active，旧期次的 active 需单独 replace 去掉，否则会出现 2 个 active；校验 `s.count('period-content active')==1` 是硬性红线。
+
+## 第15次执行（2026-08-25）—— p17 发布（2026.8.17–8.23）
+- **状态**：✅ 内容+构建+全项校验+提交完成；推送首次因网络断连失败，已调 `http.postBuffer`/`HTTP/1.1` 后重试。commit `cd9fff4`（p17）+ docs 记录提交。
+- **方法**：新建 `add_p17.py`（Python 三引号保留 `${ICONS.xx}`；锚点用注释行 `<!-- ════ 期次16：2026.8.10–8.18 ════ -->`）。单脚本完成 5 处改动：PERIODS 头加 p17、activePeriodId='p17'、**p16 去 active**、footer 8/18→8/25 与 8/25→9/1、插入 p17 块。构建：`cp` 同步镜像 → 父目录 `node build_html.js`（816.0 KB）→ wechat-weekly `node ../clean_tags.js`（816.7 KB）。
+- **本期**：8 维度 18 条（小店7/企微1/客户端2/支付2/开放平台·小程序2/视频号2/推客1/公众号1）；8 条 alert 红标；6 处非官方灰字标注。
+- **重点**：① 微信小店「调整部分场景经营类目」（8/21 发布，**9/1 生效**，传统滋补部分关闭 + 生鲜/农资园艺开放 + 新增「升级经营场景」功能，部分场景经营商品**不支持视频号直播/短视频挂车**）；② 珠宝首饰 6 个二级类目特定条件准入优选联盟（8/19 生效，带货者三重硬门槛：3星+ / 评分≥4.5 / 近90天热招品牌黄金单天最高支付 GMV≥30万）；③《商家和带货者账号体系管理规则》修订版 8/19 生效（企业主体关联账号最高 100 个；视频号年内变更关联商家 3 次，高 GMV 达标可放宽至 12 次）；④ 企业微信 5.0.10 **全面开放 CLI 与 MCP**（8/18，取消企业规模门槛，十大办公模块开放，WorkBuddy/DeepSeek Harness/自建 Agent 可接入，四重安全防护）；⑤ 微信支付《合作伙伴合作规则》修订（8/24，违约认定前可先行「延迟结算技术服务费」）；⑥ 小微 AI 入口增至 16 个；⑦ glass-easel 组件框架开放（基础库 3.8.12 起，覆盖约 98% 用户）；⑧ 中央网信办团播整治指导视频号（处置直播间 7200+/账号 2200+）。
+- **链接合规**：14 个 link-btn 全官方域名（store.weixin.qq.com ×9、work.weixin.qq.com ×1、pay.weixin.qq.com ×1、posts.tenpay.cn ×1、developers.weixin.qq.com ×1、developers.e.qq.com ×1）；无第三方媒体链接；媒体汇总/灰度类条目均无链接并标注灰字。
+- **校验全绿**：20 期块、active 唯一=p17、`<script>`=1、printPDF=1、mobile `@media`=1、footer=1、noResult=1、全局 div 1867/1867 平衡、内联 JS `new Function` 可解析、8 个 dim-count 与实际条目逐一一致（7/1/2/2/2/2/1/1=18）。
+- 💡 **断言前置模式（推荐固化）**：`add_p17.py` 把所有校验写成写文件**之前**的 `assert`（锚点唯一性 + active==1 + 闭合注释 + PERIODS/activePeriodId 已更新），从源头拦截而非事后 grep 补救，比 p16 时「先写后发现 active=2」更稳。
+- ⚠️ **push 网络不稳**：首次 push 3 分钟后报 `send-pack: unexpected disconnect while reading sideband packet`（index.html 已达 925 KB，单次推送体积偏大）。处置：`git config http.postBuffer 524288000` + `git config http.version HTTP/1.1` 后重试。本地 commit 不受影响，失败后 `git log` 确认 commit 仍在、`ahead 1` 即可放心重推。
+- ⚠️ **仓库外备份文件不要用 `rm`**：`build_html.js.bak_p17` 放在父目录（仓库外），`rm -f` 触发 safe-delete 策略路径拼接错误、刷一屏 stderr 但删除失败。有 git 兜底，建议直接不做 .bak 备份。
