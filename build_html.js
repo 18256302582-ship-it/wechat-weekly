@@ -395,8 +395,195 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
 <div class="container">
 
 <!-- ════ 期次10：2026.6.30–7.6 ════ -->
+<!-- ════ 期次17：2026.8.17–8.23 ════ -->
+<div class="period-content active" id="p17">
+  <div class="overview-card">
+    <div class="card-title">▌ 本期要点速览（2026.8.17–8.23）</div>
+    <table class="overview-table">
+      <thead><tr><th>#</th><th>维度</th><th>核心内容</th><th style="text-align:center;width:80px">重要程度</th></tr></thead>
+      <tbody>
+        <tr style="background:#fff5f5"><td>1</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店 <span style="color:#c0392b;font-weight:700">⭐重点</span></div></td><td><b style="color:#c0392b">类目经营体系大调整</b>——「部分场景经营」能力范围调整（9/1 生效，传统滋补部分关闭、生鲜/农资园艺开放，新增「升级经营场景」功能）；珠宝首饰 6 个二级类目特定条件准入优选联盟（8/19 生效）；母婴、服饰内衣新增开放类目（8/20）；功能调整汇总-20260821（商品讲解录制、售后补寄）</td><td style="text-align:center">★★★</td></tr>
+        <tr style="background:#fff5f5"><td>2</td><td><div class="dim-cell"><img src="${ICONS.work}" alt="">企业微信 <span style="color:#c0392b;font-weight:700">⭐重点</span></div></td><td><b style="color:#c0392b">5.0.10 全面开放 CLI 与 MCP（8/18）</b>——彻底取消企业规模与资质门槛，十大办公模块（消息/文档/表格/邮件/会议/日程/通讯录/待办/微盘等）向 Agent 开放；WorkBuddy、DeepSeek Harness、企业自建 Agent 均可直接接入；MCP 链路叠加四重安全防护（权限独立配置、关键动作人工审批、授权到期自动回收、全流程日志可追溯）</td><td style="text-align:center">★★★</td></tr>
+        <tr><td>3</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店（规则）</div></td><td>《微信小店商家和带货者账号体系管理规则》修订版 <b>8/19 正式生效</b>：企业主体关联账号上限最高可提升至 100 个（视频号/公众号/服务号/企微/小程序各 100）；视频号自然年内变更关联商家上限 3 次，达标高 GMV 账号可放宽至 12 次</td><td style="text-align:center">★★★</td></tr>
+        <tr><td>4</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">微信客户端</div></td><td>AI 助手「小微」灰度入口增至 16 个（8/17–8/18 新增公众号 AI 总结、图片 AI 处理、朋友圈 AI 点评）；转账新增「向银行卡或手机号转账」；撤回提示可删除（趋近无痕）；鸿蒙版 8.0.20.53 开启邀测（8/18，灰度支付安全锁）</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>5</td><td><div class="dim-cell"><img src="${ICONS.pay}" alt="">微信支付</div></td><td>《微信支付合作伙伴合作规则》修订（8/24 公告）：违约认定前财付通可先行采取「延迟结算技术服务费」等风控措施，认定结果与处理结果均需告知；跨境支付打通柬埔寨 KHQR（8/18，金边启动）；数字人民币钱包系列协议表述修订（8/18）</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>6</td><td><div class="dim-cell"><img src="${ICONS.open}" alt="">微信开放平台/小程序</div></td><td>小程序新一代组件框架 glass-easel 开放自由使用（基础库 3.8.12 起支持 WebView 渲染，覆盖约 98% 用户）；违规微短剧与小程序集中治理（8/14、8/18 两轮下架数十部）；腾讯广告侧小程序场景定投选项逻辑收紧（8/17 起）</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>7</td><td><div class="dim-cell"><img src="${ICONS.channels}" alt="">视频号</div></td><td>中央网信办「清朗·网络娱乐团播乱象整治」指导视频号等平台规范团播管理（累计处置违规直播间 7200+、账号 2200+）；鸿蒙版视频号能力补齐（评论支持搜索/动画表情、直播送礼、创作礼物开关、分享设为铃声）</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>8</td><td><div class="dim-cell"><img src="${ICONS.tuike}" alt="">推客</div></td><td>珠宝首饰特定条件准入联盟对带货者提出明确门槛（3星以上 + 评分≥4.5 + 近90天热招品牌黄金类目单天最高支付 GMV≥30万），高价值类目带货权限进一步向头部集中</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>9</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">公众号/服务号</div></td><td>公众号内容纳入「小微」AI 总结能力灰度（消息页与文章底部双入口）；账号体系新规明确公众号/服务号可关联小店商家或绑定带货者，文章内可插入商品卡（8/19 生效）</td><td style="text-align:center">★★☆</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.store}" alt=""></div>
+      <div class="dim-title-text">微信小店</div>
+      <div class="dim-count">7 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item alert">
+        <div class="item-title">「调整部分场景经营类目」公告（8/21 发布，9 月 1 日生效）</div>
+        <div class="item-desc">平台明确两种经营方式的区别：<b>全场景经营</b>需提交完整类目及商品材料，商品经营场景不受限制；<b>部分场景经营</b>简化提交流程，但通过该方式上架的商品<b>不支持通过视频号直播/短视频挂车推广销售</b>。<b>自 2026 年 9 月 1 日起</b>，平台将关闭【食品饮料-传统滋补】下部分类目的「部分场景经营」能力，同时对【生鲜】【农资园艺】两个一级类目下部分类目开放该能力。同步新增<b>「部分场景经营」升级经营场景功能</b>——达到平台经营标准后可升级至「全场景经营」，从而解锁视频号等经营场景。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9814/88ef906c2f96059c/growth_center_platform_notice/1?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+      <div class="item alert">
+        <div class="item-title">「珠宝首饰部分类目特定条件准入联盟」公告（8/19 生效）</div>
+        <div class="item-desc">自 2026 年 8 月 19 日起，珠宝首饰下二级类目【和田玉】【水晶玛瑙】【彩宝】【其它玉石】【翡翠】【天珠工艺品】按特定条件准入优选联盟，开放<b>直播、短视频</b>场景。带货者需<b>同时满足</b>三项硬门槛：① 带货者为 3 星、4 星或 5 星等级；② 带货者评分 ≥ 4.5；③ 近 90 天通过优选联盟选品售卖<b>热招品牌黄金类目</b>商品（品牌素款黄金、品牌镶嵌黄金全部三级类目），在直播/短视频/公众号/橱窗分享场景<b>单天最高支付 GMV 总和 ≥ 30 万</b>。高价值玉石类目的带货准入门槛显著抬升。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9819/f6347dd3171ba266/growth_center_platform_notice/1?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+      <div class="item alert">
+        <div class="item-title">《商家和带货者账号体系管理规则》修订版正式生效（8/19）</div>
+        <div class="item-desc">修订日期 8 月 5 日，<b>生效日期 2026 年 8 月 19 日</b>。核心要点：<b>① 关联账号上限</b>——个体工商户主体为视频号/公众号/服务号/企微/小程序各 1 个；企业主体初始各 5 个，满足条件后最高可提升至<b>各 100 个</b>。<b>② 视频号变更关联商家</b>——1 个自然年内最多变更 3 次；达到「近 365 天自营身份推广 GMV≥1000 万 + 当前非带货身份 + 对当前/最近关联店铺自营推广 GMV≥200 万 + 近 180 天无严重违规」全部条件者可继续变更，年内总计不超过 12 次。<b>③ 封禁连带</b>——永久封禁的关联账号合计≥3 个时，平台将解除全部关联，仅保留各 1 个关联空间。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/7797/e567e11a16f00db4/growth_center_rule_for_store/1?bpath=%252Frule%252Fshop" target="_blank">查看规则</a>
+      </div>
+      <div class="item">
+        <div class="item-title">功能调整汇总-20260821：商品讲解录制 + 售后补寄</div>
+        <div class="item-desc"><b>① 带货「商品讲解录制」（8 月 17 日上线）</b>：主播可录制讲解片段，持续积累优质短视频素材，并可设置将片段展示在<b>商品橱窗、直播间及商品详情页</b>等核心位置，让用户随时观看专业讲解，解决购买疑虑、提升决策效率。<b>② 「售后补寄」（8 月 18 日上线）</b>：完善商家可代发起及可协商的售后类型，支持商家在与用户协商一致的情况下，通过「代用户发起售后」及「售后协商」入口完成商品补寄。<b>③ API 调整</b>：获取订单详情接口新增 <code>voucher_product_info</code> 字段，<code>need_appointment</code> 字段新增。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9828/1bdf549e74e732fa/growth_center_manual_for_store/6?bpath=%252Fhome%252Fweekly-features" target="_blank">查看公告</a>
+      </div>
+      <div class="item">
+        <div class="item-title">母婴、服饰内衣新增开放类目调整公告（8/20）</div>
+        <div class="item-desc">平台同日发布两份类目调整公告：<b>母婴新增开放类目</b>与<b>一级类目「服饰内衣」调整</b>。商家需按新类目准入要求上架商品，并同步遵守对应类目的管理规则、准禁售细则、保证金与技术服务费要求。两大高频消费一级类目的结构优化，将影响存量商品的类目归属与后续上架路径。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9787/98622322e590d087/growth_center_platform_notice/1?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+      <div class="item">
+        <div class="item-title">「限时秒杀」活动政策发布（8/18）</div>
+        <div class="item-desc">平台推出「限时秒杀」活动，符合条件商品可获<b>平台流量扶持及秒杀补贴</b>。平台将参考商品近期普惠到手价、同款商品价格等因素进行<b>比价筛选</b>，价格竞争力成为获取资源的重要指标。准入要求：报名店铺体验分 ≥ 4.4 分（或暂无体验分），报名商品体验分 ≥ 4.2 分且近 30 天销量 ≥ 20 单。<span style="color:#999;font-size:12px">（活动周期与招商细则以成长中心公告页为准）</span></div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9809/05a2c22b10a6827b/growth_center_platform_notice/2?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+      <div class="item alert">
+        <div class="item-title">「虚假宣传资质证明」专项治理公告（8/17）+ 商品规格创建指南（8/21）</div>
+        <div class="item-desc"><b>专项治理</b>：平台针对商家使用伪造、篡改、盗用等虚假资质证明材料完成类目准入或商品发布的行为开展集中治理，涉及违规将按平台规则处置。<b>《商品规格创建指南》</b>（8 月 21 日发布于功能中心）：规范商家创建商品规格（SKU）的字段填写与结构组织方式，配合本周类目调整，降低因规格填写不当导致的审核驳回与售后纠纷。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9820/d77425307cf315b8/growth_center_platform_notice/3?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#eaf6ec"><img src="${ICONS.work}" alt=""></div>
+      <div class="dim-title-text">企业微信</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item alert">
+        <div class="item-title">5.0.10 全面开放 CLI 与 MCP 能力（8/18）</div>
+        <div class="item-desc">企业微信黑板报宣布 5.0.10 版本<b>全面开放命令行界面（CLI）与模型上下文协议（MCP）能力</b>，向 Agent 开放十大核心办公能力模块。<br><b>① 零门槛</b>：彻底取消企业规模、资质认证等限制条件，面向所有规模的企业开放，企业可基于开放接口接入<b>自建 Agent</b>。<br><b>② 十大模块</b>：企微消息、文档、智能表格、邮件、会议、日程、通讯录、待办、微盘等核心办公板块，接入后的 Agent 可通过「智能机器人」直接调用完成任务。<br><b>③ 已支持接入</b>：WorkBuddy、DeepSeek Harness、MiniMax Code 等主流 Agent 均可直接打通。以 WorkBuddy 为例，可读取企微文档与智能表格生成经营分析报告、调用企业资料生成客户提案 PPT、调用通讯录完成「找人 + 约会议」一条龙。<br><b>④ 安全四重防护</b>：人员权限与 AI 操作权限独立配置；AI 执行关键动作需人工审批确认；AI 授权可设有效期、到期自动回收；AI 的数据调用与执行行为均被记录、可随时追溯。<br>此举意味着企业微信 AI 能力从 6 月「大圆」内测阶段正式走向平台级开放，办公数据与 Agent 生态的连接方式发生结构性变化。</div>
+        <a class="link-btn" href="https://work.weixin.qq.com/nl/act/p/78e0b0d2c8b2ff8f" target="_blank">查看公告</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.mp}" alt=""></div>
+      <div class="dim-title-text">微信客户端</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item">
+        <div class="item-title">AI 助手「小微」灰度入口增至 16 个（8/17–8/18）</div>
+        <div class="item-desc">微信原生 AI 助手「小微」灰度新增 3 个高频场景入口：<b>公众号 AI 总结</b>、<b>图片 AI 处理</b>、<b>朋友圈 AI 点评</b>，使微信内 AI 入口总数达到 16 个。同期微信优化多项基础功能：转账新增「收付款 → 向银行卡或手机号转账」（需收款方开启「允许通过手机号向我转账」）；撤回消息后「你撤回了一条消息」提示可从页面删除，撤回趋近无痕，正逐步覆盖 iOS 与 Android。微信官方同时回应朋友圈「现在、过去、未来都不会有二次编辑功能」。<span style="color:#999;font-size:12px">⚠️ AI 入口目前仅部分用户可见，全量上线时间待官方确认；本条为媒体汇总，非官方公告</span></div>
+      </div>
+      <div class="item">
+        <div class="item-title">鸿蒙版 8.0.20.53 开启邀测（8/18）</div>
+        <div class="item-desc">微信鸿蒙版 App 在华为应用市场开启 8.0.20.53（8393781）版本邀测升级，测试时间 2026/8/18–2026/9/17。用户反馈新增特性包括：灰度<b>支付安全锁</b>；视频号评论支持搜索表情与动画表情、观看直播支持送礼物与动画表情、新增「展示个人创作礼物」开关、分享新增「设为铃声」；发现-游戏新增搜索功能；灰度公众号文章/贴图/第三方网址支持浮窗与星标；灰度朋友圈支持点击话题、网址、小程序链接等蓝色超链接；多选消息合并转发支持转发到企业微信。<span style="color:#999;font-size:12px">⚠️ 官方更新说明仅为「修复了一些已知问题」，具体特性为用户实测汇总，非官方公告</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8f8ee"><img src="${ICONS.pay}" alt=""></div>
+      <div class="dim-title-text">微信支付</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item alert">
+        <div class="item-title">《微信支付合作伙伴合作规则》修订公告（8/24）</div>
+        <div class="item-desc">财付通支付科技有限公司发布公告，为更好保障商户和消费者合法权益、保障客户资金安全，对《微信支付合作伙伴合作规则》进行修订。<b>关键变化在 6.2 条</b>：旧版为「在知悉合作伙伴涉嫌违约情形后，财付通将向合作伙伴发送电子邮件或站内信」；<b>新版改为「财付通可采取包括但不限于延迟结算技术服务费在内的违约处理措施</b>，并通过电子邮件和/或商户/合作伙伴平台站内信向合作伙伴发送通知」。即在正式认定违约之前，财付通有权<b>先行实施「延迟结算技术服务费」等风控动作</b>。此外 6.2 条两处将「将认定结果告知合作伙伴」改为「将认定结果<b>及处理结果</b>告知合作伙伴」，透明度提升。本次修订还涉及渠道商连带责任条款等细节调整。服务商与渠道商需重新评估结算周期风险。</div>
+        <a class="link-btn" href="https://pay.weixin.qq.com/index.php/public/apply_sign/protocol_modify" target="_blank">查看公告</a>
+      </div>
+      <div class="item">
+        <div class="item-title">跨境支付打通柬埔寨 KHQR（8/18）+ 数字人民币钱包协议修订（8/18）</div>
+        <div class="item-desc"><b>① 柬埔寨 KHQR 互联互通</b>：柬埔寨国家银行与微信支付 8 月 18 日在金边宣布正式启动跨境二维码支付服务，首阶段实现微信支付与柬埔寨二维码标准（KHQR）互通。微信支付用户在柬消费可<b>直接扫描当地商户 KHQR 码</b>，覆盖餐饮、购物、交通、旅游、娱乐等日常场景，商户无需承担额外交易手续成本。<b>② 数字人民币钱包协议修订</b>：财付通 8 月 18 日公告修订《数字人民币钱包用户服务协议》等 7 份协议，主要将「转钱」调整为「转钱包」、「存银行」调整为「转银行卡」，使协议表述与 App 实际功能名称一致，公告届满 30 日起生效。</div>
+        <a class="link-btn" href="https://posts.tenpay.cn/posts/2da155166a840812000b3a3d7c88c02e.html" target="_blank">查看公告</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#eef7ff"><img src="${ICONS.open}" alt=""></div>
+      <div class="dim-title-text">微信开放平台 / 小程序</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item">
+        <div class="item-title">小程序新一代组件框架 glass-easel 开放自由使用</div>
+        <div class="item-desc">微信开发者宣布小程序新一代框架组件 <b>glass-easel</b> 已可自由使用，适合编写与维护复杂小程序。glass-easel 是新版小程序组件框架的核心实现，本质上是 JavaScript 的组件化界面框架，内核也可独立运行在 Web 环境；它是旧版 <code>exparser</code> 的升级，在保持兼容性的同时新增特性与性能改进。<b>从基础库 3.8.12 起提供对 WebView 渲染引擎的支持，目前已覆盖约 98% 的微信用户。</b>新特性包括：Component 构造器的 Chaining 形式写法（更适合组织复杂组件逻辑、TypeScript 支持更好）、动态 slot、trait behaviors，以及配套的新 WXML 编译器（支持 <code>let:</code> 定义局部变量、<code>class:</code> 语法增删样式类）。同时配套代码编辑器插件、开发者工具扩展、国际化扩展。<span style="color:#999;font-size:12px">⚠️ 本条为开发者社区/媒体汇总，具体以微信开放文档为准</span></div>
+        <a class="link-btn" href="https://developers.weixin.qq.com/miniprogram/dev/framework/glass-easel/" target="_blank">查看文档</a>
+      </div>
+      <div class="item">
+        <div class="item-title">违规微短剧与小程序集中治理（8/14、8/18 两轮）</div>
+        <div class="item-desc">「微信珊瑚安全」连续发布公告：根据国家广播电视总局和广东省广播电视局部署要求，平台加大对低俗有害微短剧的巡查审核与违规侵权微短剧小程序的运营管理，并持续规范<b>真人类、其他动画类和 AI 真人类</b>微短剧的管理标准、创作要求与传播秩序。依据国家法律法规及《腾讯微信软件许可服务协议》《微信小程序运营规范》，平台<b>下架数十部违规微短剧</b>（含价值观导向不正、内容粗制滥造的内容），并对存在违规行为的小程序进行处置，同步公示部分违规剧目与小程序名单。此外，腾讯广告侧自 8 月 17 日起，【微信公众号小程序场景-小程序小游戏流量类型】不再支持同时选择「小程序-不限」与「小程序-某具体流量类型」，通过 Marketing API 同时传入将报错。</div>
+        <a class="link-btn" href="https://developers.e.qq.com/v3.0/pages/news/info/mini_program_type_update" target="_blank">查看公告</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#fff4e8"><img src="${ICONS.channels}" alt=""></div>
+      <div class="dim-title-text">视频号</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item alert">
+        <div class="item-title">中央网信办「清朗·网络娱乐团播乱象整治」规范团播管理</div>
+        <div class="item-desc">中央网信办开展「清朗·网络娱乐团播乱象整治」专项行动，累计处置违规直播间 <b>7200 余个</b>、账号 <b>2200 余个</b>，并<b>指导抖音、快手、微信视频号等平台规范团播行为管理</b>。团播（多人连麦/多人同屏才艺直播）此前存在低俗表演、诱导打赏、恶意 PK 等问题。视频号直播运营方（尤其 MCN 与团播机构）需重新评估内容合规边界与主播培训机制。<span style="color:#999;font-size:12px">⚠️ 本条源自媒体报道监管通报，视频号侧尚未见独立官方公告</span></div>
+      </div>
+      <div class="item">
+        <div class="item-title">鸿蒙版视频号能力补齐（随 8.0.20.53 邀测）</div>
+        <div class="item-desc">随微信鸿蒙版 8.0.20.53 邀测，视频号在鸿蒙端补齐多项能力：<b>评论区</b>支持搜索表情与动画表情、支持查看评论中的动画表情；<b>直播场景</b>观看直播时评论支持动画表情与搜索表情、支持送礼物；<b>创作者侧</b>新增「展示个人创作礼物」开关（路径：我-视频号-发起直播-更多-更多设置）、发表视频界面元素对齐其他端、灰度发表视频号时支持选择位置信息、灰度视频号发送和接收私信；<b>分享侧</b>点击分享新增「设为铃声」。鸿蒙端视频号功能与 iOS/Android 的差距进一步缩小。<span style="color:#999;font-size:12px">⚠️ 为邀测版本用户实测汇总，非官方功能公告</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#fdf0f6"><img src="${ICONS.tuike}" alt=""></div>
+      <div class="dim-title-text">推客</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item">
+        <div class="item-title">高价值类目带货门槛抬升：珠宝玉石联盟准入设三重硬指标</div>
+        <div class="item-desc">随「珠宝首饰部分类目特定条件准入联盟」公告 8 月 19 日生效，带货者（推客）若要在<b>直播、短视频</b>场景推广和田玉、水晶玛瑙、彩宝、其它玉石、翡翠、天珠工艺品等类目商品，须同时满足：① <b>带货星级 3 星及以上</b>；② <b>带货者评分 ≥ 4.5</b>；③ 近 90 天通过优选联盟选品售卖热招品牌黄金类目商品，在直播/短视频/公众号/橱窗分享场景<b>单天最高支付 GMV 总和 ≥ 30 万</b>。非直播/短视频场景仍遵循《优选联盟准入及清退规则》。这标志着平台在高单价、高纠纷风险类目上，将带货权限与<b>历史业绩 + 服务质量</b>双重挂钩，中小推客进入该类目的路径被明显收窄。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9819/f6347dd3171ba266/growth_center_platform_notice/1?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.mp}" alt=""></div>
+      <div class="dim-title-text">公众号 / 服务号</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item">
+        <div class="item-title">公众号纳入 AI 总结灰度 + 账号体系新规明确带货能力（8/19 生效）</div>
+        <div class="item-desc"><b>① AI 总结灰度</b>：随「小微」新增入口，公众号内容被纳入 AI 总结能力灰度，覆盖<b>公众号消息页 AI 总结</b>与<b>文章底部 AI 总结</b>双入口；同时灰度公众号文章支持浮窗与设置星标（鸿蒙端已见）。<b>② 带货能力明确</b>：8 月 19 日生效的《商家和带货者账号体系管理规则》明确，公众号/服务号接受小店商家关联邀请后，账号主页即可展示相应店铺入口、文章内可插入关联小店商家的<b>商品卡</b>；绑定带货者后，主页可展示带货橱窗入口、文章内可插入<b>联盟商品卡</b>；若既关联商家又绑定带货者，文章内两类商品卡均可插入，主页展示内容由管理员自行选择。1 个公众号/服务号账号同时只能关联 1 个微信小店商家、只能绑定 1 个带货者。<span style="color:#999;font-size:12px">⚠️ AI 总结入口为灰度中的媒体汇总信息，带货规则部分为官方规则原文</span></div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/7797/e567e11a16f00db4/growth_center_rule_for_store/1?bpath=%252Frule%252Fshop" target="_blank">查看规则</a>
+      </div>
+    </div>
+  </div>
+</div><!-- /p17 -->
+
 <!-- ════ 期次16：2026.8.10–8.18 ════ -->
-<div class="period-content active" id="p16">
+<div class="period-content" id="p16">
   <div class="overview-card">
     <div class="card-title">▌ 本期要点速览（2026.8.10–8.18）</div>
     <table class="overview-table">
@@ -2454,8 +2641,8 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
 
 <div class="footer">
   <div class="footer-update">
-    <span>🕐 最近更新：2026年8月18日</span>
-    <span class="footer-next">📅 下次更新：2026年8月25日（周二）</span>
+    <span>🕐 最近更新：2026年8月25日</span>
+    <span class="footer-next">📅 下次更新：2026年9月1日（周二）</span>
   </div>
   <div class="footer-credit">
     <strong>微信生态每周更新汇总</strong> · 数据来源：腾讯智慧零售、微信公开渠道
@@ -2487,6 +2674,7 @@ function printPDF() {
 })();
 
 const PERIODS = [
+  { id: 'p17',  label: '2026.8.17–8.23', start: new Date(2026, 7, 17), end: new Date(2026, 7, 23) },
   { id: 'p16',  label: '2026.8.10–8.18', start: new Date(2026, 7, 10), end: new Date(2026, 7, 18) },
   { id: 'p15',  label: '2026.8.3–8.9', start: new Date(2026, 7, 3), end: new Date(2026, 7, 9) },
   { id: 'p14',  label: '2026.7.27–8.2', start: new Date(2026, 6, 27), end: new Date(2026, 7, 2) },
@@ -2509,7 +2697,7 @@ const PERIODS = [
 ];
 
 // 当前选中期次
-let activePeriodId = 'p16';
+let activePeriodId = 'p17';
 // 日历当前显示的月份
 let calYear = 2026, calMonth = 7; // 0-indexed，6=7月
 
