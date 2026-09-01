@@ -381,3 +381,16 @@
 - 💡 **断言前置模式（推荐固化）**：`add_p17.py` 把所有校验写成写文件**之前**的 `assert`（锚点唯一性 + active==1 + 闭合注释 + PERIODS/activePeriodId 已更新），从源头拦截而非事后 grep 补救，比 p16 时「先写后发现 active=2」更稳。
 - ⚠️ **push 网络不稳**：首次 push 3 分钟后报 `send-pack: unexpected disconnect while reading sideband packet`（index.html 已达 925 KB，单次推送体积偏大）。处置：`git config http.postBuffer 524288000` + `git config http.version HTTP/1.1` 后重试。本地 commit 不受影响，失败后 `git log` 确认 commit 仍在、`ahead 1` 即可放心重推。
 - ⚠️ **仓库外备份文件不要用 `rm`**：`build_html.js.bak_p17` 放在父目录（仓库外），`rm -f` 触发 safe-delete 策略路径拼接错误、刷一屏 stderr 但删除失败。有 git 兜底，建议直接不做 .bak 备份。
+
+## 第16次执行（2026-09-01）—— p18 发布（2026.8.24–8.30）
+- **状态**：✅ 内容+构建+全项校验+提交+推送+线上验证 完成。commit `c0dd722`（76c5707..c0dd722）；线上 curl 确认 HTTP 200 / 987,509 字节（与本地构建完全一致）、active 唯一=p18、21 期块、footer「最近更新 2026年9月1日 / 下次更新 2026年9月8日（周二）」。
+- **期次判定**：上期 p17（8.17–8.23）发布于 8/25；本次 9/1（周二，恰为 footer 预告日）触发，正常顺延为 p18 覆盖上周完整周 8.24–8.30，**区间无重复**（8/25 之后那周自动化未触发，本期顺延补上）。calMonth 仍为 7（8月），p18 属 8 月无需改。
+- **方法**：新建 `add_p18.py`（沿用 add_p17.py 的 Python 三引号写法保留 `${ICONS.xx}`；锚点用注释行 `<!-- ════ 期次17：2026.8.17–8.23 ════ -->`）。单脚本 5 处改动：PERIODS 头加 p18、activePeriodId='p18'、**p17 去 active**、footer 8/25→9/1 与 9/1→9/8、注释锚点前插入 p18 块。构建：`cp` 同步镜像 → 父目录 `node build_html.js`（865.9 KB）→ wechat-weekly `node ../clean_tags.js`（987,509 字节）。
+- **本期**：8 维度 15 条（小店6/视频号2/支付1/客户端·小程序2/公众号1/推客1/企微1/开放平台1）；7 条 alert 红标；8 处非官方灰字标注。
+- **重点**：① 微信小店**金秋大促激励计划**（8/25 发布，报名 8/25 14:00–9/27，三玩法，单账号累计上限 200 万点电商成长卡）；② 珠宝首饰新增【合成彩色宝石】+ 10 个三级类目定向准入，同时**关闭【合成/人造宝石】（9/4 生效）**；③ 合成彩色宝石纳入**先检后发**质检范围（9/4 生效，同单送检 3 次上限）；④ 动物捕杀工具专项治理（8/26，10 家店铺处置 180 天）；⑤ 资质管理功能上线（8/31）；⑥ 质检补充 + 自然灾害延迟发货报备（8/28、8/31）；⑦ 视频号 Q4 原生短剧激励（S 评级单剧最高 100 万、厂牌 60 万）+ **《微短剧发展管理办法》9/1 施行**（国家广电总局规章，链接 www.nrta.gov.cn 并灰字说明非平台公告）；⑧ 微信支付 AI 专属卡支持 DeepSeek Harness / OpenClaw（8/31）；⑨ 鸿蒙版 8.0.21.34 邀测（视频号发起直播支持带货）+ 辟谣发图收费（8/31）；⑩ 公众号珊瑚安全清朗第五期（8/28，处置 85831 个 / 关闭 1802 个）；⑪ 推客金秋大促带货者激励（绑定视频号粉丝≥1、评分≥4.5）；⑫ 企业微信与开放平台本周无新官方公告，作上期能力延续说明并标注灰字。
+- **链接合规**：8 个 link-btn = store.weixin.qq.com ×7 + www.nrta.gov.cn ×1（国家广电总局一手规章）；无第三方媒体链接；媒体汇总/灰度类条目均无链接并带灰字标注。
+- **校验全绿**（线上复核）：21 期块、active 唯一=p18、`<script>`=1、printPDF=1、mobile `@media`=1、footer=1、noResult=1、全局 div 1972/1972 平衡、内联 JS `new Function` 可解析、8 个 dim-count 与实际条目逐一一致（6/2/1/2/1/1/1/1=15）、item-title 15 = item 15。
+- 💡 **逐期 div 切片偏移判据（再次确认并校准）**：`add_p18.py` 首跑断言失败报「105 open / 105 close（期望 open=close+1）」。用 p17/p16/p15 实测校准后确认：切片若自 `id="pN">` 起（漏掉开头 `<div`）则 diff=-1；若自完整 `<div class="period-content..." id="pN">` 起则 **diff=0**。故断言应写 `opens == closes`。**这是切法偏移而非结构损坏**，勿据此"修复"HTML。
+- 💡 **断言前置模式再次生效**：首跑在断言处中止且**在写文件之前**，源文件未被污染（`grep -c 'id="p18"'` 返回 0 确认干净），改断言后重跑一次成功，无需回滚。该模式建议持续固化。
+- ⚠️ **`| tail` 会吞掉 git 退出码**：首次 push 用 `git push ... | tail -8; echo "EXIT=$?"` 输出 `EXIT=0` 但**实际推送失败**（`error: failed to push some refs`）。`$?` 取的是 `tail` 的退出码。**正确判据**：用 `${PIPESTATUS[0]}`，或查 `git status -sb` 是否仍显示 `ahead N`。
+- ⚠️ **push 网络不稳（本期再遇）**：首次 push 失败，`git fetch` 探测同样失败（`fatal: expected flush after ref listing`，timeout 124）→ 判定为 GitHub 网络层连通性问题，非鉴权/代码问题。处置：在既有 `http.postBuffer=524288000` + `http.version=HTTP/1.1` 基础上追加 `http.lowSpeedLimit=0` + `http.lowSpeedTime=999999`，后台重跑 43 秒成功。本地 commit 始终安全。
