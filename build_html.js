@@ -395,8 +395,177 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
 <div class="container">
 
 <!-- ════ 期次10：2026.6.30–7.6 ════ -->
+<!-- ════ 期次18：2026.8.24–8.30 ════ -->
+<div class="period-content active" id="p18">
+  <div class="overview-card">
+    <div class="card-title">▌ 本期要点速览（2026.8.24–8.30）</div>
+    <table class="overview-table">
+      <thead><tr><th>#</th><th>维度</th><th>核心内容</th><th style="text-align:center;width:80px">重要程度</th></tr></thead>
+      <tbody>
+        <tr style="background:#fff5f5"><td>1</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店 <span style="color:#c0392b;font-weight:700">⭐重点</span></div></td><td><b style="color:#c0392b">金秋大促激励计划开启报名（8/25）</b>——三大玩法（跨店满减补贴/直播大场及跃迁激励/主播分享券），活动 9/4–9/27，报名 8/25 14:00 起；单账号累计最高可得 200 万点电商成长卡；优质品牌商家可获 100% 平台全资补贴</td><td style="text-align:center">★★★</td></tr>
+        <tr style="background:#fff5f5"><td>2</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店（类目） <span style="color:#c0392b;font-weight:700">⭐重点</span></div></td><td><b style="color:#c0392b">珠宝首饰类目结构调整 + 质检扩围（9/4 生效）</b>——新增二级类目【合成彩色宝石】及 10 个三级类目（定向准入），同步关闭【合成/人造宝石】（莫桑石、合成红/蓝宝石等）；【合成彩色宝石】全量纳入「先检后发」质检要求</td><td style="text-align:center">★★★</td></tr>
+        <tr><td>3</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店（治理）</div></td><td>「违规售卖违法或危险的动物捕杀工具」专项治理公告（8/26）：10 个违规店铺被公示处置（下架全部商品、暂停保证金提现 180 天、延长结算期 180 天、冻结支付资金 180 天）；严打谐音/暗语/代号规避审核，情节严重者永久封禁店铺并移交公安机关</td><td style="text-align:center">★★★</td></tr>
+        <tr><td>4</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店（功能）</div></td><td>新增「资质管理」功能（8/31 上线）：统一管理店铺类目证照，支持查看/更新/删除；证照到期前系统主动提醒，存量过期证照关联类目流转为「即将失效」，逾期未更新将<b>自动下架该类目在售商品</b></td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>5</td><td><div class="dim-cell"><img src="${ICONS.channels}" alt="">视频号</div></td><td>Q4 原生短剧激励政策发布（8/31，覆盖 9/1–12/31）：S 评级单剧最高 100 万现金激励，厂牌年度最高 60 万；《微短剧发展管理办法》9/1 起施行，微短剧按投资额度与题材分三类管理</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>6</td><td><div class="dim-cell"><img src="${ICONS.pay}" alt="">微信支付</div></td><td>AI 专属卡再扩容（8/31）：继 WorkBuddy、QClaw 之后新增支持 DeepSeek Harness 与 OpenClaw，可付费调用 Skillhub 上 700 余个 Pay Skill；主账户隔离 + 每笔手机端二次确认的安全模型不变</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>7</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">公众号/服务号</div></td><td>珊瑚安全发布「清朗·整治账号名称信息乱象」专项行动公告（第五期，8/28）：处置假冒仿冒官方机构及媒体、未认证加注头衔、伪装特定职业、蹭炒热点、昵称资料含不良信息等账号；今年以来累计处置账号 85831 个、关闭 1802 个</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>8</td><td><div class="dim-cell"><img src="${ICONS.mini}" alt="">微信客户端/小程序</div></td><td>鸿蒙版 8.0.21.34 开启邀测（8/31–9/30）；8.0.21 灰度内容含<b>视频号发起直播支持直播带货</b>（发起直播-更多-商品）、视频号隐私三设置项、通讯录公众号/服务号列表左滑「不再关注」、设置新增微信支付商家助手等</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>9</td><td><div class="dim-cell"><img src="${ICONS.tuike}" alt="">推客</div></td><td>金秋大促带货者专项激励：带货者可提报大场直播计划参与「基础+叠加+首次跃迁」三重激励；准入门槛为已绑定视频号（有效粉丝≥1）、评分≥4.5、近半年无严重违规；主播分享券由平台全资发放</td><td style="text-align:center">★★☆</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.store}" alt=""></div>
+      <div class="dim-title-text">微信小店</div>
+      <div class="dim-count">6 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item alert">
+        <div class="item-title">2026 年金秋大促｜平台活动激励计划发布（8/25，报名 8/25 14:00 起）</div>
+        <div class="item-desc">平台发布金秋大促激励计划，分<b>三大玩法</b>：<b>① 跨店满减补贴</b>（9/4 14:00–9/27，跨店满减消费券，混资/平台全资；店铺体验分 ≥ 4.4 或暂无评分、近 30 天无异常或重大违规；平台与商家按 1:1 出资，优质品牌商家可获<b>100% 平台全资补贴</b>，用户有几率获膨胀券且膨胀部分由平台全额承担）；<b>② 直播大场及跃迁激励</b>（9/4–9/27，电商成长卡；含基础激励、叠加激励、首次跃迁激励三部分，单场基础激励最高 90 万点、叠加最高 30 万点，<b>活动周期内单账号累计最高 200 万点</b>，成长卡有效期为发放后 15 个自然日）；<b>③ 主播分享券激励</b>（9/10–9/27，平台全资满减券）。<b>报名时间 2026 年 8 月 25 日 14:00 至 9 月 27 日 23:59:59</b>；商家须先参与玩法 1 并提报至少一个活动商品，才可报名玩法 2、3。活动商品不得变相涨价（含先涨价后优惠），否则无法获得激励；本次校验期为 7/20–8/14 及 8/20–9/27。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9831/794263a6ea08b6bb/growth_center_platform_notice/2?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+      <div class="item alert">
+        <div class="item-title">一级类目「珠宝首饰」新增类目调整公告（8/28 发布，9 月 4 日生效）</div>
+        <div class="item-desc"><b>自 2026 年 9 月 4 日起</b>，平台在【珠宝首饰】下<b>新增二级类目【合成彩色宝石】</b>，并新开放 10 个三级类目——头饰、耳饰、吊坠、项链、胸饰、手镯、手链/脚链、戒指、工艺品、裸石，<b>全部为「定向准入」</b>。同时<b>关闭二级类目【合成/人造宝石】及其下三级类目</b>（莫桑石、合成红/蓝宝石、更多合成/人造宝石）。经营该类目的商家需同时满足《微信小店入驻规则》《「一级类目-珠宝首饰」定向准入和清退标准》及类目管理规则要求。存量经营合成/人造宝石的商家须关注类目迁移与商品重新归类。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9823/236e26cf22b5bae5/growth_center_platform_notice/1?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+      <div class="item alert">
+        <div class="item-title">「珠宝玉石商品提交质检服务中心质检」公告更新（8/28，9 月 4 日新增类目生效）</div>
+        <div class="item-desc">平台更新珠宝玉石「先检后发」质检类目清单：<b>自 2026 年 9 月 4 日起，【珠宝首饰-合成彩色宝石】下所有三级类目全量要求在发货前提交微信小店质检服务中心质检</b>，质检通过后由质检中心打包发货，平台自动录入快递信息与订单状态。此前已纳入质检的类目包括彩宝、翡翠、和田玉、水晶玛瑙、珍珠、其它玉石、普通黄金、普通银饰、普通银镀金、天珠工艺品、普通铂金、普通 K 金、合成钻石等。<b>同一订单质检次数上限 3 次</b>，三次均驳回将无法继续送仓，商家需与用户协商取消或按「无法发货」处理。检测覆盖外观（货不对板/少件/断裂/严重色差/无贵金属印记/仿大牌）、商品品质、主图规范与材质（材质禁售、虚假宣传材质、处理类商品、无资质销售、参数不一致）四大维度。商家须提前在【微信小店-平台服务-商品质检】开通功能、安装打印控件并充值服务账户。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/1204/36501f80f4c00890/growth_center_platform_notice/1?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+      <div class="item alert">
+        <div class="item-title">「违规售卖违法或危险的动物捕杀工具」专项治理公告（8/26）</div>
+        <div class="item-desc">平台巡检识别并拦截多起违规发布、售卖违法或危险动物捕杀工具的行为，部分商家或带货者<b>试图通过谐音、暗语、代号等隐蔽方式描述商品名称、功能或用途以规避审核</b>。<b>违规范围</b>包括：电力类捕杀工具、捕鱼机/电鱼机/地龙仪/电蚯蚓机/炸鱼工具、禁用渔具（可视锚鱼器、绝户网）、禁用猎捕工具（猎夹、捕兽夹、鸟网、弓弩、毒药、麻醉枪、猎套等）、违禁钓鱼药剂、非法诱捕工具（电媒扩音器、粘鸟网等）、毒鼠强等剧毒灭鼠药剂。<b>本次公示 10 个违规账号处置结果</b>：下架所有商品、暂停店铺新增所有类别商品、营业执照禁止开店、暂停店铺保证金提现 180 天、延长店铺订单结算期 180 天、冻结支付资金 180 天。情节严重或多次违规者将<b>永久封禁橱窗功能、永久封禁直播权限乃至永久封禁店铺</b>，并保留将证据移交公安机关的权利。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9840/641ac544f5a8e18b/growth_center_platform_notice/3?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+      <div class="item alert">
+        <div class="item-title">新增「资质管理」功能公告（8/31 上线）</div>
+        <div class="item-desc"><b>自 2026 年 8 月 31 日起</b>，商家可进入小店后台<b>「资质管理」页面</b>，对店铺内类目证照资质进行统一管理（含行政许可资质的查看、更新、删除等操作）。后续店内新增证照经审核通过后，系统将<b>在证照到期前主动提醒</b>；商家收到「资质即将失效」提醒后须及时更新有效证件，避免因证照过期导致关联类目自动失效、类目下商品面临下架风险。<b>针对店内存量已过期证照</b>，该证件关联的类目将流转为<b>「即将失效」状态</b>，商家须及时提交有效证件并更新信息，<b>逾期未更新的系统将自动下架该关联类目下的在售商品</b>。该调整不影响商家对已产生订单的履约义务。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9851/2cfc2daea5100b7a/growth_center_platform_notice/1?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+      <div class="item">
+        <div class="item-title">「珠宝玉石质检」补充公告 + 自然灾害延迟发货报备指引更新（8/28、8/31）</div>
+        <div class="item-desc"><b>① 珠宝玉石质检补充公告</b>（8/28）：与主质检公告同日发布，对送检流程、随附物品要求等细节作补充说明——商家可随货携带 GIA、HRD、IGI、EGL、SSEF、GUILD、GRS、GUBELIN、AIGS、AGL、LOTUS 及日本真珠系三家机构的证书，并对证书真伪与货证相符负责；平台有权移除不符合要求的随附物品（如大师证、收藏证书，以及引导扫码加微信/手机号的卡片纸张）。<b>② 自然灾害延迟发货报备指引</b>（8 月 31 日更新）：平台持续更新受自然灾害影响商家的延迟/无法发货报备流程，受影响商家可按指引提交报备以减免相应违规责任。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/7812/d6eb975f1e8e8878/growth_center_platform_notice/8?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#fff0e6"><img src="${ICONS.channels}" alt=""></div>
+      <div class="dim-title-text">视频号</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item">
+        <div class="item-title">Q4 原生短剧激励政策发布（8/31，覆盖 9/1–12/31）</div>
+        <div class="item-desc">视频号公布 2026 年第四季度原生短剧激励政策，激励周期为 <b>9 月 1 日至 12 月 31 日</b>。据行业报道，<b>S 评级单剧最高可获 100 万元现金激励</b>，<b>厂牌年度激励最高 60 万元</b>，政策导向引导创作者产出更适合大众观看的内容。该政策延续视频号在原生短剧赛道的持续投入，与微信生态内短剧内容供给、分账透明化方向一致。<span style="color:#999;font-size:12px">⚠️ 具体评级标准与结算细则以视频号创作者平台官方通知为准，此为行业媒体汇总，非官方公告原文</span></div>
+      </div>
+      <div class="item alert">
+        <div class="item-title">《微短剧发展管理办法》9 月 1 日起施行，影响视频号短剧生态</div>
+        <div class="item-desc">国家广播电视总局《微短剧发展管理办法》<b>自 2026 年 9 月 1 日起施行</b>。《办法》将微短剧按<b>投资额度与题材分为一类、二类、三类</b>：一类指投资额度较大或主要剧情涉及政治、军事、外交、国家安全、统战、民族、宗教、司法、公安等特殊题材；二类为投资额度相对不大的一般题材；三类为投资额度较低的一般题材。《办法》明确微短剧不得载有危害国家统一主权和领土完整、泄露国家秘密、煽动民族仇恨、诋毁中华优秀传统文化、侵害未成年人合法权益等<b>十一项禁止内容</b>；同时要求播出前按规审核并同步报主管部门，对重点账号建立信用评价体系，播出单位应定期审核评估算法机制，<b>不得使用诱导用户沉迷、过度消费的算法模型</b>，并建立分级管理与退出机制。同日施行的《互联网信息内容多渠道分发服务管理规定》要求平台与 MCN 机构签订入驻协议并向省级网信部门备案、在账号页面显著展示所属机构名称，且<b>不得为未满十六周岁未成年人提供网络直播发布服务</b>。<span style="color:#999;font-size:12px">⚠️ 此为国家主管部门规章，非视频号平台公告；具体平台落地细则以视频号后续通知为准</span></div>
+        <a class="link-btn" href="https://www.nrta.gov.cn/art/2026/7/31/art_113_73785.html" target="_blank">查看办法</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e9f7ef"><img src="${ICONS.pay}" alt=""></div>
+      <div class="dim-title-text">微信支付</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item">
+        <div class="item-title">AI 专属卡新增支持 DeepSeek Harness 与 OpenClaw（8/31）</div>
+        <div class="item-desc">微信支付官方宣布 <b>AI 专属卡上新</b>，继 WorkBuddy、QClaw 之后，<b>新增支持接入 DeepSeek Harness 和 OpenClaw</b>。授权后用户只需在对话中提出需求，即可体验从智能对话推荐到下单支付的消费流程；目前 AI 专属卡已支持在上述 Agent 中<b>付费调用 Skillhub 上的 700 余个 Pay Skill</b>，未来将覆盖更多场景。<b>接入路径</b>：① 通过 <code>npx -y @tenpay/weixinpay-ai-installer</code> 一键完成插件下载、安装与配置；② 首次支付时 Agent 生成绑定链接（也可直接要求「帮我绑定一张微信支付 AI 专属卡」）；③ Agent 发起订单后弹出支付授权，用户手机端二次确认后从专属卡扣款。<b>安全模型不变</b>：AI 专属卡与微信支付主账户<b>完全隔离</b>，Agent 内消费仅能使用专属卡余额；卡内额度由用户自行设定并可随时转入/转出；<b>每笔订单均需用户本人最终授权确认</b>。AI 专属卡于 2026 年 6 月 17 日正式发布。<span style="color:#999;font-size:12px">⚠️ 此为微信支付官方公众号发布内容的媒体汇总，未找到 pay.weixin.qq.com 对应公告页链接</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8f4fd"><img src="${ICONS.mini}" alt=""></div>
+      <div class="dim-title-text">微信客户端/小程序</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item">
+        <div class="item-title">鸿蒙版 8.0.21.34 开启邀测（8/31–9/30），视频号发起直播支持带货</div>
+        <div class="item-desc">微信鸿蒙版 App 于 <b>8 月 31 日</b>在华为应用市场开启 <b>8.0.21.34（8394018）版本邀测升级</b>，测试时间 2026/8/31–2026/9/30，官方更新日志为「修复了一些已知问题」。8.0.21 系列已知灰度内容（不绑定版本号）中，对生态运营影响较大的包括：<b>① 视频号发起直播时支持直播带货</b>（路径：发起直播-更多-商品）；② 发现-视频号-个人中心-设置新增「谁可以看我的视频号内容」「谁可以发评论」「谁可以向我打招呼」三项隐私设置（8.0.21.33 已暂时收回）；③ <b>通讯录-公众号/服务号列表左滑新增「不再关注」</b>；④ 视频号分享按钮 UI 优化并新增「复制链接」；⑤ 发现-直播新增右侧红点推荐消息提醒；⑥ 设置-通用-辅助功能新增<b>微信支付商家助手</b>；⑦ 私聊免打扰后支持折叠聊天。微信鸿蒙版安装量已突破 7000 万（最新约 7438 万）。<span style="color:#999;font-size:12px">⚠️ 灰度测试内容由网友整理汇总，非官方版本更新日志，功能可能调整或收回</span></div>
+      </div>
+      <div class="item">
+        <div class="item-title">腾讯辟谣「9 月微信发图收费」传言（8/31）</div>
+        <div class="item-desc">针对网络流传的「9 月起微信发图片双向收费」说法，腾讯于 <b>8 月 31 日</b>通过「较真辟谣」回应：该说法为<b>2022 年、2024 年已辟谣过的旧谣言翻炒</b>。官方明确除创作者收费表情外，<b>微信发送图片不收费、不存在免密划走费用</b>的情形。运营方在向用户或客户传达平台政策时应以官方渠道信息为准，避免转发未经核实的收费类传言。<span style="color:#999;font-size:12px">⚠️ 此为腾讯官方辟谣内容的媒体汇总，非产品功能更新</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#eef4ff"><img src="${ICONS.mp}" alt=""></div>
+      <div class="dim-title-text">公众号/服务号</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item alert">
+        <div class="item-title">「清朗·整治账号名称信息乱象」专项行动公告（第五期，8/28）</div>
+        <div class="item-desc">微信珊瑚安全于 <b>8 月 28 日</b>发布《关于持续开展"清朗·整治账号名称信息乱象"专项行动的公告（第五期）》，集中处置五类账号：<b>① 假冒仿冒官方机构及媒体</b>（如昵称含「文旅发布」「融媒」「金融」等字眼借势）；<b>② 未经认证加注头衔</b>（财经、医疗、司法、教育等专业身份须先认证再展示）；<b>③ 伪装特定职业人员</b>；<b>④ 蹭炒热点事件</b>（冒充当事人、假借患者名义发声）；<b>⑤ 昵称资料暗含不良信息</b>。<b>今年以来平台已累计处置账号 85831 个、关闭账号 1802 个</b>。治理范围覆盖头像、昵称、个人简介与账号整体呈现方式——头像中出现官方标识、红点/数字提醒、二维码或收款码，昵称含机构名称、名人姓名、未认证专业头衔的，均可能被处置（资料清空、禁言乃至封号）。运营者应自查账号标识，保持真实、清晰、不含误导性暗示。<span style="color:#999;font-size:12px">⚠️ 公告原文发布于「微信珊瑚安全」公众号，此处为内容要点汇总</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#fdf0e8"><img src="${ICONS.tuike}" alt=""></div>
+      <div class="dim-title-text">推客</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item">
+        <div class="item-title">金秋大促带货者激励：直播大场 + 主播分享券双轨（8/25 起报名）</div>
+        <div class="item-desc">金秋大促激励计划同步向<b>带货者（推客）</b>开放，与商家侧并轨执行。<b>报名条件</b>：① 带货者已绑定视频号账号（<b>有效粉丝数 ≥ 1</b>）；② 带货者评分 <b>≥ 4.5</b> 或暂无评分；③ 近半年内无严重违规记录、账号无异常情形。<b>激励构成</b>：以带货者身份报名，仅统计其绑定视频号账号<b>带货优选联盟商品</b>产生的 GMV（含直播间、短视频、橱窗场景），不含关联店铺自营商品及其他渠道带货 GMV；可获「基础激励 + 叠加激励（活动商品有效 GMV 占比 ≥ 50%）+ 首次跃迁激励（自 6/1 以来单日支付 GMV 首次突破门槛）」三重电商成长卡。<b>PC 端报名入口</b>：微信小店带货助手 > 营销 > 平台活动 >【金秋大促直播大场及跃迁激励】（暂不支持手机端）。<b>运营要求</b>：需创建直播预告蓄水、选择「视频号直播-购物」分类开播、建议单场时长 ≥ 4 小时且单场讲解商品 ≥ 3 件、发布带 #微信小店金秋大促 话题的短视频。同一视频号可同时以商家与带货者双身份报名同一大场日期，分别累加计算激励。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9831/794263a6ea08b6bb/growth_center_platform_notice/2?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#eaf6ec"><img src="${ICONS.work}" alt=""></div>
+      <div class="dim-title-text">企业微信</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item">
+        <div class="item-title">本周官方侧无新版本发布，5.0.10 CLI/MCP 能力持续开放中</div>
+        <div class="item-desc">本周（8/24–8/30）企业微信官方侧<b>未发布新版本或重大功能公告</b>。上期（8/18）发布的 <b>5.0.10 版本全面开放 CLI 与 MCP</b> 仍是当前生态重点：取消企业规模与资质门槛，十大办公模块（消息/文档/表格/邮件/会议/日程/通讯录/待办/微盘等）向 Agent 开放，WorkBuddy、DeepSeek Harness 及企业自建 Agent 均可接入，MCP 链路叠加权限独立配置、关键动作人工审批、授权到期自动回收、全流程日志可追溯四重安全防护。建议本周重点为存量能力的落地验证与灰度接入。<span style="color:#999;font-size:12px">⚠️ 本周无官方新公告，此为上期能力的延续状态说明</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#eef2f7"><img src="${ICONS.open}" alt=""></div>
+      <div class="dim-title-text">微信开放平台</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item">
+        <div class="item-title">小程序 AI 生态接入持续推进，规则中心与功能中心本周无新增</div>
+        <div class="item-desc">本周（8/24–8/30）微信小店规则中心与功能中心<b>均无新修订规则或新增指引发布</b>（规则中心最新为 8/19《商家和带货者账号体系管理规则》，功能中心最新为 8/21《商品规格创建指南》）。开放平台侧延续 AI 生态开放主线：小程序可通过<b>自动模式（零代码授权，平台自动读取源码拆解页面）</b>与<b>开发模式（自主开发定制化技能，经平台评测审核后被微信 AI 调用）</b>两种方式接入微信 AI 生态，两种模式不互斥、可同时开启；美团、京东、滴滴、携程、得物、美的等头部平台已作为首批完成接入。上期（8/18）发布的开发者工具 2.02.2608040（Electron 版 + 小程序 AI 调试 + Skill 能力）与 glass-easel 组件框架开放（基础库 3.8.12 起）仍为当前可用能力。<span style="color:#999;font-size:12px">⚠️ 本周官方侧无新增公告，此为生态现状与上期能力延续说明</span></div>
+      </div>
+    </div>
+  </div>
+</div><!-- /p18 -->
+
 <!-- ════ 期次17：2026.8.17–8.23 ════ -->
-<div class="period-content active" id="p17">
+<div class="period-content" id="p17">
   <div class="overview-card">
     <div class="card-title">▌ 本期要点速览（2026.8.17–8.23）</div>
     <table class="overview-table">
@@ -2641,8 +2810,8 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
 
 <div class="footer">
   <div class="footer-update">
-    <span>🕐 最近更新：2026年8月25日</span>
-    <span class="footer-next">📅 下次更新：2026年9月1日（周二）</span>
+    <span>🕐 最近更新：2026年9月1日</span>
+    <span class="footer-next">📅 下次更新：2026年9月8日（周二）</span>
   </div>
   <div class="footer-credit">
     <strong>微信生态每周更新汇总</strong> · 数据来源：腾讯智慧零售、微信公开渠道
@@ -2674,6 +2843,7 @@ function printPDF() {
 })();
 
 const PERIODS = [
+  { id: 'p18',  label: '2026.8.24–8.30', start: new Date(2026, 7, 24), end: new Date(2026, 7, 30) },
   { id: 'p17',  label: '2026.8.17–8.23', start: new Date(2026, 7, 17), end: new Date(2026, 7, 23) },
   { id: 'p16',  label: '2026.8.10–8.18', start: new Date(2026, 7, 10), end: new Date(2026, 7, 18) },
   { id: 'p15',  label: '2026.8.3–8.9', start: new Date(2026, 7, 3), end: new Date(2026, 7, 9) },
@@ -2697,7 +2867,7 @@ const PERIODS = [
 ];
 
 // 当前选中期次
-let activePeriodId = 'p17';
+let activePeriodId = 'p18';
 // 日历当前显示的月份
 let calYear = 2026, calMonth = 7; // 0-indexed，6=7月
 
