@@ -396,7 +396,195 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
 
 <!-- ════ 期次10：2026.6.30–7.6 ════ -->
 <!-- ════ 期次18：2026.8.24–8.30 ════ -->
-<div class="period-content active" id="p18">
+<div class="period-content active" id="p19">
+  <div class="overview-card">
+    <div class="card-title">▌ 本期要点速览（2026.8.31–9.6）</div>
+    <table class="overview-table">
+      <thead><tr><th>#</th><th>维度</th><th>核心内容</th><th style="text-align:center;width:80px">重要程度</th></tr></thead>
+      <tbody>
+        <tr style="background:#fff5f5"><td>1</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店 <span style="color:#c0392b;font-weight:700">⭐重点</span></div></td><td><b style="color:#c0392b">9 月双激励政策发布</b>——「优质经营商家增量激励政策（2026年9月）」与「服务商 2026年9月商家服务商激励政策」同步上线，叠加金秋大促形成月度增长组合拳</td><td style="text-align:center">★★★</td></tr>
+        <tr style="background:#fff5f5"><td>2</td><td><div class="dim-cell"><img src="${ICONS.store}" alt="">微信小店（类目） <span style="color:#c0392b;font-weight:700">⭐重点</span></div></td><td><b style="color:#c0392b">多类目集中调整</b>——新增【计生用品】二级类目、新增【美发假发/造型】二级类目，并对运动户外、母婴、服饰内衣、家纺 4 个类目延长预售时间</td><td style="text-align:center">★★★</td></tr>
+        <tr style="background:#fff5f5"><td>3</td><td><div class="dim-cell"><img src="${ICONS.mini}" alt="">小程序 <span style="color:#c0392b;font-weight:700">⭐重点</span></div></td><td><b style="color:#c0392b">个人主体小程序开放「虚拟支付:个人」能力（9/3）</b>——工具类小程序完成认证与备案后即可开通，全终端月支付限额 10 万元，独立开发者可在站内售卖会员、付费功能、AI 使用次数等</td><td style="text-align:center">★★★</td></tr>
+        <tr><td>4</td><td><div class="dim-cell"><img src="${ICONS.channels}" alt="">视频号</div></td><td>Q4 原生短剧激励新政 9/1 正式落地：账单由月结改为<b>半月结算</b>，基础分账上叠加「观看时长+真人剧目+年轻用户」三重激励，最高可达基础分账 140%</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>5</td><td><div class="dim-cell"><img src="${ICONS.pay}" alt="">微信支付</div></td><td>商户文档中心更新日志（9/1）上线《AI支付》能力；微信支付商家助手在鸿蒙版微信中灰度提供入口（9/2）</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>6</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">公众号/服务号</div></td><td>公众号消息页「AI 总结」入口灰度（常看的号 + 文章底部）；微信派 9/2 上线「长按查看全部未读聊天」与「红包/转账提醒」两项防遗漏功能（均灰度中）</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>7</td><td><div class="dim-cell"><img src="${ICONS.mini}" alt="">微信客户端</div></td><td>鸿蒙版 8.0.21.37 尝鲜升级（9/2）支持<b>视频号发起直播带货</b>；Linux 版 4.1.13（9/6）补齐语音输入转文字、滚动截图、消息连续翻译、群接龙</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>8</td><td><div class="dim-cell"><img src="${ICONS.tuike}" alt="">推客 / 企业微信</div></td><td>本期两线均无新增官方重大公告：推客「2026年8-9月联盟带货机构激励计划」与「带货者拉新激励计划」持续进行；企业微信 5.0.10（CLI/MCP 开放）能力持续可用</td><td style="text-align:center">★★</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8faf0"><img src="${ICONS.store}" alt=""></div>
+      <div class="dim-title-text">微信小店</div>
+      <div class="dim-count">10 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item alert">
+        <div class="item-title">微信小店｜优质经营商家增量激励政策（2026年9月）（9/1）</div>
+        <div class="item-desc">平台发布 9 月「优质经营商家增量激励政策」，面向经营表现优质的商家提供增量激励，与上期金秋大促、服务商激励形成月度增长组合拳，鼓励商家提升经营质量与用户服务体验。具体激励口径以公告原文为准。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9869/f1754121b6102f16/growth_center_platform_notice/2?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+      <div class="item alert">
+        <div class="item-title">微信小店服务商｜2026年9月「商家服务商」激励政策（9/1）</div>
+        <div class="item-desc">平台发布 9 月「商家服务商」激励政策，围绕基础拉新、场景增量及应季类目加码三类激励设定计算规则与结算口径，设激励上限与服务商整体系数调整机制，并明确违规回收、动销店铺数量门槛等参与要求；电商成长卡按流程发放，有效期与使用指引同步公布。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9849/1d6850ac82f8b70e/growth_center_platform_notice/2?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+      <div class="item alert">
+        <div class="item-title">关于「微信小店新增二级类目计生用品」调整公告（9/4）</div>
+        <div class="item-desc">平台在对应一级类目下<b>新增二级类目【计生用品】</b>，同步明确该类目的经营要求与资质规范，相关商家需关注类目准入与商品合规要求。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9852/f7801ec5bd7041fa/growth_center_platform_notice/1?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+      <div class="item alert">
+        <div class="item-title">关于「微信小店二级类目美发假发/造型类目」调整公告（9/4）</div>
+        <div class="item-desc">平台在【美发假发/造型】相关二级类目下进行结构调整，新增或规范对应三级类目，经营该类目的商家需核对商品挂靠类目与资质要求，避免类目失效影响正常经营。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9880/511feec95389cf2f/growth_center_platform_notice/1?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+      <div class="item">
+        <div class="item-title">关于运动户外 / 母婴 / 服饰内衣 / 家纺部分类目延长预售时间调整公告（9/2–9/3）</div>
+        <div class="item-desc">平台于 9/2–9/3 集中发布 4 则类目预售时间调整公告：<b>运动户外</b>（9/3）、<b>母婴</b>（9/2）、<b>服饰内衣</b>（9/2）、<b>家纺</b>（9/2）部分类目延长预售时间，相关类目商家可按新规设置更长预售周期。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9865/f586f5d13327655b/growth_center_platform_notice/1?bpath=%252Fnotice" target="_blank">运动户外</a>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9867/98c6558e794655ed/growth_center_platform_notice/1?bpath=%252Fnotice" target="_blank">母婴</a>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9868/948c38b0dc1757c1/growth_center_platform_notice/1?bpath=%252Fnotice" target="_blank">服饰内衣</a>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9866/0a839c1ee13aad07/growth_center_platform_notice/1?bpath=%252Fnotice" target="_blank">家纺</a>
+      </div>
+      <div class="item">
+        <div class="item-title">微信小店每周治理公告（26年第36周）（9/2）</div>
+        <div class="item-desc">平台发布第 36 周治理公告，公示本周违规处置情况与治理重点，提醒商家与带货者规范经营、遵守平台规则。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9879/5abadceb4127ab7f/growth_center_platform_notice/4?bpath=%252Fnotice" target="_blank">查看公告</a>
+      </div>
+      <div class="item">
+        <div class="item-title">微信小店｜签到领补贴 / 签到领好礼活动细则（9/4）</div>
+        <div class="item-desc">平台发布「签到领补贴」「签到领好礼」两则活动细则，通过签到互动为商家与用户提供补贴与好礼，具体参与方式与发放规则以公告原文为准。</div>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9873/1edc9a8698c3f01f/growth_center_platform_notice/1?bpath=%252Fnotice" target="_blank">签到领补贴</a>
+        <a class="link-btn" href="https://store.weixin.qq.com/chengzhang/webdoc/wiki/9872/5133b94f3617856a/growth_center_platform_notice/1?bpath=%252Fnotice" target="_blank">签到领好礼</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#fdeef6"><img src="${ICONS.channels}" alt=""></div>
+      <div class="dim-title-text">视频号</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item alert">
+        <div class="item-title">视频号原生短剧激励新政 9/1 正式落地：半月结算 + 三重时长叠加激励</div>
+        <div class="item-desc">8/31 发布的「视频号原生短剧」激励活动于 <b>9/1 正式生效，覆盖 9/1–12/31</b>。结算端账单周期由月结改为<b>半月结算</b>（每月 5 日、24 日推送结算单）；收益端在基础分账上叠加「观看时长激励 20% + 真人剧目激励 10% + 12-35 岁年轻用户时长激励 10%」三重激励，三项全部满足最高可达基础分账 140%，叠加无上限。参与剧目须通过「视频号原生短剧」链路上架、审核状态正常，严禁盗版/抄袭/刷量。<span style="color:#999;font-size:12px">⚠️ 此为第三方媒体报道与平台公告综合整理，未找到单一官方公告原文深链</span></div>
+      </div>
+      <div class="item">
+        <div class="item-title">鸿蒙版微信支持视频号发起直播带货（8.0.21.37，9/2）</div>
+        <div class="item-desc">微信鸿蒙版 8.0.21.37 尝鲜升级（测试期 9/2–10/2）新增<b>视频号发起直播支持直播带货</b>（发起直播-更多-商品），并优化视频号分享按钮 UI（新增「复制链接」）、发现-直播新增红点推荐、视频号个人中心新增隐私设置项。<span style="color:#999;font-size:12px">⚠️ 此为第三方媒体对该版本更新内容的整理，非官方公告原文</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#e8f3ee"><img src="${ICONS.pay}" alt=""></div>
+      <div class="dim-title-text">微信支付</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item alert">
+        <div class="item-title">商户文档中心更新日志上线《AI支付》能力（9/1）</div>
+        <div class="item-desc">微信支付商户文档中心「更新日志」显示，<b>2026-09 上线《AI支付》能力</b>（支付产品类），进一步完善 AI 与支付链路结合的产品矩阵。</div>
+        <a class="link-btn" href="https://pay.weixin.qq.com/doc/v3/merchant/4012078749" target="_blank">查看更新日志</a>
+      </div>
+      <div class="item">
+        <div class="item-title">微信支付商家助手鸿蒙版灰度入口（9/2）</div>
+        <div class="item-desc">微信支付商家助手在鸿蒙版微信中开始灰度提供入口（设置-通用-辅助功能新增微信支付商家助手），方便商家在鸿蒙端使用对账、经营等能力。<span style="color:#999;font-size:12px">⚠️ 此为第三方百科对该能力上线时间的记录，非官方公告原文</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#eef4fb"><img src="${ICONS.mp}" alt=""></div>
+      <div class="dim-title-text">公众号 / 服务号</div>
+      <div class="dim-count">2 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item">
+        <div class="item-title">公众号消息页「AI 总结」入口灰度</div>
+        <div class="item-desc">公众号消息页「常看的号」一栏最左侧新增小微标志与「AI 总结」入口，可自动将近期常看公众号更新整理成摘要；打开任意公众号文章后，文章底部同样提供「AI 总结」按钮，一键提炼长文核心观点。上述功能处灰度测试阶段，仅部分用户可见。<span style="color:#999;font-size:12px">⚠️ 此为第三方媒体对灰度功能的整理，非官方公告原文</span></div>
+      </div>
+      <div class="item">
+        <div class="item-title">微信派上线「未读聊天查看」与「红包/转账提醒」（9/2，灰度中）</div>
+        <div class="item-desc">微信官方公众号「微信派」9/2 介绍两项防遗漏新功能：<b>长按左下角「微信」可查看全部未读聊天</b>（灰度中）；聊天框右上角对未领取红包或转账<b>显示提醒标识</b>，点击可快速定位。功能正逐步向全量用户开放。<span style="color:#999;font-size:12px">⚠️ 此为第三方媒体对微信派内容的整理，非官方公告原文</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#eaf6ec"><img src="${ICONS.mini}" alt=""></div>
+      <div class="dim-title-text">小程序 / 微信客户端</div>
+      <div class="dim-count">3 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item alert">
+        <div class="item-title">小程序「虚拟支付:个人」能力上线（9/3）</div>
+        <div class="item-desc">微信开放文档新增<b>「虚拟支付:个人」</b>能力：个人主体的<b>工具类</b>小程序，完成认证与备案后即可开通虚拟支付，全终端月支付限额 <b>10 万元</b>。开发者可在站内售卖会员、付费功能、AI 使用次数、数字内容等增值服务，显著降低个人开发者的变现门槛。</div>
+        <a class="link-btn" href="https://developers.weixin.qq.com/miniprogram/dev/framework/" target="_blank">开放平台文档</a>
+      </div>
+      <div class="item">
+        <div class="item-title">微信 Linux 版 4.1.13 更新（9/6）</div>
+        <div class="item-desc">微信 Linux 版推送 4.1.13 版本，新增语音输入转文字、滚动截图、消息连续翻译、群接龙及动态表情预览等能力，图片视频合并展示与单聊记录分享同步支持，进一步缩小跨端体验差距。<span style="color:#999;font-size:12px">⚠️ 此为第三方媒体对版本更新内容的整理，非官方公告原文</span></div>
+      </div>
+      <div class="item">
+        <div class="item-title">微信鸿蒙版 8.0.21.37 尝鲜升级（9/2）</div>
+        <div class="item-desc">鸿蒙版微信开启 8.0.21.37 版本尝鲜升级（测试期 9/2–10/2）：支持视频号发起直播带货、视频号分享新增「复制链接」、发现-直播红点推荐、视频号个人中心隐私设置项、观看直播连麦、私聊免打扰折叠、通讯录左滑「不再关注」等。<span style="color:#999;font-size:12px">⚠️ 此为第三方媒体对版本更新内容的整理，非官方公告原文</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#eef2f7"><img src="${ICONS.open}" alt=""></div>
+      <div class="dim-title-text">微信开放平台</div>
+      <div class="dim-count">1 条更新</div>
+    </div>
+    <div class="dim-body">
+      <div class="item">
+        <div class="item-title">小程序虚拟支付等能力经开放平台文档发布，AI 生态接入持续开放</div>
+        <div class="item-desc">本周上线的「虚拟支付:个人」能力由微信开放平台文档发布；微信 AI 生态接入能力（<b>自动模式</b>：提审时授权平台读取源码即可零代码接入；<b>开发模式</b>：自主开发定制 Skill 经评测审核后被微信 AI 调用）持续开放，美团、京东、滴滴、携程、得物、美的等头部平台作为首批持续接入扩大中。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#eaf6ec"><img src="${ICONS.tuike}" alt=""></div>
+      <div class="dim-title-text">推客</div>
+      <div class="dim-count">持续进行</div>
+    </div>
+    <div class="dim-body">
+      <div class="item">
+        <div class="item-title">本期无新增官方公告，8-9 月激励计划持续进行</div>
+        <div class="item-desc">本周（8/31–9/6）推客侧<b>未发布新的官方重大公告</b>。仍在有效期内的激励包括：「微信小店｜联盟带货机构推客带货功能激励计划（2026年8-9月）」（8/1–9/30）与「带货者拉新激励计划」（8/17–9/17），相关带货机构、服务商与带货者可继续报名参与。<span style="color:#999;font-size:12px">⚠️ 本期无官方新公告，此为既有激励计划的延续状态说明</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dim-block">
+    <div class="dim-header">
+      <div class="dim-icon" style="background:#eaf6ec"><img src="${ICONS.work}" alt=""></div>
+      <div class="dim-title-text">企业微信</div>
+      <div class="dim-count">持续进行</div>
+    </div>
+    <div class="dim-body">
+      <div class="item">
+        <div class="item-title">本周官方侧无新版本/重大功能公告，5.0.10 能力持续可用</div>
+        <div class="item-desc">本周（8/31–9/6）企业微信官方侧<b>未发布新版本或重大功能公告</b>。上期（8/18）发布的 <b>5.0.10 版本全面开放 CLI 与 MCP</b> 仍是当前生态重点：十大办公模块向 Agent 开放，WorkBuddy、DeepSeek Harness 及企业自建 Agent 均可接入，叠加权限独立配置、关键动作人工审批、授权到期自动回收、全流程日志四重安全机制。微信派本周上线的未读/红包提醒属微信客户端能力，企业微信侧无同步大版本。<span style="color:#999;font-size:12px">⚠️ 本期无官方新公告，此为上期能力的延续状态说明</span></div>
+      </div>
+    </div>
+  </div>
+</div><!-- /p19 -->
+
+<div class="period-content" id="p18">
   <div class="overview-card">
     <div class="card-title">▌ 本期要点速览（2026.8.24–8.30）</div>
     <table class="overview-table">
@@ -2810,8 +2998,8 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
 
 <div class="footer">
   <div class="footer-update">
-    <span>🕐 最近更新：2026年9月1日</span>
-    <span class="footer-next">📅 下次更新：2026年9月8日（周二）</span>
+    <span>🕐 最近更新：2026年9月8日</span>
+    <span class="footer-next">📅 下次更新：2026年9月15日（周二）</span>
   </div>
   <div class="footer-credit">
     <strong>微信生态每周更新汇总</strong> · 数据来源：腾讯智慧零售、微信公开渠道
@@ -2843,6 +3031,7 @@ function printPDF() {
 })();
 
 const PERIODS = [
+  { id: 'p19',  label: '2026.8.31–9.6', start: new Date(2026, 7, 31), end: new Date(2026, 8, 6) },
   { id: 'p18',  label: '2026.8.24–8.30', start: new Date(2026, 7, 24), end: new Date(2026, 7, 30) },
   { id: 'p17',  label: '2026.8.17–8.23', start: new Date(2026, 7, 17), end: new Date(2026, 7, 23) },
   { id: 'p16',  label: '2026.8.10–8.18', start: new Date(2026, 7, 10), end: new Date(2026, 7, 18) },
@@ -2867,9 +3056,9 @@ const PERIODS = [
 ];
 
 // 当前选中期次
-let activePeriodId = 'p18';
+let activePeriodId = 'p19';
 // 日历当前显示的月份
-let calYear = 2026, calMonth = 7; // 0-indexed，6=7月
+let calYear = 2026, calMonth = 8; // 0-indexed，6=7月
 
 function switchTab(btn, id) {
   activePeriodId = id;
