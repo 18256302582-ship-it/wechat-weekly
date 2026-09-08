@@ -407,7 +407,7 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
         <tr style="background:#fff5f5"><td>3</td><td><div class="dim-cell"><img src="${ICONS.mini}" alt="">小程序 <span style="color:#c0392b;font-weight:700">⭐重点</span></div></td><td><b style="color:#c0392b">个人主体小程序开放「虚拟支付:个人」能力（9/3）</b>——工具类小程序完成认证与备案后即可开通，全终端月支付限额 10 万元，独立开发者可在站内售卖会员、付费功能、AI 使用次数等</td><td style="text-align:center">★★★</td></tr>
         <tr><td>4</td><td><div class="dim-cell"><img src="${ICONS.channels}" alt="">视频号</div></td><td>Q4 原生短剧激励新政 9/1 正式落地：账单由月结改为<b>半月结算</b>，基础分账上叠加「观看时长+真人剧目+年轻用户」三重激励，最高可达基础分账 140%</td><td style="text-align:center">★★☆</td></tr>
         <tr><td>5</td><td><div class="dim-cell"><img src="${ICONS.pay}" alt="">微信支付</div></td><td>商户文档中心更新日志（9/1）上线《AI支付》能力；微信支付商家助手在鸿蒙版微信中灰度提供入口（9/2）</td><td style="text-align:center">★★☆</td></tr>
-        <tr><td>6</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">公众号/服务号</div></td><td>公众号消息页「AI 总结」入口灰度（常看的号 + 文章底部）；微信派 9/2 上线「长按查看全部未读聊天」与「红包/转账提醒」两项防遗漏功能（均灰度中）</td><td style="text-align:center">★★☆</td></tr>
+        <tr><td>6</td><td><div class="dim-cell"><img src="${ICONS.mp}" alt="">公众号/服务号</div></td><td>公众号后台新增「微信位置运营」入口（认领门店位置、关联小程序/服务号贴图，灰度开放）；微信内测「小微AI社交」（两个小微可先行代聊）；公众号消息页「AI 总结」入口灰度 + 微信派 9/2「未读聊天查看」「红包/转账提醒」</td><td style="text-align:center">★★☆</td></tr>
         <tr><td>7</td><td><div class="dim-cell"><img src="${ICONS.mini}" alt="">微信客户端</div></td><td>鸿蒙版 8.0.21.37 尝鲜升级（9/2）支持<b>视频号发起直播带货</b>；Linux 版 4.1.13（9/6）补齐语音输入转文字、滚动截图、消息连续翻译、群接龙</td><td style="text-align:center">★★☆</td></tr>
         <tr><td>8</td><td><div class="dim-cell"><img src="${ICONS.tuike}" alt="">推客 / 企业微信</div></td><td>本期两线均无新增官方重大公告：推客「2026年8-9月联盟带货机构激励计划」与「带货者拉新激励计划」持续进行；企业微信 5.0.10（CLI/MCP 开放）能力持续可用</td><td style="text-align:center">★★</td></tr>
       </tbody>
@@ -504,7 +504,7 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
     <div class="dim-header">
       <div class="dim-icon" style="background:#eef4fb"><img src="${ICONS.mp}" alt=""></div>
       <div class="dim-title-text">公众号 / 服务号</div>
-      <div class="dim-count">2 条更新</div>
+      <div class="dim-count">4 条更新</div>
     </div>
     <div class="dim-body">
       <div class="item">
@@ -514,6 +514,15 @@ mark.hl { background: #fde68a; color: #374151; border-radius: 2px; padding: 0 1p
       <div class="item">
         <div class="item-title">微信派上线「未读聊天查看」与「红包/转账提醒」（9/2，灰度中）</div>
         <div class="item-desc">微信官方公众号「微信派」9/2 介绍两项防遗漏新功能：<b>长按左下角「微信」可查看全部未读聊天</b>（灰度中）；聊天框右上角对未领取红包或转账<b>显示提醒标识</b>，点击可快速定位。功能正逐步向全量用户开放。<span style="color:#999;font-size:12px">⚠️ 此为第三方媒体对微信派内容的整理，非官方公告原文</span></div>
+      </div>
+      <div class="item alert">
+        <div class="item-title">公众号后台新增「微信位置运营」入口（灰度开放）</div>
+        <div class="item-desc">线下商家可在公众号后台「营销与服务」中认领自己门店的微信位置，认领后支持：<b>① 关联小程序</b>，在位置页展示小程序服务；<b>② 关联服务号/订阅号</b>（需企业主体），在位置页优先展示公众号贴图（最新发布默认置顶）；<b>③ 多入口连接用户</b>，用户在聊天、朋友圈、视频号、公众号贴图等场景点击即可查看位置页；<b>④ 贴图自动带位置标签</b>，用户在小程序发布贴图时自动带上 2 公里内最近门店 POI，获门店附近精准推荐曝光。连锁品牌可提交商标信息后<b>批量导入位置（单次最多 1000 个）</b>，形成「一店一位置」矩阵入口。认领免费，需门头照、营业执照、法人验证。</div>
+        <a class="link-btn" href="https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/wxpoi" target="_blank">查看官方文档</a>
+      </div>
+      <div class="item alert">
+        <div class="item-title">微信内测「小微AI社交」：两个小微可先行代聊（9/7 报道）</div>
+        <div class="item-desc">据《每日经济新闻》等媒体 9/7 报道，微信正内测「小微AI社交」：用户向自己的「小微」提出诉求（如约饭、订座），由它联系好友的小微先行沟通；对方授权后两个 AI 交流并将结果带回，需要用户拍板时提醒确认。与「代发微信消息」不同，全程发生在「小微」内，<b>不会出现在个人对话框</b>。这是原生 AI 助手「小微」（6 月中旬小范围内测）在社交场景的能力延伸，目前仅小范围测试。<span style="color:#999;font-size:12px">⚠️ 此为第三方媒体报道，非官方公告原文，功能处内测阶段</span></div>
       </div>
     </div>
   </div>
